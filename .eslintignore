@@ -1,2 +1,2 @@
-example/webpack.config.js
+webpack.config.js
 example/*.bundle.js

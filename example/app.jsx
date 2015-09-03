@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Label } from '../src/components'
+import { Label } from '../src'
 
 class App extends React.Component {
   render() {

@@ -1,10 +1,5 @@
 module.exports = {
   context: __dirname,
-  entry: './app.jsx',
-  output: {
-    path: __dirname,
-    filename: 'app.bundle.js'
-  },
   module: {
     loaders: [
       { test: /\.jsx?$/, exclude: /node_modules/, loaders: [
@@ -15,7 +10,7 @@ module.exports = {
   resolve: {
     modulesDirectories: [
       '.',
-      '../node_modules'
+      './node_modules'
     ],
     extensions: ['', '.json', '.js', '.jsx']
   }
