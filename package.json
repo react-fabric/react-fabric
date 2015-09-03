@@ -17,7 +17,14 @@
     "prepublish": "parallelshell 'npm run transpile' 'npm run build'",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "Kevin Mees <kev.mees@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kmees/react-fabric.git"
+  },
+  "bugs": {
+    "url": "https://github.com/kmees/react-fabric/issues"
+  },
   "license": "MIT",
   "dependencies": {
     "classnames": "^2.1.3",
