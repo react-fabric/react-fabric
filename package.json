@@ -4,9 +4,15 @@
   "description": "Office UI Fabric components built with React",
   "main": "index.js",
   "scripts": {
+    "build:src": "babel src --out-dir dist/",
     "build:example": "webpack --config ./example/webpack.config.js",
+    "build": "parallelshell 'npm run build:src' 'npm run build:example'",
+    "watch:src": "babel src -w --out-dir dist/",
     "watch:example": "webpack -w --config ./example/webpack.config.js",
-    "lint": "eslint -c .eslintrc --ext .js --ext .jsx src/",
+    "watch": "parallelshell 'npm run watch:src' 'npm run watch:example'",
+    "lint:src": "eslint -c .eslintrc --ext .js --ext .jsx src/",
+    "lint:example": "eslint -c .eslintrc --ext .js --ext .jsx example/",
+    "lint": "parallelshell 'npm run lint:src' 'npm run lint:example'",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -24,6 +30,7 @@
     "eslint": "^1.3.1",
     "eslint-config-airbnb": "0.0.8",
     "eslint-plugin-react": "^3.3.1",
+    "parallelshell": "^2.0.0",
     "webpack": "^1.12.0"
   }
 }
