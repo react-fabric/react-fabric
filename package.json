@@ -1,6 +1,6 @@
 {
   "name": "react-fabric",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Office UI Fabric components built with React",
   "main": "lib/index.js",
   "scripts": {
