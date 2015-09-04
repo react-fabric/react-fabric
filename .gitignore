@@ -1,2 +1,7 @@
 node_modules/
-example/*.bundle.js
+npm-debug.log
+
+example/*.bundle.js*
+
+dist/
+lib/
