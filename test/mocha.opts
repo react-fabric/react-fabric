@@ -1,0 +1,3 @@
+--compilers jsx:babel/register
+--require ./test/setup.js
+--check-leaks

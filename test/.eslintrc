@@ -1,0 +1,9 @@
+{
+  "rules": {
+    "func-names": 0
+  },
+  "globals": {
+    "expect": false,
+    "TestUtils": false
+  }
+}
