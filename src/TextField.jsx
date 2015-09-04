@@ -5,11 +5,12 @@ import Label from './Label'
 
 export default class TextField extends React.Component {
   static propTypes = {
-    label: PropTypes.node,
     description: PropTypes.string,
-    required: PropTypes.bool,
-    placeholder: PropTypes.bool,
+    disabled: PropTypes.bool,
+    label: PropTypes.node,
     multiline: PropTypes.bool,
+    placeholder: PropTypes.bool,
+    required: PropTypes.bool,
     underlined: PropTypes.bool
   }
 
@@ -43,15 +44,15 @@ export default class TextField extends React.Component {
     })
   }
 
-  _createLabel(content, required) {
+  _createLabel({disabled, label: content, required}) {
     let label
 
     if (content === void 0 || content === null) {
       label = null
     } else if (content._isReactElement && content.type === Label) {
-      label = React.cloneElement(content, { required })
+      label = React.cloneElement(content, { required, disbled })
     } else {
-      label = <Label required={required}>{content}</Label>
+      label = <Label required={required} disabled={disabled}>{content}</Label>
     }
 
     return label
@@ -60,14 +61,13 @@ export default class TextField extends React.Component {
   render() {
     const {
       description,
-      label: labelContent,
-      required,
-      placeholder,
+      disabled,
       multiline,
+      placeholder,
       underlined
     } = this.props
 
-    const label = this.state.showLabel || !placeholder ? this._createLabel(labelContent, required) : null
+    const label = this.state.showLabel || !placeholder ? this._createLabel(this.props) : null
 
     const input = React.cloneElement(multiline ? <textarea /> : <input />, {
       className: 'ms-TextField-field',
@@ -81,7 +81,8 @@ export default class TextField extends React.Component {
          'ms-TextField', {
            'ms-TextField--placeholder': placeholder,
            'ms-TextField--underlined': underlined,
-           'is-active': underlined && this.state.isActive
+           'is-active': underlined && this.state.isActive,
+           'is-disabled': disabled
          }
        )}>
         {label}
@@ -90,5 +91,4 @@ export default class TextField extends React.Component {
       </div>
     )
   }
-
 }
