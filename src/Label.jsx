@@ -1,5 +1,5 @@
 import React, { PropTypes} from 'react'
-import cn from 'classnames'
+import cx from 'classnames'
 
 export default class Label extends React.Component  {
   static propTypes = {
@@ -11,11 +11,12 @@ export default class Label extends React.Component  {
     const { required, disabled } = this.props
 
     return (
-       <label className={cn({
-         'ms-Label': true,
-         'is-required': required,
-         'is-disabled': disabled,
-       })}>
+       <label className={cx(
+         'ms-Label', {
+           'is-required': required,
+           'is-disabled': disabled,
+         }
+       )}>
         {this.props.children}
       </label>
     )
