@@ -5,7 +5,7 @@ import render from './util/render'
 import Label from '../src/Label.jsx'
 
 describe('Label', function() {
-  it('renders a <label /> tag', function() {
+  it('renders a <label />', function() {
     var sut = render(
       <Label>Foo</Label>
     )
@@ -18,7 +18,7 @@ describe('Label', function() {
   })
 
   it('can be required', function() {
-    const sut = render(
+    var sut = render(
       <Label required={true}>Foo</Label>
     )
 
@@ -26,7 +26,7 @@ describe('Label', function() {
   })
 
   it('can be disabled', function() {
-    const sut = render(
+    var sut = render(
       <Label disabled={true}>Foo</Label>
     )
 
