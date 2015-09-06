@@ -1,4 +1,5 @@
 import React from 'react'
+import _ from 'lodash'
 
 import Button from '../src/Button.jsx'
 
@@ -16,17 +17,18 @@ describe('Button', () => {
       )
       expect(sut).to.have.property('type', 'button')
       expect(sut).to.have.deep.property('props.className', 'ms-Button')
+      expect(_.compact(sut.props.children)).to.be.empty
     })
 
-    it('renders its children', () => {
+    it('renders its children as the label', () => {
       var sut = render(
         <Button>Foo</Button>
       )
-      var children = sut.props.children
+      var [label] = _.compact(sut.props.children)
 
-      expect(children).to.have.property('type', 'span')
-      expect(children).to.have.deep.property('props.className', 'ms-Button-label')
-      expect(children).to.have.deep.property('props.children', 'Foo')
+      expect(label).to.have.property('type', 'span')
+      expect(label).to.have.deep.property('props.className', 'ms-Button-label')
+      expect(label).to.have.deep.property('props.children', 'Foo')
     })
 
     it('can be disabled', () => {
@@ -37,7 +39,7 @@ describe('Button', () => {
       expect(sut.props.className.split(' ')).to.include('is-disabled')
     })
 
-    it('can be primary', () => {
+    it('can be a primary button', () => {
       var sut = render(
         <Button primary={true} />
       )
@@ -45,7 +47,7 @@ describe('Button', () => {
       expect(sut.props.className.split(' ')).to.include('ms-Button--primary')
     })
 
-    it('can be hero', () => {
+    it('can be a hero button', () => {
       var sut = render(
         <Button hero={true} />
       )
@@ -53,7 +55,7 @@ describe('Button', () => {
       expect(sut.props.className.split(' ')).to.include('ms-Button--hero')
     })
 
-    it('can be compound', () => {
+    it('can be a compound button', () => {
       var sut = render(
         <Button compound={true} />
       )
@@ -61,12 +63,35 @@ describe('Button', () => {
       expect(sut.props.className.split(' ')).to.include('ms-Button--compound')
     })
 
-    it('can be command', () => {
+    it('can be a command button', () => {
       var sut = render(
         <Button command={true} />
       )
 
       expect(sut.props.className.split(' ')).to.include('ms-Button--command')
+    })
+
+    it('can have a description', function() {
+      var sut = render(
+        <Button description="Foo" />
+      )
+      var [description] = _.compact(sut.props.children)
+
+      expect(description).to.have.property('type', 'span')
+      expect(description).to.have.deep.property('props.className', 'ms-Button-description')
+      expect(description).to.have.deep.property('props.children', 'Foo')
+    })
+
+    it('can have an icon', function() {
+      var sut = render(
+        <Button icon="heart" />
+      )
+      var [icon] = _.compact(sut.props.children)
+
+      expect(icon).to.have.property('type', 'span')
+      expect(icon).to.have.deep.property('props.className', 'ms-Button-icon')
+      expect(icon.props.children).to.have.property('type', 'i')
+      expect(icon.props.children).to.have.deep.property('props.className', 'ms-Icon ms-Icon--heart')
     })
   })
 

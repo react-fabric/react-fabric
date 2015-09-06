@@ -9,17 +9,22 @@ export default class Button extends React.Component  {
     hero: PropTypes.bool,
     compound: PropTypes.bool,
     command: PropTypes.bool,
-    type: PropTypes.string
+    type: PropTypes.string,
+    description: PropTypes.node,
+    icon: PropTypes.string
   }
 
   render() {
     const {
+      children,
       disabled,
       primary,
       hero,
       compound,
       command,
-      type
+      type,
+      description,
+      icon
     } = this.props
 
     return (
@@ -32,7 +37,20 @@ export default class Button extends React.Component  {
           'ms-Button--command': command
         }
       )}>
-        <span className="ms-Button-label">{this.props.children}</span>
+        { icon ? <span className="ms-Button-icon">
+            <i className={`ms-Icon ms-Icon--${icon}`}/>
+          </span> : null
+        }
+        {
+          children ? <span className="ms-Button-label">
+            {this.props.children}
+          </span> : null
+        }
+        {
+          description ? <span className="ms-Button-description">
+            {description}
+          </span> : null
+        }
       </button>
     )
   }
