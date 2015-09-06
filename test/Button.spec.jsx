@@ -69,4 +69,14 @@ describe('Button', () => {
       expect(sut.props.className.split(' ')).to.include('ms-Button--command')
     })
   })
+
+  describe('[Functionality]', () => {
+    it('can have a type attribute', () => {
+      var sut = render(
+        <Button type="submit" />
+      )
+
+      expect(sut).to.have.deep.property('props.type', 'submit')
+    })
+  })
 })

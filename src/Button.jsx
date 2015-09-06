@@ -8,7 +8,8 @@ export default class Button extends React.Component  {
     primary: PropTypes.bool,
     hero: PropTypes.bool,
     compound: PropTypes.bool,
-    command: PropTypes.bool
+    command: PropTypes.bool,
+    type: PropTypes.string
   }
 
   render() {
@@ -17,11 +18,12 @@ export default class Button extends React.Component  {
       primary,
       hero,
       compound,
-      command
+      command,
+      type
     } = this.props
 
     return (
-      <button className={cx(
+      <button type={type} className={cx(
         'ms-Button', {
           'is-disabled': disabled,
           'ms-Button--primary': primary,
