@@ -95,7 +95,7 @@ describe('ChoiceField', () => {
       expect(input).to.have.deep.property('props.checked', true)
     })
 
-    it('add name property to <input />', () => {
+    it('adds name property to <input />', () => {
       var sut = render(
         <ChoiceField name="foo" />
       )
