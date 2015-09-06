@@ -11,7 +11,6 @@ export default class Button extends React.Component  {
     hero: PropTypes.bool,
     compound: PropTypes.bool,
     command: PropTypes.bool,
-    type: PropTypes.string,
     description: PropTypes.node,
     iconName: PropTypes.string
   }
@@ -24,13 +23,13 @@ export default class Button extends React.Component  {
       hero,
       compound,
       command,
-      type,
       description,
-      iconName
+      iconName,
+      ...props
     } = this.props
 
     return (
-      <button type={type} className={cx(
+      <button {...props} className={cx(
         'ms-Button', {
           'is-disabled': disabled,
           'ms-Button--primary': primary,
@@ -45,7 +44,7 @@ export default class Button extends React.Component  {
         }
         {
           children ? <span className="ms-Button-label">
-            {this.props.children}
+            {children}
           </span> : null
         }
         {

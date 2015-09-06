@@ -1,5 +1,6 @@
 import React from 'react'
 import _ from 'lodash'
+import sinon from 'sinon'
 
 import Button from '../src/Button'
 import FontIcon from '../src/FontIcon'
@@ -97,12 +98,14 @@ describe('Button', () => {
   })
 
   describe('[Functionality]', () => {
-    it('can have a type attribute', () => {
+    it('passes other properties to the <button />', () => {
+      var cb = sinon.spy()
       var sut = render(
-        <Button type="submit" />
+        <Button type="submit" onClick={cb}/>
       )
 
       expect(sut).to.have.deep.property('props.type', 'submit')
+      expect(sut).to.have.deep.property('props.onClick', cb)
     })
   })
 })
