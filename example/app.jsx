@@ -28,7 +28,7 @@ class App extends React.Component {
         <Button description="Lorem Ipsum sit dolor amet.">With Description</Button>
         <Button disabled={true}>Disabled</Button>
         <Button primary={true}>Primary</Button>
-        <Button icon="bag" hero={true}>Hero</Button>
+        <Button iconName="bag" hero={true}>Hero</Button>
         <Button compound={true}>Compound</Button>
         <Button command={true}>Command</Button>
       </div>
