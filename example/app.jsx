@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
-import { Label, TextField } from '../src'
+import { Label, TextField, Button} from '../src'
 
 class App extends React.Component {
   render() {
@@ -22,6 +22,15 @@ class App extends React.Component {
         <TextField label="Placeholder" placeholder={true} />
         <TextField label="Underlined" underlined={true} />
         <TextField label="Required" required={true} />
+
+        <h2>Button</h2>
+        <Button>Standard</Button>
+        <Button description="Lorem Ipsum sit dolor amet.">With Description</Button>
+        <Button disabled={true}>Disabled</Button>
+        <Button primary={true}>Primary</Button>
+        <Button icon="bag" hero={true}>Hero</Button>
+        <Button compound={true}>Compound</Button>
+        <Button command={true}>Command</Button>
       </div>
     )
   }
