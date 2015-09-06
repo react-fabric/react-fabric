@@ -1,8 +1,8 @@
-# react-fabric
+# react-fabric [![npm version](https://badge.fury.io/js/react-fabric.svg)](http://badge.fury.io/js/react-fabric) [![Build Status](https://travis-ci.org/kmees/react-fabric.svg)](https://travis-ci.org/kmees/react-fabric)
 
 react-facric is a set of [React](http://facebook.github.io/react/) components that wrap the [Office UI Fabric](https://github.com/OfficeDev/Office-UI-Fabric)
 
-** Please note that this module is still in early development! **
+**Please note that this module is still in early development!**
 
 ## Example
 There is an [example project](https://github.com/kmees/react-fabric/blob/master/example) included in the repository to get you started. To run the example, follow these steps:
