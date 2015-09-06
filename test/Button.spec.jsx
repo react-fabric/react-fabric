@@ -44,5 +44,13 @@ describe('Button', () => {
 
       expect(sut.props.className.split(' ')).to.include('ms-Button--primary')
     })
+
+    it('can be hero', () => {
+      var sut = render(
+        <Button hero={true} />
+      )
+
+      expect(sut.props.className.split(' ')).to.include('ms-Button--hero')
+    })
   })
 })
