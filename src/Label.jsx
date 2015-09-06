@@ -6,13 +6,14 @@ export default class Label extends React.Component  {
   static propTypes = {
     required: PropTypes.bool,
     disabled: PropTypes.bool,
+    htmlFor: PropTypes.string
   }
 
   render() {
-    const { required, disabled } = this.props
+    const { required, disabled, htmlFor } = this.props
 
     return (
-       <label className={cx(
+       <label htmlFor={htmlFor} className={cx(
          'ms-Label', {
            'is-required': required,
            'is-disabled': disabled,
