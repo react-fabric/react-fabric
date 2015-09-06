@@ -2,7 +2,6 @@ import React, { PropTypes } from 'react'
 import cx from 'classnames'
 
 import Label from './Label'
-import { isBlank } from './util'
 
 export default class TextField extends React.Component {
   static displayName = 'TextField'
@@ -56,32 +55,29 @@ export default class TextField extends React.Component {
   }
 
   _createLabel() {
-    const { disabled, label: content, required } = this.props
+    if (!this.props.label) { return null }
+
+    const { disabled, label, required } = this.props
     const { showLabel, id } = this.state
     const style = showLabel ? null : { display: 'none' }
 
-    const attributes = {
+    const properties = {
       required,
       disabled,
       style,
       htmlFor: `${id}_input`
     }
 
-    let label
-    if (isBlank(content)) {
-      label = null
-    } else if (content._isReactElement && content.type === Label) {
-      label = React.cloneElement(content, attributes)
-    } else {
-      label = <Label {...attributes}>{content}</Label>
+    if (label._isReactElement && label.type === Label) {
+      return React.cloneElement(label, properties)
     }
 
-    return label
+    return <Label {...properties}>{label}</Label>
   }
 
   render() {
     const {
-      description: descriptionContent,
+      description,
       disabled,
       multiline,
       placeholder,
@@ -96,9 +92,6 @@ export default class TextField extends React.Component {
       onBlur: this._onInputBlur.bind(this),
       id: `${this.state.id}_input`
     })
-    const description = !isBlank(descriptionContent) ? <span className="ms-TextField-description">
-      {descriptionContent}
-    </span> : null
 
     return (
        <div id={this.state.id} className={cx(
@@ -111,7 +104,11 @@ export default class TextField extends React.Component {
        )}>
         {label}
         {input}
-        {description}
+        {
+          description ? <span className="ms-TextField-description">
+            {description}
+          </span> : null
+        }
       </div>
     )
   }
