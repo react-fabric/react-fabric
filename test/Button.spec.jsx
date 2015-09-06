@@ -52,5 +52,13 @@ describe('Button', () => {
 
       expect(sut.props.className.split(' ')).to.include('ms-Button--hero')
     })
+
+    it('can be compound', () => {
+      var sut = render(
+        <Button compound={true} />
+      )
+
+      expect(sut.props.className.split(' ')).to.include('ms-Button--compound')
+    })
   })
 })
