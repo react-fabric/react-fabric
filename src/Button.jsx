@@ -4,16 +4,18 @@ import cx from 'classnames'
 export default class Button extends React.Component  {
   static displayName = 'Button'
   static propTypes = {
-    disabled: PropTypes.bool
+    disabled: PropTypes.bool,
+    primary: PropTypes.bool
   }
 
   render() {
-    const { disabled } = this.props
+    const { disabled, primary} = this.props
 
     return (
       <button className={cx(
         'ms-Button', {
-          'is-disabled': disabled
+          'is-disabled': disabled,
+          'ms-Button--primary': primary
         }
       )}>
         <span className="ms-Button-label">{this.props.children}</span>

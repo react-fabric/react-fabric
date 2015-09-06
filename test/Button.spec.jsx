@@ -36,5 +36,13 @@ describe('Button', () => {
 
       expect(sut.props.className.split(' ')).to.include('is-disabled')
     })
+
+    it('can be primary', () => {
+      var sut = render(
+        <Button primary={true} />
+      )
+
+      expect(sut.props.className.split(' ')).to.include('ms-Button--primary')
+    })
   })
 })
