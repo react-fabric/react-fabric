@@ -1,6 +1,8 @@
 import React, { PropTypes } from 'react'
 import cx from 'classnames'
 
+import FontIcon from './FontIcon'
+
 export default class Button extends React.Component  {
   static displayName = 'Button'
   static propTypes = {
@@ -11,7 +13,7 @@ export default class Button extends React.Component  {
     command: PropTypes.bool,
     type: PropTypes.string,
     description: PropTypes.node,
-    icon: PropTypes.string
+    iconName: PropTypes.string
   }
 
   render() {
@@ -24,7 +26,7 @@ export default class Button extends React.Component  {
       command,
       type,
       description,
-      icon
+      iconName
     } = this.props
 
     return (
@@ -37,8 +39,8 @@ export default class Button extends React.Component  {
           'ms-Button--command': command
         }
       )}>
-        { icon ? <span className="ms-Button-icon">
-            <i className={`ms-Icon ms-Icon--${icon}`}/>
+        { iconName ? <span className="ms-Button-icon">
+            <FontIcon name={iconName}/>
           </span> : null
         }
         {
