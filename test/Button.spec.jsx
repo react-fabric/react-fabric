@@ -1,7 +1,8 @@
 import React from 'react'
 import _ from 'lodash'
 
-import Button from '../src/Button.jsx'
+import Button from '../src/Button'
+import FontIcon from '../src/FontIcon'
 
 import render from './util/render'
 
@@ -84,14 +85,14 @@ describe('Button', () => {
 
     it('can have an icon', function() {
       var sut = render(
-        <Button icon="heart" />
+        <Button iconName="heart" />
       )
       var [icon] = _.compact(sut.props.children)
 
       expect(icon).to.have.property('type', 'span')
       expect(icon).to.have.deep.property('props.className', 'ms-Button-icon')
-      expect(icon.props.children).to.have.property('type', 'i')
-      expect(icon.props.children).to.have.deep.property('props.className', 'ms-Icon ms-Icon--heart')
+      expect(icon.props.children).to.have.property('type', FontIcon)
+      expect(icon.props.children).to.have.deep.property('props.name', 'heart')
     })
   })
 
