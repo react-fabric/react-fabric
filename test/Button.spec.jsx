@@ -12,16 +12,29 @@ describe('Button', () => {
   describe('[Presentation]', () => {
     it('renders a <button />', () => {
       var sut = render(
-        <Button>Foo</Button>
+        <Button />
       )
-      var label = sut.props.children
-
       expect(sut).to.have.property('type', 'button')
       expect(sut).to.have.deep.property('props.className', 'ms-Button')
+    })
 
-      expect(label).to.have.property('type', 'span')
-      expect(label).to.have.deep.property('props.className', 'ms-Button-label')
-      expect(label).to.have.deep.property('props.children', 'Foo')
+    it('renders its children', () => {
+      var sut = render(
+        <Button>Foo</Button>
+      )
+      var children = sut.props.children
+
+      expect(children).to.have.property('type', 'span')
+      expect(children).to.have.deep.property('props.className', 'ms-Button-label')
+      expect(children).to.have.deep.property('props.children', 'Foo')
+    })
+
+    it('can be disabled', () => {
+      var sut = render(
+        <Button disabled={true} />
+      )
+
+      expect(sut.props.className.split(' ')).to.include('is-disabled')
     })
   })
 })
