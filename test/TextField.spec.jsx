@@ -59,6 +59,17 @@ describe('TextField', function() {
         target: { value: 'Foo' }
       })
     })
+
+    it('generates an id for input and sets the \'for\' attribute on the Label', function() {
+      var sut = render(
+        <TextField label="Foo" />
+      )
+
+      var [label, input] = _.compact(sut.props.children)
+
+      expect(input.props.id).to.not.be.undefined
+      expect(label.props).to.have.property('htmlFor', input.props.id)
+    })
   })
 
   describe('[Appearance]', function() {

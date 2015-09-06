@@ -14,17 +14,23 @@ export default class TextField extends React.Component {
     onChange: PropTypes.func,
     placeholder: PropTypes.bool,
     required: PropTypes.bool,
-    underlined: PropTypes.bool
+    underlined: PropTypes.bool,
+    id: PropTypes.string
   }
 
-  constructor() {
+  constructor(props) {
     super()
 
     this.state = {
       showLabel: true,
-      isActive: false
+      isActive: false,
+      id: props.id || `TextField-${TextField.instanceCount}`
     }
+
+    TextField.instanceCount++
   }
+
+  static instanceCount = 0
 
   _onInputChange(e) {
     this.setState({
@@ -51,15 +57,23 @@ export default class TextField extends React.Component {
 
   _createLabel() {
     const { disabled, label: content, required } = this.props
-    const style = this.state.showLabel ? null : { display: 'none' }
+    const { showLabel, id } = this.state
+    const style = showLabel ? null : { display: 'none' }
+
+    const attributes = {
+      required,
+      disabled,
+      style,
+      htmlFor: `${id}_input`
+    }
 
     let label
     if (isBlank(content)) {
       label = null
     } else if (content._isReactElement && content.type === Label) {
-      label = React.cloneElement(content, { required, disabled, style })
+      label = React.cloneElement(content, attributes)
     } else {
-      label = <Label required={required} disabled={disabled} style={style}>{content}</Label>
+      label = <Label {...attributes}>{content}</Label>
     }
 
     return label
@@ -79,14 +93,15 @@ export default class TextField extends React.Component {
       className: 'ms-TextField-field',
       onChange: this._onInputChange.bind(this),
       onFocus: this._onInputFocus.bind(this),
-      onBlur: this._onInputBlur.bind(this)
+      onBlur: this._onInputBlur.bind(this),
+      id: `${this.state.id}_input`
     })
     const description = !isBlank(descriptionContent) ? <span className="ms-TextField-description">
       {descriptionContent}
     </span> : null
 
     return (
-       <div className={cx(
+       <div id={this.state.id} className={cx(
          'ms-TextField', {
            'ms-TextField--placeholder': placeholder,
            'ms-TextField--underlined': underlined,
