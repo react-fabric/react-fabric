@@ -1,10 +1,13 @@
+/* eslint no-console: 0 */
+
 import React from 'react'
 import ReactDOM from 'react-dom'
 
-import { Label, TextField, Button} from '../src'
+import { Label, TextField, Button, ChoiceField } from '../src'
 
 class App extends React.Component {
   render() {
+    const click = () => { console.log('click') }
     return (
       <div>
         <h2>Label</h2>
@@ -24,13 +27,17 @@ class App extends React.Component {
         <TextField label="Required" required={true} />
 
         <h2>Button</h2>
-        <Button>Standard</Button>
+        <Button onClick={click}>Standard</Button>
         <Button description="Lorem Ipsum sit dolor amet.">With Description</Button>
         <Button disabled={true}>Disabled</Button>
         <Button primary={true}>Primary</Button>
         <Button iconName="bag" hero={true}>Hero</Button>
         <Button compound={true}>Compound</Button>
         <Button command={true}>Command</Button>
+
+        <h2>ChoiceField</h2>
+        <ChoiceField type="radio">Foo</ChoiceField>
+        <ChoiceField type="checkbox">Foo</ChoiceField>
       </div>
     )
   }
