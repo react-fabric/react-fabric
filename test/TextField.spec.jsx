@@ -74,6 +74,16 @@ describe('TextField', () => {
       expect(input.props.id).to.not.be.undefined
       expect(label.props).to.have.property('htmlFor', input.props.id)
     })
+
+    it('adds name property to <input />', () => {
+      var sut = render(
+        <TextField name="foo" />
+      )
+
+      var [input] = _.compact(sut.props.children)
+
+      expect(input).to.have.deep.property('props.name', 'foo')
+    })
   })
 
   describe('[Appearance]', () => {
