@@ -1,4 +1,6 @@
 import React from 'react'
+import sinon from 'sinon'
+import TestUtils, { Simulate } from 'react-addons-test-utils'
 
 import ChoiceField from '../src/ChoiceField'
 
@@ -66,6 +68,31 @@ describe('ChoiceField', () => {
 
       expect(input.props.id).to.not.be.undefined
       expect(label.props.htmlFor).to.equal(input.props.id)
+    })
+
+    it('supports onChange callback', () => {
+      var onChange = sinon.spy()
+      var sut = TestUtils.renderIntoDocument(
+        <ChoiceField onChange={onChange} />
+      )
+
+      var input = TestUtils.findRenderedDOMComponentWithTag(sut, 'input')
+      input.checked = true
+      Simulate.change(input)
+
+      expect(onChange).to.have.been.calledOnce.and.calledWithMatch({
+        target: { checked: true }
+      })
+    })
+
+    it('supports initial checked state', () => {
+      var sut = render(
+        <ChoiceField checked={true} />
+      )
+
+      var [input, ] = sut.props.children
+
+      expect(input).to.have.deep.property('props.checked', true)
     })
   })
 })

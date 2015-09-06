@@ -8,7 +8,9 @@ export default class ChoiceField extends React.Component {
       'checkbox',
       'radio'
     ]).isRequired,
-    children: PropTypes.element
+    children: PropTypes.element,
+    onChange: PropTypes.func,
+    checked: PropTypes.bool
   }
   static defaultProps = {
     type: 'checkbox'
@@ -27,7 +29,9 @@ export default class ChoiceField extends React.Component {
   render() {
     const {
       type,
-      children
+      children,
+      onChange,
+      checked
     } = this.props
     const inputId = `${this.state.id}_input`
 
@@ -35,7 +39,11 @@ export default class ChoiceField extends React.Component {
       <div id={this.state.id} className={cx(
         'ms-ChoiceField'
       )}>
-        <input className="ms-ChoiceField-input" id={inputId} type={type} />
+      <input className="ms-ChoiceField-input"
+        id={inputId}
+        type={type}
+        onChange={onChange}
+        checked={checked} />
         <label className="ms-ChoiceField-field" htmlFor={inputId}>
           <span className="ms-Label">{children}</span>
         </label>
