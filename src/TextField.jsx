@@ -14,7 +14,8 @@ export default class TextField extends React.Component {
     placeholder: PropTypes.bool,
     required: PropTypes.bool,
     underlined: PropTypes.bool,
-    id: PropTypes.string
+    id: PropTypes.string,
+    name: PropTypes.string
   }
 
   constructor(props) {
@@ -81,7 +82,8 @@ export default class TextField extends React.Component {
       disabled,
       multiline,
       placeholder,
-      underlined
+      underlined,
+      name
     } = this.props
 
     const label = this._createLabel()
@@ -90,7 +92,8 @@ export default class TextField extends React.Component {
       onChange: this._onInputChange.bind(this),
       onFocus: this._onInputFocus.bind(this),
       onBlur: this._onInputBlur.bind(this),
-      id: `${this.state.id}_input`
+      id: `${this.state.id}_input`,
+      name
     })
 
     return (
