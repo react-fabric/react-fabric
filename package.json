@@ -17,7 +17,8 @@
     "lint:example": "eslint -c .eslintrc --ext .js --ext .jsx example/",
     "lint": "parallelshell 'npm run lint:src' 'npm run lint:example'",
     "prepublish": "parallelshell 'npm run transpile' 'npm run build'",
-    "test": "mocha -R ${MOCHA_REPORTER:-'spec'}"
+    "test": "mocha -R ${MOCHA_REPORTER:-'spec'}",
+    "test:ci": "mocha -w -R ${MOCHA_REPORTER:-'dot'}"
   },
   "author": "Kevin Mees <kev.mees@gmail.com>",
   "repository": {
