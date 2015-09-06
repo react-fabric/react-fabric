@@ -7,22 +7,37 @@ export default class ChoiceField extends React.Component {
     type: PropTypes.oneOf([
       'checkbox',
       'radio'
-    ]).isRequired
+    ]).isRequired,
+    children: PropTypes.element
   }
   static defaultProps = {
     type: 'checkbox'
   }
 
+  constructor(props) {
+    super()
+
+    this.state = {
+      id: props.id || `ChoiceField-${this.constructor.instanceCount}`
+    }
+
+    this.constructor.instanceCount++
+  }
+
   render() {
-    const { type } = this.props
+    const {
+      type,
+      children
+    } = this.props
+    const inputId = `${this.state.id}_input`
 
     return (
-      <div className={cx(
+      <div id={this.state.id} className={cx(
         'ms-ChoiceField'
       )}>
-        <input className="ms-ChoiceField-input" type={type} />
-        <label className="ms-ChoiceField-field">
-          <span className="ms-Label">{this.props.children}</span>
+        <input className="ms-ChoiceField-input" id={inputId} type={type} />
+        <label className="ms-ChoiceField-field" htmlFor={inputId}>
+          <span className="ms-Label">{children}</span>
         </label>
       </div>
     )
