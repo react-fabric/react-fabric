@@ -5,9 +5,11 @@
   "main": "lib/index.js",
   "scripts": {
     "transpile": "babel src --out-dir lib/",
+    "pretranspile": "rm -rf lib/",
     "build:src": "webpack ./src dist/react-fabric.js",
     "build:example": "webpack ./example/app.jsx ./example/app.bundle.js",
     "build": "parallelshell 'npm run build:src' 'npm run build:example'",
+    "prebuild": "rm -rf dist/",
     "watch:src": "webpack -w ./src dist/react-fabric.js",
     "watch:example": "webpack -w -devtool 'cheap-eval-source-map' ./example/app.jsx ./example/app.bundle.js",
     "watch": "parallelshell 'npm run watch:src' 'npm run watch:example'",
