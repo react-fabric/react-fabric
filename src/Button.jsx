@@ -7,7 +7,8 @@ export default class Button extends React.Component  {
     disabled: PropTypes.bool,
     primary: PropTypes.bool,
     hero: PropTypes.bool,
-    compound: PropTypes.bool
+    compound: PropTypes.bool,
+    command: PropTypes.bool
   }
 
   render() {
@@ -15,7 +16,8 @@ export default class Button extends React.Component  {
       disabled,
       primary,
       hero,
-      compound
+      compound,
+      command
     } = this.props
 
     return (
@@ -25,6 +27,7 @@ export default class Button extends React.Component  {
           'ms-Button--primary': primary,
           'ms-Button--hero': hero,
           'ms-Button--compound': compound,
+          'ms-Button--command': command
         }
       )}>
         <span className="ms-Button-label">{this.props.children}</span>
