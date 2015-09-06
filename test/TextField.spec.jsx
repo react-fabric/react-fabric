@@ -8,9 +8,13 @@ import render from './util/render'
 import TextField from '../src/TextField.jsx'
 import Label from '../src/Label.jsx'
 
-describe('TextField', function() {
-  describe('[Functionality]', function() {
-    it('is singleline per default', function() {
+describe('TextField', () => {
+  it('has a display name', () => {
+    expect(TextField).to.have.property('displayName', 'TextField')
+  })
+
+  describe('[Functionality]', () => {
+    it('is singleline per default', () => {
       var sut = render(
         <TextField />
       )
@@ -20,7 +24,7 @@ describe('TextField', function() {
       expect(input).to.have.property('type', 'input')
     })
 
-    it('supports multiline', function() {
+    it('supports multiline', () => {
       var sut = render(
         <TextField multiline={true} />
       )
@@ -30,7 +34,7 @@ describe('TextField', function() {
       expect(input).to.have.property('type', 'textarea')
     })
 
-    it('supports onChange callback', function() {
+    it('supports onChange callback', () => {
       var onChange = sinon.spy()
       var sut = TestUtils.renderIntoDocument(
         <TextField onChange={onChange} />
@@ -45,7 +49,7 @@ describe('TextField', function() {
       })
     })
 
-    it('supports onChange callback for multiline', function() {
+    it('supports onChange callback for multiline', () => {
       var onChange = sinon.spy()
       var sut = TestUtils.renderIntoDocument(
         <TextField onChange={onChange} multiline={true} />
@@ -60,7 +64,7 @@ describe('TextField', function() {
       })
     })
 
-    it('generates an id for input and sets the \'for\' attribute on the Label', function() {
+    it('generates an id for input and sets the \'for\' attribute on the Label', () => {
       var sut = render(
         <TextField label="Foo" />
       )
@@ -72,9 +76,9 @@ describe('TextField', function() {
     })
   })
 
-  describe('[Appearance]', function() {
-    describe('plain', function() {
-      it('renders a wrapped input', function() {
+  describe('[Appearance]', () => {
+    describe('plain', () => {
+      it('renders a wrapped input', () => {
         var sut = render(
           <TextField />
         )
@@ -88,8 +92,8 @@ describe('TextField', function() {
       })
     })
 
-    describe('with a label property', function() {
-      it('that is a Label Component gets just rendered', function() {
+    describe('with a label property', () => {
+      it('that is a Label Component gets just rendered', () => {
         var sut = render(
           <TextField label={
             <Label>Foo</Label>
@@ -102,7 +106,7 @@ describe('TextField', function() {
         expect(label.props).to.have.property('children', 'Foo')
       })
 
-      it('that is any element gets renderd inside a Label Component', function() {
+      it('that is any element gets renderd inside a Label Component', () => {
         var label = <span>Foo</span>
         var sut = render(
           <TextField label={label} />
@@ -115,8 +119,8 @@ describe('TextField', function() {
       })
     })
 
-    describe('with a description', function() {
-      it('that is any React element gets rendered inside a description container', function() {
+    describe('with a description', () => {
+      it('that is any React element gets rendered inside a description container', () => {
         var description = <span>Foo</span>
         var sut = render(
           <TextField description={description} />
@@ -130,8 +134,8 @@ describe('TextField', function() {
       })
     })
 
-    describe('with a placeholder', function() {
-      it('adds placeholder modifier', function() {
+    describe('with a placeholder', () => {
+      it('adds placeholder modifier', () => {
         var sut = render(
           <TextField placeholder={true} />
         )
@@ -139,7 +143,7 @@ describe('TextField', function() {
         expect(sut.props.className.split(' ')).to.include('ms-TextField--placeholder')
       })
 
-      it('hides placeholder when input has a value', function() {
+      it('hides placeholder when input has a value', () => {
         var sut = TestUtils.renderIntoDocument(
           <TextField label="Foo" placeholder={true} />
         )
@@ -155,8 +159,8 @@ describe('TextField', function() {
       })
     })
 
-    describe('when underlined', function() {
-      it('adds underlined modifier', function() {
+    describe('when underlined', () => {
+      it('adds underlined modifier', () => {
         var sut = render(
           <TextField underlined={true} />
         )
@@ -164,7 +168,7 @@ describe('TextField', function() {
         expect(sut.props.className.split(' ')).to.include('ms-TextField--underlined')
       })
 
-      it('handles active state', function() {
+      it('handles active state', () => {
         var sut = TestUtils.renderIntoDocument(
           <TextField underlined={true} />
         )
@@ -176,7 +180,7 @@ describe('TextField', function() {
       })
     })
 
-    it('can be required', function() {
+    it('can be required', () => {
       var sut = [
         render(<TextField label="Foo" required={true} />),
         render(<TextField label={<Label>Foo</Label>} required={true} />)
@@ -189,7 +193,7 @@ describe('TextField', function() {
       expect(label2.props).to.have.property('required', true)
     })
 
-    it('can be disabled', function() {
+    it('can be disabled', () => {
       var sut = [
         render(<TextField label="Foo" disabled={true} />),
         render(<TextField label={<Label>Foo</Label>} disabled={true} />)
