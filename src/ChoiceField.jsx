@@ -8,10 +8,14 @@ export default class ChoiceField extends React.Component {
       'checkbox',
       'radio'
     ]).isRequired,
-    children: PropTypes.element,
+    label: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.element
+    ]),
     onChange: PropTypes.func,
     checked: PropTypes.bool,
-    name: PropTypes.name
+    name: PropTypes.string,
+    value: PropTypes.string
   }
   static defaultProps = {
     type: 'checkbox'
@@ -27,13 +31,16 @@ export default class ChoiceField extends React.Component {
     this.constructor.instanceCount++
   }
 
+  static instanceCount = 0
+
   render() {
     const {
       type,
-      children,
+      label,
       onChange,
       checked,
-      name
+      name,
+      value
     } = this.props
     const inputId = `${this.state.id}_input`
 
@@ -46,9 +53,10 @@ export default class ChoiceField extends React.Component {
         type={type}
         onChange={onChange}
         checked={checked}
-        name={name} />
+        name={name}
+        value={value} />
         <label className="ms-ChoiceField-field" htmlFor={inputId}>
-          <span className="ms-Label">{children}</span>
+          <span className="ms-Label">{label}</span>
         </label>
       </div>
     )
