@@ -1,0 +1,22 @@
+{
+  "name": "react-fabric-docs",
+  "version": "0.0.1",
+  "description": "Documentation for react-fabric",
+  "scripts": {
+    "prestart": "webpack-dev-server --config webpack-server.config.js --progress --colors --inline",
+    "start": "open http://localhost:3000",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kmees/react-fabric"
+  },
+  "devDependencies": {
+    "Fabric": "git+https://github.com/OfficeDev/Office-UI-Fabric.git",
+    "html-webpack-plugin": "^1.6.1",
+    "raw-loader": "^0.5.1",
+    "style-loader": "^0.12.3",
+    "webpack": "^1.12.1",
+    "webpack-dev-server": "^1.10.1"
+  }
+}
