@@ -1,9 +1,11 @@
 /* eslint no-console: 0 */
-
 import React from 'react'
 import ReactDOM from 'react-dom'
 
-import { Label, TextField, Button, ChoiceField, ChoiceFieldGroup } from '../src'
+import { Label, TextField, Button, ChoiceField, ChoiceFieldGroup } from 'react-fabric'
+
+require('Fabric/dist/css/fabric.css')
+require('Fabric/dist/css/fabric.components.css')
 
 class App extends React.Component {
   render() {
@@ -55,4 +57,4 @@ class App extends React.Component {
   }
 }
 
-ReactDOM.render(<App />, document.getElementById('main'))
+ReactDOM.render(<App />, document.getElementById('app-container'))
