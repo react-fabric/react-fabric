@@ -5,6 +5,7 @@
   "scripts": {
     "prestart": "webpack-dev-server --config webpack-server.config.js --progress --colors --inline",
     "start": "open http://localhost:3000",
+    "build": "webpack --config webpack.config.js --progess --colors",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -16,6 +17,7 @@
     "html-webpack-plugin": "^1.6.1",
     "raw-loader": "^0.5.1",
     "style-loader": "^0.12.3",
+    "transfer-webpack-plugin": "^0.1.4",
     "webpack": "^1.12.1",
     "webpack-dev-server": "^1.10.1"
   }
