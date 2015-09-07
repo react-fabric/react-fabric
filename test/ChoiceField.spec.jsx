@@ -39,9 +39,7 @@ describe('ChoiceField', () => {
       expect(innerLabel).to.have.deep.property('props.className', 'ms-Label')
       expect(innerLabel).to.have.deep.property('props.children', 'Foo')
     })
-  })
 
-  describe('[Functionality]', () => {
     it('can be a checkbox', () => {
       var sut = render(
         <ChoiceField type="checkbox" />
@@ -59,7 +57,9 @@ describe('ChoiceField', () => {
 
       expect(input).to.have.deep.property('props.type', 'radio')
     })
+  })
 
+  describe('[Functionality]', () => {
     it('generates an id and a \'for\' tag to connect <input /> and <label />', () => {
       var sut = render(
         <ChoiceField />
@@ -103,6 +103,16 @@ describe('ChoiceField', () => {
       var [input, ] = sut.props.children
 
       expect(input).to.have.deep.property('props.name', 'foo')
+    })
+
+    it('can have a value', () => {
+      var sut = render(
+        <ChoiceField value="foo" />
+      )
+
+      var [input, ] = sut.props.children
+
+      expect(input).to.have.deep.property('props.value', 'foo')
     })
   })
 })
