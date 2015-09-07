@@ -57,6 +57,14 @@ describe('Toggle', () => {
       expect(description).to.have.deep.property('props.className', 'ms-Toggle-description')
       expect(description).to.have.deep.property('props.children', 'Foo')
     })
+
+    it('can have the text on the left', () => {
+      var sut = render(
+        <Toggle textLeft={true} />
+      )
+
+      expect(sut.props.className.split(' ')).to.include('ms-Toggle--textLeft')
+    })
   })
 
   describe('[Functionality]', () => {

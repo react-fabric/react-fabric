@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react'
+import cx from 'classnames'
 
 export default class Toggle extends React.Component  {
   static displayName = 'Toggle'
@@ -10,7 +11,8 @@ export default class Toggle extends React.Component  {
       PropTypes.element
     ]),
     id: PropTypes.string,
-    onChange: PropTypes.func
+    onChange: PropTypes.func,
+    textLeft: PropTypes.bool
   }
 
   constructor(props) {
@@ -31,13 +33,18 @@ export default class Toggle extends React.Component  {
       offLabel,
       description,
       id,
-      onChange
+      onChange,
+      textLeft
     } = this.props
 
     const inputId = `${id}_input`
 
     return (
-      <div className="ms-Toggle" id={id}>
+     <div id={id} className={cx(
+       'ms-Toggle', {
+         'ms-Toggle--textLeft': textLeft
+       }
+     )}>
         {
           description ? <span className="ms-Toggle-description">
             {description}
