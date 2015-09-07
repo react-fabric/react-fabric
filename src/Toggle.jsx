@@ -9,7 +9,8 @@ export default class Toggle extends React.Component  {
       PropTypes.string,
       PropTypes.element
     ]),
-    id: PropTypes.string
+    id: PropTypes.string,
+    onChange: PropTypes.func
   }
 
   constructor(props) {
@@ -29,7 +30,8 @@ export default class Toggle extends React.Component  {
       onLabel,
       offLabel,
       description,
-      id
+      id,
+      onChange
     } = this.props
 
     const inputId = `${id}_input`
@@ -41,7 +43,7 @@ export default class Toggle extends React.Component  {
             {description}
           </span> : null
         }
-        <input className="ms-Toggle-input" id={inputId} type="checkbox" />
+        <input className="ms-Toggle-input" id={inputId} onChange={onChange} type="checkbox" />
         <label className="ms-Toggle-field" htmlFor={inputId}>
           <span className="ms-Label ms-Label--on">{onLabel}</span>
           <span className="ms-Label ms-Label--off">{offLabel}</span>
