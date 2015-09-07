@@ -10,23 +10,28 @@ export default class ChoiceFieldGroup extends React.Component {
       PropTypes.string,
       PropTypes.instanceOf(Label)
     ]),
-    children: PropTypes.arrayOf(PropTypes.instanceOf(ChoiceField))
+    children: PropTypes.arrayOf(PropTypes.instanceOf(ChoiceField)),
+    required: PropTypes.bool
   }
 
-  _createLabel({title}) {
+  _createLabel({title, required}) {
     if (!title) { return null }
 
     if (title._isReactElement && title.type === Label) {
-      return title
+      return React.cloneElement(title, {required})
     }
 
-    return <Label>{title}</Label>
+    return <Label required={required}>{title}</Label>
   }
 
   render() {
-    const { children, title} = this.props
+    const {
+      children,
+      title,
+      required
+    } = this.props
 
-    const label = this._createLabel({title})
+    const label = this._createLabel({title, required})
 
     return (
       <div className="ms-ChoiceFieldGroup">

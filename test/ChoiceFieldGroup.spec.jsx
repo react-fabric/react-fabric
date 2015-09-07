@@ -38,5 +38,14 @@ describe('ChoiceFieldGroup', () => {
       expect(label).to.have.property('type', Label)
       expect(label).to.have.deep.property('props.children', 'Foo')
     })
+
+    it('can be required', () => {
+      var sut = render(
+        <ChoiceFieldGroup required={true} title="Foo" />
+      )
+      var [{props: {children: label}}, ] = sut.props.children
+
+      expect(label).to.have.deep.property('props.required', true)
+    })
   })
 })
