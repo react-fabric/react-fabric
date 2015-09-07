@@ -11,7 +11,7 @@ var nodeModulesPath = path.resolve(__dirname, 'node_modules');
 
 var config = {
   entry: [
-    path.join(__dirname, '/src/app/app.jsx')
+    path.join(__dirname, '/src/index.jsx')
   ],
   resolve: {
     extensions: ["", ".js", ".jsx"],
@@ -27,7 +27,7 @@ var config = {
   devtool: 'source-map',
   output: {
     path: buildPath,
-    filename: 'app.js'
+    filename: 'index.js'
   },
   plugins: [
     //Used to include index.html in build folder

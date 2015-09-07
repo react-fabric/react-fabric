@@ -1,13 +1,8 @@
-/* eslint no-console: 0 */
 import React from 'react'
-import ReactDOM from 'react-dom'
 
 import { Label, TextField, Button, ChoiceField, ChoiceFieldGroup } from 'react-fabric'
 
-require('Fabric/dist/css/fabric.css')
-require('Fabric/dist/css/fabric.components.css')
-
-class App extends React.Component {
+export default class Components extends React.Component {
   render() {
     const click = () => { console.log('click') }
     return (
@@ -56,5 +51,3 @@ class App extends React.Component {
     )
   }
 }
-
-ReactDOM.render(<App />, document.getElementById('app-container'))
