@@ -43,6 +43,7 @@ var config = {
     new webpack.NoErrorsPlugin(),
     new TransferWebpackPlugin([
       {from: 'css'},
+      {from: '../images', to: 'images'}
     ], path.resolve(__dirname,"src"))
   ],
   module: {
@@ -63,7 +64,7 @@ var config = {
       {
         test: /\.css$/,
         loader: 'style-loader!raw-loader',
-        include: [path.resolve(nodeModulesPath, 'Fabric')]
+        include: [path.resolve(__dirname, 'src'), path.resolve(nodeModulesPath, 'Fabric')]
       }
     ]
   },
