@@ -56,4 +56,16 @@ describe('Toggle', () => {
       expect(description).to.have.deep.property('props.children', 'Foo')
     })
   })
+
+  describe('[Functionality]', () => {
+    it('generates an id and a \'for\' tag to connect <input /> and <label />', () => {
+      var sut = render(
+        <Toggle />
+      )
+      var [, input, label] = sut.props.children
+
+      expect(input.props.id).to.not.be.undefined
+      expect(label.props.htmlFor).to.equal(input.props.id)
+    })
+  })
 })

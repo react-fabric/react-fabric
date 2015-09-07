@@ -9,20 +9,40 @@ export default class Toggle extends React.Component  {
       PropTypes.string,
       PropTypes.element
     ]),
+    id: PropTypes.string
   }
 
+  constructor(props) {
+    super()
+
+    this.state = {
+      id: props.id || `Toggle-${this.constructor.instanceCount}`
+    }
+
+    this.constructor.instanceCount++
+  }
+
+  static instanceCount = 0
+
   render() {
-    const { onLabel, offLabel, description } = this.props
+    const {
+      onLabel,
+      offLabel,
+      description,
+      id
+    } = this.props
+
+    const inputId = `${id}_input`
 
     return (
-      <div className="ms-Toggle">
+      <div className="ms-Toggle" id={id}>
         {
           description ? <span className="ms-Toggle-description">
             {description}
           </span> : null
         }
-        <input type="checkbox" className="ms-Toggle-input" />
-        <label className="ms-Toggle-field">
+        <input className="ms-Toggle-input" id={inputId} type="checkbox" />
+        <label className="ms-Toggle-field" htmlFor={inputId}>
           <span className="ms-Label ms-Label--on">{onLabel}</span>
           <span className="ms-Label ms-Label--off">{offLabel}</span>
         </label>
