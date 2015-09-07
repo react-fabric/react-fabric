@@ -6,16 +6,9 @@
   "scripts": {
     "transpile": "babel src --out-dir lib/",
     "pretranspile": "rm -rf lib/",
-    "build:src": "webpack ./src dist/react-fabric.js",
-    "build:docs": "webpack ./docs/app.jsx ./docs/app.bundle.js",
-    "build": "parallelshell 'npm run build:src' 'npm run build:docs'",
+    "build": "webpack ./src dist/react-fabric.js",
     "prebuild": "rm -rf dist/",
-    "watch:src": "webpack -w ./src dist/react-fabric.js",
-    "watch:docs": "webpack -w -devtool 'cheap-eval-source-map' ./docs/app.jsx ./docs/app.bundle.js",
-    "watch": "parallelshell 'npm run watch:src' 'npm run watch:docs'",
-    "lint:src": "eslint -c .eslintrc --ext .js --ext .jsx src/",
-    "lint:docs": "eslint -c .eslintrc --ext .js --ext .jsx docs/",
-    "lint": "parallelshell 'npm run lint:src' 'npm run lint:docs'",
+    "lint": "eslint -c .eslintrc --ext .js --ext .jsx src/",
     "prepublish": "parallelshell 'npm run transpile' 'npm run build'",
     "test": "mocha -R ${MOCHA_REPORTER:-'spec'}",
     "test:ci": "mocha -w -R ${MOCHA_REPORTER:-'dot'}"
