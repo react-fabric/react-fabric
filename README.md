@@ -5,12 +5,12 @@ react-facric is a set of [React](http://facebook.github.io/react/) components th
 **Please note that this module is still in early development!**
 
 ## Example
-There is an [example project](https://github.com/kmees/react-fabric/blob/master/example) included in the repository to get you started. To run the example, follow these steps:
+The [docs project](https://github.com/kmees/react-fabric/blob/master/docs) included in the repository doubles as the example project. To run the docs project, follow these steps:
 
 ```sh
 $ npm install
-$ npm run build:example
-$ open example/index.html
+$ npm run build:docs
+$ open docs/index.html
 ```
 
 ## License
