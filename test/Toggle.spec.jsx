@@ -15,7 +15,7 @@ describe('Toggle', () => {
         <Toggle />
       )
 
-      var [input, ] = sut.props.children
+      var [, input, ] = sut.props.children
 
       expect(sut).to.have.property('type', 'div')
       expect(sut).to.have.deep.property('props.className', 'ms-Toggle')
@@ -29,7 +29,7 @@ describe('Toggle', () => {
         <Toggle onLabel="On" offLabel="Off" />
       )
 
-      var [input, label] = sut.props.children
+      var [, , label] = sut.props.children
       var [on, off] = label.props.children
 
       expect(label).to.have.property('type', 'label')
@@ -42,6 +42,18 @@ describe('Toggle', () => {
       expect(off).to.have.property('type', 'span')
       expect(off).to.have.deep.property('props.className', 'ms-Label ms-Label--off')
       expect(off).to.have.deep.property('props.children', 'Off')
+    })
+
+    it('can have a description', () => {
+      var sut = render(
+        <Toggle description="Foo" />
+      )
+
+      var [description, ] = sut.props.children
+
+      expect(description).to.have.property('type', 'span')
+      expect(description).to.have.deep.property('props.className', 'ms-Toggle-description')
+      expect(description).to.have.deep.property('props.children', 'Foo')
     })
   })
 })
