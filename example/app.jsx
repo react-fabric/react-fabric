@@ -3,7 +3,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
-import { Label, TextField, Button, ChoiceField } from '../src'
+import { Label, TextField, Button, ChoiceField, ChoiceFieldGroup } from '../src'
 
 class App extends React.Component {
   render() {
@@ -36,8 +36,20 @@ class App extends React.Component {
         <Button command={true}>Command</Button>
 
         <h2>ChoiceField</h2>
-        <ChoiceField type="radio">Foo</ChoiceField>
-        <ChoiceField type="checkbox">Foo</ChoiceField>
+        <ChoiceField type="radio" label="Foo" />
+        <ChoiceField type="checkbox" label="Bar" />
+
+        <h2>ChoiceFieldGroup</h2>
+        <ChoiceFieldGroup title="Foo" name="choiceFieldGroup">
+          <ChoiceField label="Bar" checked={true} value="bar" />
+          <ChoiceField label="Baz" value="baz" />
+          <ChoiceField label="Qux" value="qux" />
+        </ChoiceFieldGroup>
+        <ChoiceFieldGroup title="Foo" name="choiceFieldGroup2" defaultValue="baz">
+          <ChoiceField value="bar" />
+          <ChoiceField label="Baz" value="baz" />
+          <ChoiceField label="Qux" value="qux" />
+        </ChoiceFieldGroup>
       </div>
     )
   }
