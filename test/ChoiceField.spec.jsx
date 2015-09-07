@@ -28,9 +28,9 @@ describe('ChoiceField', () => {
       expect(label).to.have.deep.property('props.className', 'ms-ChoiceField-field')
     })
 
-    it('renders the children as the label', () => {
+    it('can have a label', () => {
       var sut = render(
-        <ChoiceField>Foo</ChoiceField>
+        <ChoiceField label="Foo" />
       )
       var [, label] = sut.props.children
       var innerLabel = label.props.children
