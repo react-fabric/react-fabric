@@ -109,7 +109,7 @@ describe('SearchBox', () => {
       input.value = 'Bar'
       Simulate.change(input)
 
-      Simulate.click(closeBtn)
+      Simulate.mouseDown(closeBtn)
 
       expect(node.className).to.not.include('is-active')
       expect(label).to.have.deep.property('style.display', '')

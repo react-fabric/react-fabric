@@ -89,7 +89,7 @@ export default class SearchBox extends React.Component  {
           <i className="ms-SearchBox-icon ms-Icon ms-Icon--search" />
           {label}
         </label>
-        <button className="ms-SearchBox-closeButton" onClick={this._onClose}>
+        <button className="ms-SearchBox-closeButton" onMouseDown={this._onClose}>
           <i className="ms-Icon ms-Icon--x" />
         </button>
       </div>
