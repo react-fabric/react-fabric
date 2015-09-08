@@ -8,6 +8,7 @@ export default class SearchBox extends React.Component  {
       PropTypes.string,
       PropTypes.element,
     ]),
+    onChange: PropTypes.func,
   }
 
   constructor() {
@@ -44,6 +45,8 @@ export default class SearchBox extends React.Component  {
       ...this.state,
       value: e.target.value,
     })
+
+    if (this.props.onChange) { this.props.onChange(e) }
   }
 
   _onInputFocus() {

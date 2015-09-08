@@ -1,5 +1,6 @@
 import React from 'react'
 import TestUtils, { Simulate } from 'react-addons-test-utils'
+import sinon from 'sinon'
 
 import render from './util/render'
 
@@ -112,6 +113,21 @@ describe('SearchBox', () => {
 
       expect(node.className).to.not.include('is-active')
       expect(label).to.have.deep.property('style.display', '')
+    })
+
+    it('support onChange handler', () => {
+      var onChange = sinon.spy()
+      var sut = TestUtils.renderIntoDocument(
+        <SearchBox onChange={onChange} />
+      )
+
+      var input = TestUtils.findRenderedDOMComponentWithTag(sut, 'input')
+      input.value = 'Foo'
+      Simulate.change(input)
+
+      expect(onChange).to.have.been.calledOnce.and.calledWithMatch({
+        target: { value: 'Foo' }
+      })
     })
   })
 })
