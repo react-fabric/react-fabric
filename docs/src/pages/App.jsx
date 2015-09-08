@@ -12,7 +12,7 @@ export default class App extends React.Component {
             </li>
             <li className="ms-NavBar-item ms-NavBar-item--right">
               <a href="https://www.github.com/kmees/react-fabric" >
-                <img src="/images/GitHub-Mark-32px.png" width="24" style={{padding: '8px'}} />
+                <img src="./images/GitHub-Mark-32px.png" width="24" style={{padding: '8px'}} />
               </a>
             </li>
             <li className="ms-NavBar-item ms-NavBar-item--right">
