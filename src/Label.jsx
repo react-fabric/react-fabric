@@ -4,13 +4,17 @@ import cx from 'classnames'
 export default class Label extends React.Component  {
   static displayName = 'Label'
   static propTypes = {
-    required: PropTypes.bool,
     disabled: PropTypes.bool,
-    htmlFor: PropTypes.string
+    htmlFor: PropTypes.string,
+    required: PropTypes.bool,
   }
 
   render() {
-    const { required, disabled, htmlFor } = this.props
+    const {
+      disabled,
+      htmlFor,
+      required,
+    } = this.props
 
     return (
        <label htmlFor={htmlFor} className={cx(

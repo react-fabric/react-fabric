@@ -4,28 +4,28 @@ import cx from 'classnames'
 export default class ChoiceField extends React.Component {
   static displayName = 'ChoiceField'
   static propTypes = {
-    type: PropTypes.oneOf([
-      'checkbox',
-      'radio'
-    ]).isRequired,
+    checked: PropTypes.bool,
     label: PropTypes.oneOfType([
       PropTypes.string,
-      PropTypes.element
+      PropTypes.element,
     ]),
-    onChange: PropTypes.func,
-    checked: PropTypes.bool,
     name: PropTypes.string,
-    value: PropTypes.string
+    onChange: PropTypes.func,
+    type: PropTypes.oneOf([
+      'checkbox',
+      'radio',
+    ]).isRequired,
+    value: PropTypes.string,
   }
   static defaultProps = {
-    type: 'checkbox'
+    type: 'checkbox',
   }
 
   constructor(props) {
     super()
 
     this.state = {
-      id: props.id || `ChoiceField-${this.constructor.instanceCount}`
+      id: props.id || `ChoiceField-${this.constructor.instanceCount}`,
     }
 
     this.constructor.instanceCount++
@@ -35,12 +35,12 @@ export default class ChoiceField extends React.Component {
 
   render() {
     const {
-      type,
-      label,
-      onChange,
       checked,
+      label,
       name,
-      value
+      onChange,
+      type,
+      value,
     } = this.props
     const inputId = `${this.state.id}_input`
 

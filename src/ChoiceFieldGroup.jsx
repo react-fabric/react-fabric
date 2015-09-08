@@ -6,24 +6,24 @@ import Label from './Label'
 export default class ChoiceFieldGroup extends React.Component {
   static displayName = 'ChoiceFieldGroup'
   static propTypes = {
-    title: PropTypes.oneOfType([
-      PropTypes.string,
-      PropTypes.instanceOf(Label)
-    ]),
     children: PropTypes.arrayOf(
       PropTypes.any
     ),
-    required: PropTypes.bool,
+    defaultValue: PropTypes.string,
     name: PropTypes.string,
     onChange: PropTypes.func,
-    defaultValue: PropTypes.string
+    title: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.instanceOf(Label),
+    ]),
+    required: PropTypes.bool,
   }
 
   constructor(props) {
     super()
 
     this.state = {
-      selectedValue: props.defaultValue || ''
+      selectedValue: props.defaultValue || '',
     }
 
     this._onChoiceChanged = this._onChoiceChanged.bind(this)
@@ -45,7 +45,7 @@ export default class ChoiceFieldGroup extends React.Component {
     } else {
       this.setState({
         ...this.state,
-        selectedValue: this.state.selectedValue || checked[0] || ''
+        selectedValue: this.state.selectedValue || checked[0] || '',
       })
     }
 
@@ -78,25 +78,25 @@ export default class ChoiceFieldGroup extends React.Component {
     const {
       label,
       value,
-      ...other
+      ...other,
     } = choice.props
 
     return (
       <ChoiceField
         {...other}
-        key={value}
-        name={name}
-        label={label}
-        value={value}
-        onChange={this._onChoiceChanged}
         checked={this.state.selectedValue === value}
-        type="radio" />
+        key={value}
+        label={label}
+        name={name}
+        onChange={this._onChoiceChanged}
+        type="radio"
+        value={value} />
     )
   }
 
   _onChoiceChanged(e) {
     this.setState({
-      selectedValue: e.target.value
+      selectedValue: e.target.value,
     })
 
     if (this.props.onChange) { this.props.onChange(e) }
@@ -109,9 +109,9 @@ export default class ChoiceFieldGroup extends React.Component {
   render() {
     const {
       children,
-      title,
+      name,
       required,
-      name
+      title,
     } = this.props
 
     const label = this._createLabel({title, required})

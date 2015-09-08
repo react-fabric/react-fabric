@@ -8,18 +8,18 @@ export default class Toggle extends React.Component  {
     offLabel: PropTypes.string,
     description: PropTypes.oneOfType([
       PropTypes.string,
-      PropTypes.element
+      PropTypes.element,
     ]),
     id: PropTypes.string,
     onChange: PropTypes.func,
-    textLeft: PropTypes.bool
+    textLeft: PropTypes.bool,
   }
 
   constructor(props) {
     super()
 
     this.state = {
-      id: props.id || `Toggle-${this.constructor.instanceCount}`
+      id: props.id || `Toggle-${this.constructor.instanceCount}`,
     }
 
     this.constructor.instanceCount++
@@ -33,7 +33,7 @@ export default class Toggle extends React.Component  {
       offLabel,
       description,
       onChange,
-      textLeft
+      textLeft,
     } = this.props
 
     const inputId = `${this.state.id}_input`
@@ -41,7 +41,7 @@ export default class Toggle extends React.Component  {
     return (
      <div id={this.state.id} className={cx(
        'ms-Toggle', {
-         'ms-Toggle--textLeft': textLeft
+         'ms-Toggle--textLeft': textLeft,
        }
      )}>
         {

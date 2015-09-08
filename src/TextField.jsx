@@ -8,14 +8,14 @@ export default class TextField extends React.Component {
   static propTypes = {
     description: PropTypes.node,
     disabled: PropTypes.bool,
+    id: PropTypes.string,
     label: PropTypes.node,
     multiline: PropTypes.bool,
+    name: PropTypes.string,
     onChange: PropTypes.func,
     placeholder: PropTypes.bool,
     required: PropTypes.bool,
     underlined: PropTypes.bool,
-    id: PropTypes.string,
-    name: PropTypes.string
   }
 
   constructor(props) {
@@ -24,7 +24,7 @@ export default class TextField extends React.Component {
     this.state = {
       showLabel: true,
       isActive: false,
-      id: props.id || `TextField-${TextField.instanceCount}`
+      id: props.id || `TextField-${TextField.instanceCount}`,
     }
 
     TextField.instanceCount++
@@ -35,7 +35,7 @@ export default class TextField extends React.Component {
   _onInputChange(e) {
     this.setState({
       ...this.state,
-      showLabel: e.target.value === ''
+      showLabel: e.target.value === '',
     })
 
     if (this.props.onChange) { this.props.onChange(e) }
@@ -44,14 +44,14 @@ export default class TextField extends React.Component {
   _onInputFocus() {
     this.setState({
       ...this.state,
-      isActive: true
+      isActive: true,
     })
   }
 
   _onInputBlur() {
     this.setState({
       ...this.state,
-      isActive: false
+      isActive: false,
     })
   }
 
@@ -66,7 +66,7 @@ export default class TextField extends React.Component {
       required,
       disabled,
       style,
-      htmlFor: `${id}_input`
+      htmlFor: `${id}_input`,
     }
 
     if (label._isReactElement && label.type === Label) {
@@ -81,19 +81,19 @@ export default class TextField extends React.Component {
       description,
       disabled,
       multiline,
+      name,
       placeholder,
       underlined,
-      name
     } = this.props
 
     const label = this._createLabel()
     const input = React.cloneElement(multiline ? <textarea /> : <input />, {
       className: 'ms-TextField-field',
+      id: `${this.state.id}_input`,
+      name,
+      onBlur: this._onInputBlur.bind(this),
       onChange: this._onInputChange.bind(this),
       onFocus: this._onInputFocus.bind(this),
-      onBlur: this._onInputBlur.bind(this),
-      id: `${this.state.id}_input`,
-      name
     })
 
     return (
@@ -102,7 +102,7 @@ export default class TextField extends React.Component {
            'ms-TextField--placeholder': placeholder,
            'ms-TextField--underlined': underlined,
            'is-active': underlined && this.state.isActive,
-           'is-disabled': disabled
+           'is-disabled': disabled,
          }
        )}>
         {label}

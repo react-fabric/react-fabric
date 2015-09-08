@@ -3,7 +3,7 @@ import React, { PropTypes } from 'react'
 export default class FontIcon extends React.Component {
   static displayName = 'FontIcon'
   static propTypes = {
-    name: PropTypes.string.isRequired
+    name: PropTypes.string.isRequired,
   }
 
   render() {
