@@ -74,6 +74,7 @@ describe('Toggle', () => {
       )
       var [, input, label] = sut.props.children
 
+      expect(sut.props.id).to.not.be.undefined
       expect(input.props.id).to.not.be.undefined
       expect(label.props.htmlFor).to.equal(input.props.id)
     })

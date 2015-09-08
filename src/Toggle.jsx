@@ -32,15 +32,14 @@ export default class Toggle extends React.Component  {
       onLabel,
       offLabel,
       description,
-      id,
       onChange,
       textLeft
     } = this.props
 
-    const inputId = `${id}_input`
+    const inputId = `${this.state.id}_input`
 
     return (
-     <div id={id} className={cx(
+     <div id={this.state.id} className={cx(
        'ms-Toggle', {
          'ms-Toggle--textLeft': textLeft
        }
