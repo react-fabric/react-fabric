@@ -1,5 +1,4 @@
 import React from 'react'
-import _ from 'lodash'
 import sinon from 'sinon'
 import TestUtils, { Simulate } from 'react-addons-test-utils'
 
@@ -19,7 +18,7 @@ describe('TextField', () => {
         <TextField />
       )
 
-      var [input] = _.compact(sut.props.children)
+      var [, input] = sut.props.children
 
       expect(input).to.have.property('type', 'input')
     })
@@ -29,7 +28,7 @@ describe('TextField', () => {
         <TextField multiline={true} />
       )
 
-      var [input] = _.compact(sut.props.children)
+      var [, input] = sut.props.children
 
       expect(input).to.have.property('type', 'textarea')
     })
@@ -69,7 +68,7 @@ describe('TextField', () => {
         <TextField label="Foo" />
       )
 
-      var [label, input] = _.compact(sut.props.children)
+      var [label, input] = sut.props.children
 
       expect(input.props.id).to.not.be.undefined
       expect(label.props).to.have.property('htmlFor', input.props.id)
@@ -80,7 +79,7 @@ describe('TextField', () => {
         <TextField name="foo" />
       )
 
-      var [input] = _.compact(sut.props.children)
+      var [, input] = sut.props.children
 
       expect(input).to.have.deep.property('props.name', 'foo')
     })
@@ -93,12 +92,11 @@ describe('TextField', () => {
           <TextField />
         )
 
-        var [input, ...otherChildren] = _.compact(sut.props.children)
+        var [, input] = sut.props.children
 
         expect(sut).to.have.property('type', 'div')
         expect(sut.props).to.have.property('className', 'ms-TextField')
         expect(input.props).to.have.property('className', 'ms-TextField-field')
-        expect(otherChildren).to.have.lengthOf(0)
       })
     })
 
@@ -131,16 +129,16 @@ describe('TextField', () => {
 
     describe('with a description', () => {
       it('that is any React element gets rendered inside a description container', () => {
-        var description = <span>Foo</span>
+        var expected = <span>Foo</span>
         var sut = render(
-          <TextField description={description} />
+          <TextField description={expected} />
         )
 
-        var [, renderedDescription] = _.compact(sut.props.children)
+        var [, , description] = sut.props.children
 
-        expect(renderedDescription).to.have.property('type', 'span')
-        expect(renderedDescription.props).to.have.property('className', 'ms-TextField-description')
-        expect(renderedDescription.props).to.have.property('children', description)
+        expect(description).to.have.property('type', 'span')
+        expect(description.props).to.have.property('className', 'ms-TextField-description')
+        expect(description.props).to.have.property('children', expected)
       })
     })
 

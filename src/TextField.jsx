@@ -9,7 +9,10 @@ export default class TextField extends React.Component {
     description: PropTypes.node,
     disabled: PropTypes.bool,
     id: PropTypes.string,
-    label: PropTypes.node,
+    label: PropTypes.oneOfType([
+      PropTypes.element,
+      PropTypes.string,
+    ]),
     multiline: PropTypes.bool,
     name: PropTypes.string,
     onChange: PropTypes.func,
@@ -56,8 +59,6 @@ export default class TextField extends React.Component {
   }
 
   _createLabel() {
-    if (!this.props.label) { return null }
-
     const { disabled, label, required } = this.props
     const { showLabel, id } = this.state
     const style = showLabel ? null : { display: 'none' }
@@ -69,7 +70,7 @@ export default class TextField extends React.Component {
       htmlFor: `${id}_input`,
     }
 
-    if (label._isReactElement && label.type === Label) {
+    if (label && label._isReactElement && label.type === Label) {
       return React.cloneElement(label, properties)
     }
 
@@ -107,11 +108,9 @@ export default class TextField extends React.Component {
        )}>
         {label}
         {input}
-        {
-          description ? <span className="ms-TextField-description">
-            {description}
-          </span> : null
-        }
+        <span className="ms-TextField-description">
+          {description}
+        </span>
       </div>
     )
   }
