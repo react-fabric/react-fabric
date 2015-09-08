@@ -28,7 +28,7 @@ describe('Toggle', () => {
 
     it('can have an on and off label', () => {
       var sut = render(
-        <Toggle onLabel="On" offLabel="Off" />
+        <Toggle labelOn="On" labelOff="Off" />
       )
 
       var [, , label] = sut.props.children

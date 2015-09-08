@@ -37,7 +37,7 @@ export default class Components extends React.Component {
                   }</a> : x.text
                   const style = {
                     padding: '4px 8px',
-                    textDecoration: x.done ? '' : 'line-through'
+                    textDecoration: x.done ? '' : 'line-through',
                   }
 
                   return (
@@ -100,7 +100,7 @@ export default class Components extends React.Component {
 
               <div className="ms-Grid-row">
                 <h2 id="toggle" className="ms-font-xl">Toggle</h2>
-                <Toggle onLabel="On" offLabel="Off" />
+                <Toggle labelOn="On" labelOff="Off" />
               </div>
             </div>
           </div>
