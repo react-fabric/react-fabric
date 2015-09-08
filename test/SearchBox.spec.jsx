@@ -1,4 +1,6 @@
 import React from 'react'
+import ReactDOM from 'react-dom'
+
 import TestUtils, { Simulate } from 'react-addons-test-utils'
 import sinon from 'sinon'
 
@@ -60,7 +62,7 @@ describe('SearchBox', () => {
         <SearchBox />
       )
 
-      var node = React.findDOMNode(sut)
+      var node = ReactDOM.findDOMNode(sut)
       var input = TestUtils.findRenderedDOMComponentWithTag(sut, 'input')
       Simulate.focus(input)
 
@@ -101,7 +103,7 @@ describe('SearchBox', () => {
         <SearchBox label="Foo" />
       )
 
-      var node = React.findDOMNode(sut)
+      var node = ReactDOM.findDOMNode(sut)
       var label = TestUtils.findRenderedDOMComponentWithTag(sut, 'label')
       var input = TestUtils.findRenderedDOMComponentWithTag(sut, 'input')
       var closeBtn = TestUtils.findRenderedDOMComponentWithTag(sut, 'button')
@@ -150,6 +152,20 @@ describe('SearchBox', () => {
       Simulate.change(input)
 
       expect(sut.getValue()).to.equal('Foo')
+    })
+
+    it('supports onSearch handler when enter is pressed', () => {
+      var onSearch = sinon.spy()
+      var sut = TestUtils.renderIntoDocument(
+        <SearchBox onSearch={onSearch} />
+      )
+
+      var input = TestUtils.findRenderedDOMComponentWithTag(sut, 'input')
+      input.value = 'Foo'
+      Simulate.change(input)
+      Simulate.keyPress(input, {charCode: 13})
+
+      expect(onSearch).to.have.been.calledOnce.and.calledWith('Foo')
     })
   })
 })

@@ -4,11 +4,12 @@ import cx from 'classnames'
 export default class SearchBox extends React.Component  {
   static displayName = 'SearchBox'
   static propTypes = {
-    label: PropTypes.oneOf([
+    label: PropTypes.oneOfType([
       PropTypes.string,
       PropTypes.element,
     ]),
     onChange: PropTypes.func,
+    onSearch: PropTypes.func,
   }
 
   constructor() {
@@ -23,6 +24,7 @@ export default class SearchBox extends React.Component  {
     this._onInputBlur = this._onInputBlur.bind(this)
     this._onInputChange = this._onInputChange.bind(this)
     this._onInputFocus = this._onInputFocus.bind(this)
+    this._onInputKeyPress = this._onInputKeyPress.bind(this)
   }
 
   getValue() {
@@ -67,6 +69,13 @@ export default class SearchBox extends React.Component  {
     })
   }
 
+  _onInputKeyPress(e) {
+    const value = this.getValue()
+    if (value && e.charCode === 13 /* Enter */ && this.props.onSearch) {
+      this.props.onSearch(this.getValue())
+    }
+  }
+
   render() {
     const {
       label,
@@ -82,6 +91,7 @@ export default class SearchBox extends React.Component  {
           onBlur={this._onInputBlur}
           onChange={this._onInputChange}
           onFocus={this._onInputFocus}
+          onKeyPress={this._onInputKeyPress}
           value={this.state.value} />
         <label className="ms-SearchBox-label" style={{
           display: this.state.isActive || this.state.value ? 'none' : '',
