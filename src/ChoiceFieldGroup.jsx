@@ -64,16 +64,6 @@ export default class ChoiceFieldGroup extends React.Component {
   }
 
 
-  _createLabel({title, required}) {
-    if (!title) { return null }
-
-    if (title._isReactElement && title.type === Label) {
-      return React.cloneElement(title, {required})
-    }
-
-    return <Label required={required}>{title}</Label>
-  }
-
   _createChoiceField(choice, {name}) {
     const {
       label,
@@ -114,15 +104,11 @@ export default class ChoiceFieldGroup extends React.Component {
       title,
     } = this.props
 
-    const label = this._createLabel({title, required})
-
     return (
       <div className="ms-ChoiceFieldGroup">
-        {
-          label ? <div className="ms-ChoiceFieldGroup-title">
-            {label}
-          </div> : null
-        }
+        <div className="ms-ChoiceFieldGroup-title">
+          <Label required={required}>{title}</Label>
+        </div>
         {
           React.Children.map(children, (choice) => {
             return this._createChoiceField(choice, {name})

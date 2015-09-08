@@ -65,7 +65,7 @@ describe('TextField', () => {
 
     it('generates an id for input and sets the \'for\' attribute on the Label', () => {
       var sut = render(
-        <TextField label="Foo" />
+        <TextField />
       )
 
       var [label, input] = sut.props.children
@@ -101,19 +101,6 @@ describe('TextField', () => {
     })
 
     describe('with a label property', () => {
-      it('that is a Label Component gets just rendered', () => {
-        var sut = render(
-          <TextField label={
-            <Label>Foo</Label>
-            } />
-        )
-
-        var [label, ] = sut.props.children
-
-        expect(label).to.have.property('type', Label)
-        expect(label.props).to.have.property('children', 'Foo')
-      })
-
       it('that is any element gets renderd inside a Label Component', () => {
         var label = <span>Foo</span>
         var sut = render(

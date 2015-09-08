@@ -58,39 +58,22 @@ export default class TextField extends React.Component {
     })
   }
 
-  _createLabel() {
-    const { disabled, label, required } = this.props
-    const { showLabel, id } = this.state
-    const style = showLabel ? null : { display: 'none' }
-
-    const properties = {
-      required,
-      disabled,
-      style,
-      htmlFor: `${id}_input`,
-    }
-
-    if (label && label._isReactElement && label.type === Label) {
-      return React.cloneElement(label, properties)
-    }
-
-    return <Label {...properties}>{label}</Label>
-  }
-
   render() {
     const {
       description,
       disabled,
+      label,
       multiline,
       name,
       placeholder,
+      required,
       underlined,
     } = this.props
+    const inputId = `${this.state.id}_input`
 
-    const label = this._createLabel()
     const input = React.cloneElement(multiline ? <textarea /> : <input />, {
       className: 'ms-TextField-field',
-      id: `${this.state.id}_input`,
+      id: inputId,
       name,
       onBlur: this._onInputBlur.bind(this),
       onChange: this._onInputChange.bind(this),
@@ -106,7 +89,12 @@ export default class TextField extends React.Component {
            'is-disabled': disabled,
          }
        )}>
-        {label}
+        <Label style={this.state.showLabel ? {} : {display: 'none'}}
+          required={required}
+          disabled={disabled}
+          htmlFor={inputId}>
+          {label}
+        </Label>
         {input}
         <span className="ms-TextField-description">
           {description}

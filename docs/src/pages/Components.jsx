@@ -60,8 +60,8 @@ export default class Components extends React.Component {
                 <h2 id="text-field" className="ms-font-xl">Text Field</h2>
                 <TextField label="Simple" />
                 <TextField label={
-                  <Label required={true}>Complex Label</Label>
-                  } />
+                  <Label>Complex Label</Label>
+                } />
                 <TextField label="With Description" description="Lorem ipsum sit dolor amet." />
                 <TextField label="Multiline" multiline={true} />
                 <TextField label="Placeholder" placeholder={true} />
