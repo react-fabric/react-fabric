@@ -17,6 +17,14 @@ describe('Label', () => {
 
       expect(sut.props).to.have.property('htmlFor', 'bar')
     })
+
+    it('un-nests itself when it has another label as child', () => {
+      var sut = render(
+        <Label><Label>Foo</Label></Label>
+      )
+
+      expect(sut).to.have.deep.property('props.children', 'Foo')
+    })
   })
 
   describe('[Presentation]', () => {

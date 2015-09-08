@@ -5,25 +5,32 @@ export default class Label extends React.Component  {
   static displayName = 'Label'
   static propTypes = {
     disabled: PropTypes.bool,
-    htmlFor: PropTypes.string,
     required: PropTypes.bool,
   }
 
   render() {
     const {
+      children,
       disabled,
-      htmlFor,
       required,
+      ...props,
     } = this.props
 
+    if (children && children._isReactElement && children.type === this.constructor) {
+      return React.cloneElement(children, {
+        disabled,
+        required,
+      })
+    }
+
     return (
-       <label htmlFor={htmlFor} className={cx(
+       <label className={cx(
          'ms-Label', {
            'is-required': required,
            'is-disabled': disabled,
          }
-       )}>
-        {this.props.children}
+       )} {...props}>
+        {children}
       </label>
     )
   }
