@@ -25,6 +25,17 @@ export default class SearchBox extends React.Component  {
     this._onInputFocus = this._onInputFocus.bind(this)
   }
 
+  getValue() {
+    return this.state.value
+  }
+
+  setValue(value) {
+    this.setState({
+      ...this.state,
+      value: value,
+    })
+  }
+
   _onClose() {
     this.setState({
       ...this.state,
@@ -70,7 +81,8 @@ export default class SearchBox extends React.Component  {
         <input className="ms-SearchBox-field"
           onBlur={this._onInputBlur}
           onChange={this._onInputChange}
-          onFocus={this._onInputFocus} />
+          onFocus={this._onInputFocus}
+          value={this.state.value} />
         <label className="ms-SearchBox-label" style={{
           display: this.state.isActive || this.state.value ? 'none' : '',
         }}>

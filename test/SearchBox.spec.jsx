@@ -129,5 +129,27 @@ describe('SearchBox', () => {
         target: { value: 'Foo' }
       })
     })
+
+    it('has a setter for value', () => {
+      var sut = TestUtils.renderIntoDocument(
+        <SearchBox />
+      )
+      var input = TestUtils.findRenderedDOMComponentWithTag(sut, 'input')
+
+      sut.setValue('Foo')
+
+      expect(input).to.have.property('value', 'Foo')
+    })
+
+    it('has a getter for value', () => {
+      var sut = TestUtils.renderIntoDocument(
+        <SearchBox />
+      )
+      var input = TestUtils.findRenderedDOMComponentWithTag(sut, 'input')
+      input.value = 'Foo'
+      Simulate.change(input)
+
+      expect(sut.getValue()).to.equal('Foo')
+    })
   })
 })
