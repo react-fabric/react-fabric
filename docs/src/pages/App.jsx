@@ -21,6 +21,11 @@ export default class App extends React.Component {
           </ul>
         </div>
         {this.props.children}
+        <div className="" style={{padding: '20px 0', background: '#333333'}}>
+          <p className="ms-fontColor-themeLighter ms-font-s" style={{textAlign: 'center'}}>
+            [[awesome footer]]
+          </p>
+        </div>
       </div>
     )
   }
