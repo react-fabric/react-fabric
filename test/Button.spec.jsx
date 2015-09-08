@@ -1,5 +1,4 @@
 import React from 'react'
-import _ from 'lodash'
 import sinon from 'sinon'
 
 import Button from '../src/Button'
@@ -17,16 +16,16 @@ describe('Button', () => {
       var sut = render(
         <Button />
       )
+
       expect(sut).to.have.property('type', 'button')
       expect(sut).to.have.deep.property('props.className', 'ms-Button')
-      expect(_.compact(sut.props.children)).to.be.empty
     })
 
     it('renders its children as the label', () => {
       var sut = render(
         <Button>Foo</Button>
       )
-      var [label] = _.compact(sut.props.children)
+      var [, label] = sut.props.children
 
       expect(label).to.have.property('type', 'span')
       expect(label).to.have.deep.property('props.className', 'ms-Button-label')
@@ -43,7 +42,7 @@ describe('Button', () => {
 
     it('can be a primary button', () => {
       var sut = render(
-        <Button primary={true} />
+        <Button type="primary" />
       )
 
       expect(sut.props.className.split(' ')).to.include('ms-Button--primary')
@@ -51,7 +50,7 @@ describe('Button', () => {
 
     it('can be a hero button', () => {
       var sut = render(
-        <Button hero={true} />
+        <Button type="hero" />
       )
 
       expect(sut.props.className.split(' ')).to.include('ms-Button--hero')
@@ -59,7 +58,7 @@ describe('Button', () => {
 
     it('can be a compound button', () => {
       var sut = render(
-        <Button compound={true} />
+        <Button type="compound" />
       )
 
       expect(sut.props.className.split(' ')).to.include('ms-Button--compound')
@@ -67,7 +66,7 @@ describe('Button', () => {
 
     it('can be a command button', () => {
       var sut = render(
-        <Button command={true} />
+        <Button type="command" />
       )
 
       expect(sut.props.className.split(' ')).to.include('ms-Button--command')
@@ -77,7 +76,7 @@ describe('Button', () => {
       var sut = render(
         <Button description="Foo" />
       )
-      var [description] = _.compact(sut.props.children)
+      var [, , description] = sut.props.children
 
       expect(description).to.have.property('type', 'span')
       expect(description).to.have.deep.property('props.className', 'ms-Button-description')
@@ -88,23 +87,39 @@ describe('Button', () => {
       var sut = render(
         <Button iconName="heart" />
       )
-      var [icon] = _.compact(sut.props.children)
+      var [icon] = sut.props.children
 
       expect(icon).to.have.property('type', 'span')
       expect(icon).to.have.deep.property('props.className', 'ms-Button-icon')
+
       expect(icon.props.children).to.have.property('type', FontIcon)
       expect(icon.props.children).to.have.deep.property('props.name', 'heart')
     })
   })
 
   describe('[Functionality]', () => {
-    it('passes other properties to the <button />', () => {
-      var cb = sinon.spy()
+    it('is by default not a submit button', () => {
       var sut = render(
-        <Button type="submit" onClick={cb}/>
+        <Button />
+      )
+
+      expect(sut).to.have.deep.property('props.type', 'button')
+    })
+
+    it('can be a submit button', () => {
+      var sut = render(
+        <Button submit={true} />
       )
 
       expect(sut).to.have.deep.property('props.type', 'submit')
+    })
+
+    it('passes other properties to the <button />', () => {
+      var cb = sinon.spy()
+      var sut = render(
+        <Button onClick={cb}/>
+      )
+
       expect(sut).to.have.deep.property('props.onClick', cb)
     })
   })

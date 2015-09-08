@@ -3,55 +3,50 @@ import cx from 'classnames'
 
 import FontIcon from './FontIcon'
 
+const BUTTON_TYPES = [
+  'command',
+  'compound',
+  'hero',
+  'primary',
+]
+
 export default class Button extends React.Component  {
   static displayName = 'Button'
   static propTypes = {
-    disabled: PropTypes.bool,
-    primary: PropTypes.bool,
-    hero: PropTypes.bool,
-    compound: PropTypes.bool,
-    command: PropTypes.bool,
+    type: PropTypes.oneOf(BUTTON_TYPES),
     description: PropTypes.node,
-    iconName: PropTypes.string
+    disabled: PropTypes.bool,
+    iconName: PropTypes.string,
+    submit: PropTypes.bool,
   }
 
   render() {
     const {
       children,
-      disabled,
-      primary,
-      hero,
-      compound,
-      command,
       description,
+      disabled,
       iconName,
-      ...props
+      submit,
+      type,
+      ...props,
     } = this.props
 
     return (
-      <button {...props} className={cx(
+      <button type={submit ? 'submit' : 'button'} className={cx(
         'ms-Button', {
           'is-disabled': disabled,
-          'ms-Button--primary': primary,
-          'ms-Button--hero': hero,
-          'ms-Button--compound': compound,
-          'ms-Button--command': command
+          [`ms-Button--${type}`]: type,
         }
-      )}>
-        { iconName ? <span className="ms-Button-icon">
-            <FontIcon name={iconName}/>
-          </span> : null
-        }
-        {
-          children ? <span className="ms-Button-label">
-            {children}
-          </span> : null
-        }
-        {
-          description ? <span className="ms-Button-description">
-            {description}
-          </span> : null
-        }
+      )} {...props}>
+        <span className="ms-Button-icon">
+          { iconName ? <FontIcon name={iconName}/> : null }
+        </span>
+        <span className="ms-Button-label">
+          {children}
+        </span>
+        <span className="ms-Button-description">
+          {description}
+        </span>
       </button>
     )
   }
