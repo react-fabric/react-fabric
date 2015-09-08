@@ -15,7 +15,7 @@ describe('Label', () => {
         <Label htmlFor="bar">Foo</Label>
       )
 
-      expect(sut.props).to.have.property('htmlFor', 'bar')
+      expect(sut).to.have.deep.property('props.htmlFor', 'bar')
     })
 
     it('un-nests itself when it has another label as child', () => {
@@ -34,8 +34,8 @@ describe('Label', () => {
       )
 
       expect(sut).to.have.property('type', 'label')
-      expect(sut.props).to.have.property('className', 'ms-Label')
-      expect(sut.props).to.have.property('children', 'Foo')
+      expect(sut).to.have.deep.property('props.className', 'ms-Label')
+      expect(sut).to.have.deep.property('props.children', 'Foo')
     })
 
     it('can be required', () => {
