@@ -5,3 +5,5 @@ example/*.bundle.js*
 
 dist/
 lib/
+
+.DS_Store
