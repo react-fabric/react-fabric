@@ -2,7 +2,7 @@ import React from 'react'
 
 import render from './util/render'
 
-import Label from '../src/Label.jsx'
+import Label from '../src/Label'
 
 describe('Label', () => {
   it('has a display name', () => {

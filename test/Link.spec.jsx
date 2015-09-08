@@ -2,7 +2,7 @@ import React from 'react'
 
 import render from './util/render'
 
-import Link from '../src/Link.jsx'
+import Link from '../src/Link'
 
 describe('Link', () => {
   it('has a display name', () => {
