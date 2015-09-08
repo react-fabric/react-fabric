@@ -18,9 +18,18 @@ export default class SearchBox extends React.Component  {
       value: '',
     }
 
+    this._onClose = this._onClose.bind(this)
     this._onInputBlur = this._onInputBlur.bind(this)
     this._onInputChange = this._onInputChange.bind(this)
     this._onInputFocus = this._onInputFocus.bind(this)
+  }
+
+  _onClose() {
+    this.setState({
+      ...this.state,
+      isActive: false,
+      value: '',
+    })
   }
 
   _onInputBlur() {
@@ -65,7 +74,7 @@ export default class SearchBox extends React.Component  {
           <i className="ms-SearchBox-icon ms-Icon ms-Icon--search" />
           {label}
         </label>
-        <button className="ms-SearchBox-closeButton">
+        <button className="ms-SearchBox-closeButton" onClick={this._onClose}>
           <i className="ms-Icon ms-Icon--x" />
         </button>
       </div>

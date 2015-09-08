@@ -94,5 +94,24 @@ describe('SearchBox', () => {
 
       expect(label).to.have.deep.property('style.display', 'none')
     })
+
+    it('clears value and active state when close button is clicked', () => {
+      var sut = TestUtils.renderIntoDocument(
+        <SearchBox label="Foo" />
+      )
+
+      var node = React.findDOMNode(sut)
+      var label = TestUtils.findRenderedDOMComponentWithTag(sut, 'label')
+      var input = TestUtils.findRenderedDOMComponentWithTag(sut, 'input')
+      var closeBtn = TestUtils.findRenderedDOMComponentWithTag(sut, 'button')
+      Simulate.focus(input)
+      input.value = 'Bar'
+      Simulate.change(input)
+
+      Simulate.click(closeBtn)
+
+      expect(node.className).to.not.include('is-active')
+      expect(label).to.have.deep.property('style.display', '')
+    })
   })
 })
