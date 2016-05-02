@@ -2,7 +2,7 @@
 const path = require('path');
 const express = require('express');
 const webpack = require('webpack');
-const config = require('./webpack.development.config');
+const config = require('./webpack.config');
 
 const app = express();
 const compiler = webpack(config);
@@ -18,7 +18,7 @@ app.use(require('webpack-dev-middleware')(compiler, {
 app.use(require('webpack-hot-middleware')(compiler));
 
 app.get('*', function (req, res) {
-	res.sendFile(path.join(__dirname, './spec/index.html'));
+	res.sendFile(path.join(__dirname, './index.html'));
 });
 
 const port = 3000

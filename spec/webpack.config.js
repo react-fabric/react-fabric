@@ -4,14 +4,14 @@ const webpack = require('webpack');
 const autoprefixer = require('autoprefixer');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
-const pkg = require('./package');
+const pkg = require('../package');
 
 module.exports = {
   context: __dirname,
 	devtool: 'inline-source-map',
   entry: [
     'webpack-hot-middleware/client',
-    './spec/index.js'
+    './index.js'
   ],
   output: {
     path: path.join(__dirname, 'build'),

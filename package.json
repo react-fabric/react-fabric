@@ -4,8 +4,16 @@
   "description": "Office UI Fabric components built with React and CSS Modules",
   "main": "lib/index.js",
   "scripts": {
-    "start": "NODE_ENV=development node ./server.js",
-    "test": "NODE_PATH=./src babel-node test/index.js"
+    "start": "better-npm-run start",
+    "test": "better-npm-run test"
+  },
+  "betterScripts": {
+    "start": {
+      "command": "node ./spec/server.js"
+    },
+    "test": {
+      "command": "babel-node test/index.js"
+    }
   },
   "author": "Kevin Mees <kev.mees@gmail.com>",
   "repository": {
