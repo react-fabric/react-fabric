@@ -13,7 +13,9 @@ const Link = ({ children, hero, styles, className: baseClassName, ...props }) =>
 
   return isFunction(children) ?
     children({ className }) :
-    <a {...props} className={className}>
+    <a {...props}
+      data-fabric="Link"
+      className={className}>
       { children }
     </a>
 }

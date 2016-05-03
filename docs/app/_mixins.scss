@@ -1,0 +1,10 @@
+@mixin container {
+  padding: 2rem calc((100% - 62rem) / 2);
+}
+
+@mixin indent-inner {
+  padding: 1.5rem 3rem;
+}
+@mixin indent {
+  margin: 1.5rem 3rem;
+}

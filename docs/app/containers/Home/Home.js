@@ -22,7 +22,7 @@ const Home = () => (
       <p styleName="subtitle">Office UI Fabric components built with React.</p>
       <navigation styleName="navigation">
         <ul>
-          <li><Link to="/install">Installation</Link></li>
+          <li><Link to="/getting-started">Getting started</Link></li>
           <li><Icon glyph="dot" /></li>
           <li><Link to="/components">Components</Link></li>
           <li><Icon glyph="dot" /></li>

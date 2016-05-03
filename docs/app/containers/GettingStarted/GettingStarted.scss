@@ -1,0 +1,11 @@
+@import "~office-ui-fabric/src/sass/_Fabric.Common.scss";
+@import "../../mixins";
+
+.root {
+  display: block;
+}
+
+.title {
+  @include ms-font-xxl;
+  @include indent;
+}

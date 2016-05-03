@@ -37,14 +37,21 @@ module.exports = {
       }, {
         test: /\.(scss|css)$/,
         loader: ExtractTextPlugin.extract('style', 'css?sourceMap&modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!postcss!sass?sourceMap') // eslint-disable-line
+      }, {
+        test: /\.json$/, loader: 'json'
+      }, {
+        test: /\.md$/,
+        loader: 'html!highlight!markdown'
+        // test: /\.md$/, loader: 'raw'
+      }
       // }, {
       //   test: /\.(txt)$/,
       //   loader: 'raw',
       //   include: path.resolve(__dirname, './app/components/layout/main/modules')
-      }, {
-        test: /\.(md)$/,
-        loader: 'html!highlight!markdown'
-      }
+      // }, {
+      //   test: /\.(md)$/,
+      //   loader: 'html!highlight!markdown'
+      // }
     ]
   },
   postcss: [autoprefixer],

@@ -1,0 +1,25 @@
+@import "~office-ui-fabric/src/sass/_Fabric.Common.scss";
+@import "~office-ui-fabric/src/components/NavBar/NavBar.scss";
+@import "../../mixins";
+
+.app-bar {
+  padding-left: 3rem;
+  padding-right: 3rem;
+}
+
+.brand {
+  @include ms-fontWeight-semibold;
+
+  a {
+    color: $ms-color-orangeLight;
+
+    &:hover, &:focus {
+      color: $ms-color-orange;
+    }
+  }
+}
+
+.icon {
+  height: 20px;
+  vertical-align: text-bottom;
+}

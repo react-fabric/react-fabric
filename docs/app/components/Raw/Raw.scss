@@ -1,0 +1,73 @@
+@import "~office-ui-fabric/src/sass/_Fabric.Common.scss";
+@import "~office-ui-fabric/src/components/Link/Link.scss";
+@import "../../mixins";
+
+.raw {
+  h1 {
+    @include ms-font-xxl;
+  }
+  h2 {
+    @include ms-font-xl;
+  }
+  h3 {
+    @include ms-font-l;
+  }
+  h4 {
+    @include ms-font-m-plus;
+    @include ms-fontWeight-semilight;
+  }
+  h5 {
+    @include ms-font-m;
+    @include ms-fontWeight-semilight;
+  }
+
+  &, p {
+    @include ms-font-m-plus;
+  }
+
+  a {
+    @extend .ms-Link;
+
+  }
+
+  strong {
+    @include ms-fontWeight-semibold;
+  }
+
+  hr {
+    border-color: $ms-color-neutralTertiary
+  }
+
+  blockquote {
+    padding: 0.5em 1em;
+    margin: 1em 0;
+
+    border-left: 3px solid $ms-color-neutralTertiary;
+
+    p {
+      margin: 0
+    }
+  }
+
+  pre {
+    background: $ms-color-neutralLighter;
+  }
+
+  pre, code {
+    font-family: 'source-code-pro', Menlo, Consolas, Monaco, 'Andale Mono', 'Courier New', monospace;
+    font-size: 13px;
+    line-height: 1.4;
+  }
+}
+
+.raw-indent {
+  @extend .raw;
+
+  & > :not(pre) {
+    @include indent;
+  }
+
+  pre {
+    @include indent-inner;
+  }
+}
