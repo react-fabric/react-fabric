@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom'
 import { Router, Route, useRouterHistory } from 'react-router'
 import createHashHistory from 'history/lib/createHashHistory'
 
+require('./global.scss')
+
 const HelloWorld = () => (
   <div>Hello World</div>
 )

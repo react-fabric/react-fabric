@@ -1,0 +1,16 @@
+@import "~office-ui-fabric/src/sass/Fabric.Typography.Fonts.Output.scss";
+
+@import "~office-ui-fabric/src/sass/_Fabric.Common.scss";
+@import "~office-ui-fabric/src/sass/_Fabric.Typography.scss";
+
+body {
+  @include ms-font-m;
+}
+
+h1 { @include ms-font-xxl; }
+h2 { @include ms-font-xl; }
+h3 { @include ms-font-l; }
+
+h1,h2,h3 {
+  @include ms-fontWeight-semilight;
+}
