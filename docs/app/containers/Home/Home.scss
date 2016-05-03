@@ -1,0 +1,96 @@
+@import "~office-ui-fabric/src/sass/_Fabric.Common.scss";
+
+$ms-color-orangeLighterAlt: #feba6d;
+
+.root {
+  display: flex;
+  min-height: 100vh;
+
+  flex-direction: column;
+}
+
+.container {
+  padding: 2rem calc((100% - 62rem) / 2);
+}
+
+.header {
+  @extend .container;
+  background: $ms-color-orange;
+  text-align: center;
+}
+
+.logo {
+  min-height: 1px;
+}
+
+.title {
+  @include ms-font-su;
+}
+
+.subtitle {
+  @include ms-font-xl;
+}
+
+.title, .subtitle {
+  color: $ms-color-white;
+}
+
+.sellout {
+  display: block;
+  position: fixed;
+  top: 2rem;
+  left: 2rem;
+  z-index: 101;
+
+  > iframe {
+    display: inline-block;
+    height: 2rem;
+    width: 10rem;
+    vertical-align: top;
+  }
+}
+
+.navigation {
+  @include ms-font-l;
+
+  ul, li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  ul {
+    display: flex;
+    justify-content: center;
+  }
+
+  li {
+    margin: 0 0.5rem;
+    color: $ms-color-orangeLighter;
+  }
+
+  a {
+    color: $ms-color-orangeLighterAlt;
+
+    &:hover, &:focus {
+      color: $ms-color-white;
+    }
+  }
+}
+
+.content {
+  @extend .container;
+
+  @include ms-font-l;
+
+  flex: 1;
+}
+
+.footer {
+  @extend .container;
+
+  background: $ms-color-neutralPrimary;
+  color: $ms-color-white;
+
+  text-align: center;
+}
