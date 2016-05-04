@@ -40,8 +40,9 @@ that all the required SASS for the button component is automatically required by
 
 ## Fonts & Icons
 
-To load the required fonts from the Office CDN, simply import the fontface declaration 
-from the `office-ui-fabric` package in a global stylesheet and require it in your layout
+`react-fabric` does **not** load any of the required font files automatically. The recommended way
+is to get the fonts from the Office CDN by simply importing the fontface declaration 
+from the `office-ui-fabric` package in a global stylesheet and requiring it in your layout component.
 
 ```scss
 // globals.scss

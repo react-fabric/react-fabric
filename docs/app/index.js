@@ -12,7 +12,9 @@ ReactDOM.render((
     <Route path="/" component={Home} />
     <Route component={Layout}>
       <Route path="/getting-started" component={GettingStarted} />
-      <Route path="/components" component={Components} />
+      <Route path="/components" component={Components}>
+        <Route path=":componentName" />
+      </Route>
     </Route>
   </Router>
 ), document.getElementById('app'))

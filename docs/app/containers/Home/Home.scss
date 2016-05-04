@@ -30,6 +30,7 @@ $ms-color-orangeLighterAlt: #feba6d;
 
 .title, .subtitle {
   color: $ms-color-white;
+  margin: 1em 1rem;
 }
 
 .sellout {
@@ -81,6 +82,10 @@ $ms-color-orangeLighterAlt: #feba6d;
   @include ms-font-l;
 
   flex: 1;
+
+  > p {
+    @include indent;
+  }
 }
 
 .footer {

@@ -1,0 +1,35 @@
+@import "../../mixins";
+
+.root {
+  display: flex;
+  flex-direction: row;
+}
+
+.navigation {
+  max-width: 25rem;
+}
+
+.content {
+  flex: 1;
+
+  @include indent;
+
+  margin-top: 0;
+}
+
+.component-list,
+.component-list-item {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.component-list-item {
+  @include indent;
+
+  > span {
+    text-decoration: line-through;
+  }
+}
+
+
