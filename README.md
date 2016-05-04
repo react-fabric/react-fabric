@@ -24,12 +24,12 @@ and [sass-loader](https://github.com/jtangelder/sass-loader). A minimal starter 
 Once Webpack is set up, yu can just require `react-fabric` and use the components
 
 ```jsx
-import React from 'react'
-import Button from 'react-fabric/lib/Button'
+import React from 'react';
+import Button from 'react-fabric/lib/Button';
 
 const SaveButton = ({ onClick }) => (
-  <Button type="hero" glyph="save" onClick={onClick}>Save</Button> 
-)
+  <Button type="hero" glyph="save" onClick={onClick}>Save</Button>
+);
 
 export default SaveButton
 ```
