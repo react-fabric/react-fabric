@@ -13,7 +13,7 @@ import style from './NavBar.scss'
 @fabricComponent(style)
 class NavBar extends React.Component {
   static propTypes = {
-    brand: PropTypes.node,
+    title: PropTypes.node,
     children: PropTypes.node,
     styles: PropTypes.object
   };
@@ -36,7 +36,7 @@ class NavBar extends React.Component {
   }
 
   render() {
-    const { children, ...props } = this.props
+    const { title, children, ...props } = this.props
 
     return (
       <div data-fabric="NavBar" {...props} styleName="ms-NavBar">
@@ -46,6 +46,10 @@ class NavBar extends React.Component {
           })}>
           <Icon glyph="menu" />
         </div>
+
+        { title && <div styleName="ms-NavBar-title">
+          { title }
+        </div> }
 
         <ul styleName="ms-NavBar-items">
           { children }

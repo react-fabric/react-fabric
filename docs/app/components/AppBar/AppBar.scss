@@ -3,19 +3,16 @@
 @import "../../mixins";
 
 .app-bar {
-  padding-left: 3rem;
-  padding-right: 3rem;
+  display: block;
 }
 
-.brand {
+.app-bar-title {
+  @extend .ms-NavBar-link;
   @include ms-fontWeight-semibold;
+  color: $ms-color-orangeLight;
 
-  a {
-    color: $ms-color-orangeLight;
-
-    &:hover, &:focus {
-      color: $ms-color-orange;
-    }
+  &:hover, &:focus {
+    color: $ms-color-orange;
   }
 }
 

@@ -8,7 +8,7 @@ import style from './Components.scss'
 const ComponentList = ({ list }) => (
   <ul styleName="component-list">
     { list.map(({ name, finished }) => (
-      <li styleName="component-list-item">
+      <li key={name} styleName="component-list-item">
         { finished ?
           <Link to={`/components/${name}`}>{name}</Link> :
           <span>{name}</span>

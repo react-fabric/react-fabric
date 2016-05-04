@@ -7,11 +7,12 @@ import NavBar from 'react-fabric/NavBar'
 
 import style from './AppBar.scss'
 
+const Title = cssm(() => (
+  <IndexLink styleName="app-bar-title" to="/">react-fabric</IndexLink>
+), style)
+
 const AppBar = () => (
-  <NavBar styleName="app-bar">
-    <NavBar.Item styleName="brand">
-      <IndexLink styleName="ms-NavBar-link" to="/">react-fabric</IndexLink>
-    </NavBar.Item>
+  <NavBar styleName="app-bar" title={<Title />}>
     <NavBar.Item>
       <IndexLink styleName="ms-NavBar-link" to="/getting-started">Getting Started</IndexLink>
     </NavBar.Item>
