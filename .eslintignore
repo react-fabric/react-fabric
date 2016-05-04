@@ -1,2 +1,5 @@
-**/node_modules/
+build
+node_modules
+docs/build
+docs/node_modules
 lib
