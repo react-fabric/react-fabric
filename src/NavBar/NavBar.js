@@ -14,6 +14,7 @@ import style from './NavBar.scss'
 class NavBar extends React.Component {
   static propTypes = {
     title: PropTypes.node,
+    titleClassName: PropTypes.string,
     children: PropTypes.node,
     styles: PropTypes.object
   };
@@ -36,7 +37,7 @@ class NavBar extends React.Component {
   }
 
   render() {
-    const { title, children, ...props } = this.props
+    const { title, titleClassName, children, ...props } = this.props
 
     return (
       <div data-fabric="NavBar" {...props} styleName="ms-NavBar">
@@ -47,7 +48,7 @@ class NavBar extends React.Component {
           <Icon glyph="menu" />
         </div>
 
-        { title && <div styleName="ms-NavBar-title">
+        { title && <div className={titleClassName} styleName="ms-NavBar-title">
           { title }
         </div> }
 

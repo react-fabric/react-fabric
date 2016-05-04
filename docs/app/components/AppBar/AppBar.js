@@ -8,11 +8,12 @@ import NavBar from 'react-fabric/NavBar'
 import style from './AppBar.scss'
 
 const Title = cssm(() => (
-  <IndexLink styleName="app-bar-title" to="/">react-fabric</IndexLink>
+  <IndexLink styleName="brand" to="/">react-fabric</IndexLink>
 ), style)
 
-const AppBar = () => (
-  <NavBar styleName="app-bar" title={<Title />}>
+const AppBar = ({ styles }) => (
+  <NavBar styleName="app-bar"
+    title={<Title />} titleClassName={styles['brand-container']}>
     <NavBar.Item>
       <IndexLink styleName="ms-NavBar-link" to="/getting-started">Getting Started</IndexLink>
     </NavBar.Item>
@@ -28,5 +29,8 @@ const AppBar = () => (
     </NavBar.Item>
   </NavBar>
 )
+AppBar.propTypes = {
+  styles: React.PropTypes.object
+}
 
 export default cssm(AppBar, style)

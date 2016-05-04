@@ -6,7 +6,10 @@
   display: block;
 }
 
-.app-bar-title {
+.brand-container {
+  padding-left: 2rem;
+}
+.brand {
   @extend .ms-NavBar-link;
   @include ms-fontWeight-semibold;
   color: $ms-color-orangeLight;
