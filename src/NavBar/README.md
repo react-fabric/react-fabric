@@ -32,11 +32,13 @@ const AppBar = () => (
 
 ## Properties
 
-| Name        | Type                  | Default | Description                               |
-| :-----      | :-----                | :-----  | :-----                                    |
-| `children`  | `arrayOf(NavBarItem)` | `null`    | The name of the icon you want to display. |
-| `className` | `String`              | `''`    | Custom class name for the component.      |
-
+| Name         | Type                  | Default | Description                                              |
+| :-----       | :-----                | :-----  | :-----                                                   |
+| `isMenuOpen` | `bool`                | `false` | Set this to true/false to open/close the mobile menu.    |
+| `openMenu`   | `func`                | `null`  | Function callback when the mobile menu should be opened. |
+| `closeMenu`  | `func`                | `null`  | Function callback when the mobile menu should be closed. |
+| `children`   | `arrayOf(NavBarItem)` | `null`  | The name of the icon you want to display.                |
+| `className`  | `String`              | `''`    | Custom class name for the component.                     |
 
 # NavBarItem
 

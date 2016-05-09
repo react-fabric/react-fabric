@@ -43,7 +43,7 @@ class NavBar extends React.Component {
       React.PropTypes.arrayOf((propValue, key, componentName, location, propFullName) => {
         if (!isFabricComponent(propValue[key], NavBarItem, NavBarLink, NavBarTitle)) {
           return new Error(
-            `Invalid prop '${propFullName}' supplied to '${componentName}'. Must be one of 
+            `Invalid prop '${propFullName}' supplied to '${componentName}'. Must be one of
             NavBar.Item, NavBar.Link or NavBar.Title`
           )
         }
@@ -55,9 +55,8 @@ class NavBar extends React.Component {
         return null
       })
     ]),
-    onMenuOpen: PropTypes.func,
-    onMenuClose: PropTypes.func,
-    onMenuToggle: PropTypes.func,
+    openMenu: PropTypes.func,
+    closeMenu: PropTypes.func,
     isMenuOpen: PropTypes.bool,
     styles: PropTypes.object
   };
@@ -65,15 +64,18 @@ class NavBar extends React.Component {
     isMenuOpen: false,
   }
 
-  _toggleMenu() {
-    const { isMenuOpen, onMenuOpen, onMenuClose, onMenuToggle } = this.props
+  _closeMenu() {
+    const { closeMenu, isMenuOpen } = this.props
 
     if (isMenuOpen) {
-      if (onMenuClose) { onMenuClose() }
-    } else {
-      if (onMenuOpen) { onMenuOpen() }
+      if (closeMenu) { closeMenu() }
     }
-    if (onMenuToggle) { onMenuToggle(isMenuOpen) }
+  }
+
+  _openMenu() {
+    const { openMenu } = this.props
+
+    if (openMenu) { openMenu() }
   }
 
   render() {
@@ -81,8 +83,10 @@ class NavBar extends React.Component {
     const { title, items } = splitChildren(children)
 
     return (
-      <div data-fabric="NavBar" {...props} styleName="ms-NavBar">
-        { items.length > 0 && <div onClick={::this._toggleMenu}
+      <div data-fabric="NavBar" {...props}
+        onClick={::this._closeMenu}
+        styleName={cx('ms-NavBar', { 'is-open': isMenuOpen })}>
+        { items.length > 0 && <div onClick={::this._openMenu}
           styleName={cx('ms-NavBar-openMenu', {
             'is-open': isMenuOpen
           })}>

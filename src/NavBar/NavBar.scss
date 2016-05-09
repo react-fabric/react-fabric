@@ -3,4 +3,6 @@
 
 .ms-NavBar-title {
   @extend .ms-NavBar-item;
+
+  display: inline-block;
 }
