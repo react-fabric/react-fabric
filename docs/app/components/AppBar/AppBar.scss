@@ -6,10 +6,10 @@
   display: block;
 }
 
-.brand-container {
+.title {
   padding-left: 2rem;
 }
-.brand {
+.title-link {
   @extend .ms-NavBar-link;
   @include ms-fontWeight-semibold;
   color: $ms-color-orangeLight;

@@ -7,26 +7,23 @@ import NavBar from 'react-fabric/NavBar'
 
 import style from './AppBar.scss'
 
-const Title = cssm(() => (
-  <IndexLink styleName="brand" to="/">react-fabric</IndexLink>
-), style)
-
-const AppBar = ({ styles }) => (
-  <NavBar styleName="app-bar"
-    title={<Title />} titleClassName={styles['brand-container']}>
-    <NavBar.Item>
-      <IndexLink styleName="ms-NavBar-link" to="/getting-started">Getting Started</IndexLink>
-    </NavBar.Item>
-    <NavBar.Item>
-      <IndexLink styleName="ms-NavBar-link" to="/components">Components</IndexLink>
-    </NavBar.Item>
-    <NavBar.Item right>
-      <a styleName="ms-NavBar-link"
-        href="https://github.com/kmees/react-fabric"
+const AppBar = () => (
+  <NavBar styleName="app-bar">
+    <NavBar.Title styleName="title">
+      <IndexLink styleName="title-link" to="/">react-fabric</IndexLink>
+    </NavBar.Title>
+    <NavBar.Link>
+      <IndexLink to="/getting-started">Getting Started</IndexLink>
+    </NavBar.Link>
+    <NavBar.Link>
+      <IndexLink to="/components">Components</IndexLink>
+    </NavBar.Link>
+    <NavBar.Link right>
+      <a href="https://github.com/kmees/react-fabric"
         target="_blank">
         <img styleName="icon" src="images/GitHub-Mark-32px.png" />
       </a>
-    </NavBar.Item>
+    </NavBar.Link>
   </NavBar>
 )
 AppBar.propTypes = {
