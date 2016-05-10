@@ -2,6 +2,8 @@ import React from 'react'
 import cssm from 'react-css-modules'
 
 import IconComponent from './components/IconComponent.js'
+import LinkComponent from './components/LinkComponent.js'
+import ButtonComponent from './components/ButtonComponent.js'
 
 import style from './style'
 
@@ -27,6 +29,8 @@ const Root = () => (
   <div>
     <h1>react-fabric@{VERSION}</h1>
     <IconComponent />
+    <LinkComponent />
+    <ButtonComponent />
   </div>
 )
 

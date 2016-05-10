@@ -1,6 +1,7 @@
 @import "~office-ui-fabric/src/sass/_Fabric.Common.scss";
 @import "~office-ui-fabric/src/sass/_Fabric.Typography.scss";
 
+@import "~office-ui-fabric/src/sass/Fabric.Icons.Font.Output.scss";
 @import "~office-ui-fabric/src/sass/Fabric.Typography.Fonts.Output.scss";
 
 body {
@@ -16,10 +17,18 @@ h1,h2,h3 {
 }
 
 :global {
-  .ms-Icon {
-    padding: 3px;
-    width: 28px;
-    height: 14px;
-    text-align:center;
+  .icon-section {
+    .ms-Icon {
+      padding: 3px;
+      width: 28px;
+      height: 14px;
+      text-align:center;
+    }
+  }
+
+  .button-section {
+    > div {
+      margin: 0.5em 0;
+    }
   }
 }
