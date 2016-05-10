@@ -7,7 +7,7 @@ by passing the component class as a prop, see [Properties](#properties).
 
 ```jsx
 import { Link as RouterLink } from 'react-router';
-import Link from 'react-fabric/Link';
+import Link from 'react-fabric/lib/Link';
 
 const Navigation = () => (
   <Link href="http://google.com">Google<Link>
