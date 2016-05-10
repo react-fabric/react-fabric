@@ -1,6 +1,7 @@
 import React, { PropTypes } from 'react'
 import cx from 'classnames'
 
+import onlyWhenTypeIs from './onlyWhenTypeIs'
 import Icon from '../Icon'
 import fabricComponent from '../fabricComponent.js'
 
@@ -35,9 +36,9 @@ const Button = ({ children, type, description, disabled, submit, glyph, ...props
 Button.propTypes = {
   children: PropTypes.node,
   type: PropTypes.oneOf(BUTTON_TYPES),
-  description: PropTypes.node,
+  description: onlyWhenTypeIs('compound', PropTypes.node),
   disabled: PropTypes.bool,
-  glyph: PropTypes.string,
+  glyph: onlyWhenTypeIs(['command', 'hero'], PropTypes.string),
   submit: PropTypes.bool,
 }
 
