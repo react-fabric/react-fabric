@@ -1,0 +1,15 @@
+@import "~office-ui-fabric/src/sass/_Fabric.Common.scss";
+@import "~office-ui-fabric/src/components/Button/Button.scss";
+
+.ms-Button:disabled,
+.ms-Button.is-disabled {
+  .ms-Icon {
+    border-color: $ms-color-neutralTertiaryAlt!important;
+  }
+}
+
+.ms-Button--hero {
+  .ms-Button-icon {
+    margin-right: 3px;
+  }
+}
