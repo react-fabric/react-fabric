@@ -10,7 +10,7 @@ import { Link as RouterLink } from 'react-router';
 import Link from 'react-fabric/Link';
 
 const Navigation = () => (
-  <Link href="http://google.com" hero>Google<Link>
+  <Link href="http://google.com">Google<Link>
   <Link to="/" componentClass={RouterLink}>Home<Link>
 );
 ```
@@ -20,6 +20,5 @@ const Navigation = () => (
 | Name             | Type             | Default | Description                          |
 | :-----           | :-----           | :-----  | :-----                               |
 | `componentClass` | [elementType][1] | `a`     | Custom component used for rendering. |
-| `hero`           | `bool`           | `false` | Render the link as a hero link.      |
 
 [1]: https://github.com/react-bootstrap/react-prop-types#elementtype
