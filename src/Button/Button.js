@@ -3,6 +3,7 @@ import cx from 'classnames'
 
 import onlyWhenTypeIs from './onlyWhenTypeIs'
 import Icon from '../Icon'
+import glyphPropType from '../Icon/glyphPropType.js'
 import fabricComponent from '../fabricComponent.js'
 
 import style from './Button.scss'
@@ -38,7 +39,7 @@ Button.propTypes = {
   type: PropTypes.oneOf(BUTTON_TYPES),
   description: onlyWhenTypeIs('compound', PropTypes.node),
   disabled: PropTypes.bool,
-  glyph: onlyWhenTypeIs(['command', 'hero'], PropTypes.string),
+  glyph: glyphPropType,
   submit: PropTypes.bool,
 }
 

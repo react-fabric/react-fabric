@@ -1,6 +1,7 @@
 import React from 'react'
 import cx from 'classnames'
 
+import glyphPropType from './glyphPropType.js'
 import fabricComponent from '../fabricComponent.js'
 
 import style from './Icon.scss'
@@ -11,10 +12,7 @@ const Icon = ({ glyph, ...props }) => (
     styleName={cx('ms-Icon', `ms-Icon--${glyph}`)} />
 )
 Icon.propTypes = {
-  /**
-   * An icon name. See http://dev.office.com/fabric/styles#icons
-   */
-  glyph: React.PropTypes.string.isRequired,
+  glyph: glyphPropType.isRequired
 }
 
 export default fabricComponent(Icon, style)
