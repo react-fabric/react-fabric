@@ -24,7 +24,8 @@
   "dependencies": {
     "classnames": "^2.2.4",
     "hoist-non-react-statics": "^1.0.5",
-    "lodash.isfunction": "^3.0.8"
+    "lodash.isfunction": "^3.0.8",
+    "react-prop-types": "^0.3.1"
   },
   "devDependencies": {
     "autoprefixer": "^6.3.6",
