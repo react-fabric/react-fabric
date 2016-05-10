@@ -38,7 +38,6 @@ const AppBar = () => (
 | `openMenu`   | `func`                | `null`  | Function callback when the mobile menu should be opened. |
 | `closeMenu`  | `func`                | `null`  | Function callback when the mobile menu should be closed. |
 | `children`   | `arrayOf(NavBarItem)` | `null`  | The name of the icon you want to display.                |
-| `className`  | `String`              | `''`    | Custom class name for the component.                     |
 
 # NavBarItem
 
@@ -62,9 +61,8 @@ const AppBar = () => (
 
 | Name        | Type     | Default | Description                                  |
 | :-----      | :-----   | :-----  | :-----                                       |
-| `right`     | `bool`   | `false` | Pushes the item to the right of the `NavBar` |
 | `children`  | `node`   | `null`  | The name of the icon you want to display.    |
-| `className` | `String` | `''`    | Custom class name for the component.         |
+| `right`     | `bool`   | `false` | Pushes the item to the right of the `NavBar` |
 
 # NavBarLink
 
@@ -86,9 +84,8 @@ const AppBar = () => (
 
 | Name        | Type     | Default | Description                                  |
 | :-----      | :-----   | :-----  | :-----                                       |
-| `right`     | `bool`   | `false` | Pushes the item to the right of the `NavBar` |
 | `children`  | `node`   | `null`  | The name of the icon you want to display.    |
-| `className` | `String` | `''`    | Custom class name for the component.         |
+| `right`     | `bool`   | `false` | Pushes the item to the right of the `NavBar` |
 
 # NavBarTitle
 
@@ -112,4 +109,3 @@ const AppBar = () => (
 | Name        | Type     | Default | Description                               |
 | :-----      | :-----   | :-----  | :-----                                    |
 | `children`  | `node`   | `null`  | The name of the icon you want to display. |
-| `className` | `String` | `''`    | Custom class name for the component.      |

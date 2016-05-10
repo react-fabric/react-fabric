@@ -1,32 +1,31 @@
 import React from 'react'
 import cx from 'classnames'
-import isFunction from 'lodash/isFunction'
+import elementType from 'react-prop-types/lib/elementType'
 
 import fabricComponent from '../fabricComponent.js'
 
 import style from './Link.scss'
 
-const Link = ({ children, hero, styles, className: baseClassName, ...props }) => {
-  const className = cx(baseClassName, styles['ms-Link'], {
-    [styles['ms-Link--hero']]: hero
-  })
-
-  return isFunction(children) ?
-    children({ className }) :
-    <a {...props}
-      data-fabric="Link"
-      className={className}>
-      { children }
-    </a>
-}
+const Link = ({
+  children,
+  hero,
+  componentClass: Component,
+  ...props
+}) => (
+  <Component {...props}
+    data-fabric="Link"
+    styleName={cx('ms-Link', { ['ms-Link--hero']: hero })}>
+    { children }
+  </Component>
+)
 Link.propTypes = {
-  children: React.PropTypes.oneOfType([
-    React.PropTypes.node,
-    React.PropTypes.func
-  ]),
+  children: React.PropTypes.node,
+  componentClass: elementType,
   hero: React.PropTypes.bool,
-  className: React.PropTypes.string,
   styles: React.PropTypes.object
+}
+Link.defaultProps = {
+  componentClass: 'a'
 }
 
 export default fabricComponent(Link, style)
