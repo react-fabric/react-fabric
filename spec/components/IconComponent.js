@@ -3,7 +3,7 @@ import React from 'react'
 import Icon from '../../src/Icon'
 
 const IconComponent = () => (
-	<section>
+	<section className="icon-section">
 		<h2>Icon</h2>
     <Icon glyph="circleEmpty" />
     <Icon glyph="circleFill" />
