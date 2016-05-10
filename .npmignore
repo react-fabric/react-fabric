@@ -1,0 +1,6 @@
+.*rc
+.eslintignore
+.editorconfig
+server.js
+docs
+spec
