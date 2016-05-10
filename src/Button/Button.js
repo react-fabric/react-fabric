@@ -9,15 +9,16 @@ import style from './Button.scss'
 const BUTTON_TYPES = [
   'command',
   'compound',
-  'hero'
+  'hero',
+  'primary'
 ]
 
-const Button = ({ children, type, description, disabled, submit, glyph, primary, ...props }) => (
+const Button = ({ children, type, description, disabled, submit, glyph, ...props }) => (
   <button {...props}
     type={submit ? 'submit' : 'button'}
     styleName={cx('ms-Button', {
       'is-disabled': disabled,
-      'ms-Button--primary': primary,
+      'ms-Button--primary': type === 'primary',
       [`ms-Button--${type}`]: type,
     })}>
     <span styleName="ms-Button-icon">
@@ -38,7 +39,6 @@ Button.propTypes = {
   disabled: PropTypes.bool,
   glyph: PropTypes.string,
   submit: PropTypes.bool,
-  primary: PropTypes.bool
 }
 
 export default fabricComponent(Button, style)
