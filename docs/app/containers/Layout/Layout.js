@@ -2,6 +2,8 @@ import React from 'react'
 
 import AppBar from '../../components/AppBar'
 
+require('../../global.js')
+
 const Layout = ({ children }) => (
   <div>
     <AppBar />
