@@ -9,14 +9,14 @@ import style from './Home.scss'
 const DUMB_LINK = 'https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0'
 
 const ghEmbedUrl = ({ user, repo, type }) => (
-  `https://ghbtns.com/github-btn.html?user=${user}&amp;repo=${repo}&amp;type=${type}&amp;count=true`
+  `https://ghbtns.com/github-btn.html?user=${user}&repo=${repo}&type=${type}&count=true`
 )
 
 const Home = () => (
   <article styleName="root">
     <header styleName="header">
       <div styleName="sellout">
-        <iframe src={ghEmbedUrl({ user: 'kmees', repo: 'react-fabric', type: 'start' })}
+        <iframe src={ghEmbedUrl({ user: 'kmees', repo: 'react-fabric', type: 'star' })}
           frameBorder="0" scrolling="0" />
         <iframe src={ghEmbedUrl({ user: 'kmees', repo: 'react-fabric', type: 'fork' })}
           frameBorder="0" scrolling="0" />
