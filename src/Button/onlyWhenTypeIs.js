@@ -4,7 +4,7 @@ export default function onlyWhenTypeIs(type, propType) {
   return (propValue, key, componentName, location, propFullName) => {
     const value = propValue[key]
 
-    if (types.includes(propValue.type)) {
+    if (types.indexOf(propValue.type) !== -1) {
       return propType(propValue, key, componentName, location, propFullName)
     }
     if (value !== undefined && value !== null) {

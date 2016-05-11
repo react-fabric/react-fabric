@@ -13,7 +13,7 @@ import style from './NavBar.scss'
 const isFabricComponent = (component = {}, ...componentTypes) => {
   const type = component.type || {}
 
-  return componentTypes.includes(type)
+  return componentTypes.indexOf(type) !== -1
 }
 
 const splitChildren = children => {
