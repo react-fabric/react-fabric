@@ -24,6 +24,7 @@
   "dependencies": {
     "classnames": "^2.2.4",
     "hoist-non-react-statics": "^1.0.5",
+    "lodash.flatten": "^4.2.0",
     "lodash.isfunction": "^3.0.8",
     "react-prop-types": "^0.3.1"
   },
