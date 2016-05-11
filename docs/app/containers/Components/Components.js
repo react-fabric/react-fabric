@@ -17,6 +17,7 @@ const components = [
   'Dialog',
   'Dropdown',
   'Facepile',
+  'Grid',
   'Icon',
   'Label',
   'Link',
