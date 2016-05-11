@@ -1,0 +1,23 @@
+{
+		"app_name": "react-fabric",
+		"branch" : "master",
+		"file": "CHANGELOG.md",
+		"sections": [
+				{
+						"title": "Features",
+						"grep": "^feat"
+				},
+				{
+						"title": "Breaking changes",
+						"grep": "BREAKING"
+				},
+				{
+						"title": "Bug Fixes",
+						"grep": "^fix"
+				},
+				{
+						"title": "Documentation",
+						"grep": "^docs"
+				}
+		]
+}
