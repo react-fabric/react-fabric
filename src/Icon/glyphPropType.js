@@ -14,7 +14,7 @@ import React from 'react'
 //   return match ? match[1] : null
 // }).filter(glyph => !!glyph)
 
-const ALL_GLYPHS = [
+export const ALL_GLYPHS = [
   'circleEmpty',
   'circleFill',
   'placeholder',
