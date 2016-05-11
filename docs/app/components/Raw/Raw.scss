@@ -1,6 +1,8 @@
 @import "~office-ui-fabric/src/sass/_Fabric.Common.scss";
 @import "~office-ui-fabric/src/components/Link/Link.scss";
+@import "~office-ui-fabric/src/components/Table/Table.scss";
 @import "../../mixins";
+@import "../../variables";
 
 .raw {
   h1 {
@@ -49,18 +51,43 @@
     }
   }
 
-  pre {
-    background: $ms-color-neutralLighter;
+  code {
+    padding: 3px;
   }
 
   pre, code {
     font-family: 'source-code-pro', Menlo, Consolas, Monaco, 'Andale Mono', 'Courier New', monospace;
     font-size: 13px;
     line-height: 1.4;
+    background: $ms-color-neutralLighter;
   }
 
-  th, td {
-    padding: 0.66rem 1rem;
+  table {
+    @extend .ms-Table;
+
+    thead tr {
+      &, &:hover { background: $ms-color-orangeLight; }
+      th { color: $ms-color-white; }
+    }
+
+    tbody tr {
+      border-bottom: 1px solid $ms-color-neutralLighter;
+      &:hover {
+        background: inherit;
+      }
+    }
+
+    thead tr, tbody tr {
+      &:hover {
+        cursor: default;
+      }
+    }
+
+    // tbody tr {
+    //   &:nth-child(2n) {
+    //     background: $ms-color-orangeLighterAlt;
+    //   }
+    // }
   }
 }
 

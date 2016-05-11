@@ -1,7 +1,6 @@
 @import "~office-ui-fabric/src/sass/_Fabric.Common.scss";
 @import "../../mixins";
-
-$ms-color-orangeLighterAlt: #feba6d;
+@import "../../variables";
 
 .root {
   display: flex;
