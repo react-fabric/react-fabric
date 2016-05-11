@@ -6,8 +6,8 @@
   "scripts": {
     "start": "better-npm-run start",
     "build": "better-npm-run build",
-    "prepublish": "npm run lint && better-npm-run build",
-    "publish": "better-npm-run publish",
+    "predeploy": "npm run lint && better-npm-run build",
+    "deploy": "better-npm-run deploy",
     "lint": "eslint app"
   },
   "betterScripts": {
@@ -23,7 +23,7 @@
         "NODE_ENV": "production"
       }
     },
-    "publish": {
+    "deploy": {
       "command": "gh-pages -d build"
     }
   },
