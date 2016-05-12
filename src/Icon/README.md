@@ -20,7 +20,7 @@ const Icons = () => (
 
 ## Properties
 
-| Name                  | Type     | Default | Description                                   |
-| :-----                | :-----   | :-----  | :-----                                        |
-| <del>`children`</del> | `null`   | `null`  | This component does not render any `children` |
-| `glyph`               | `String` | `''`    | The name of the icon you want to display.     |
+| Name                  | Type     | Default     | Description                                   |
+| :-----                | :-----   | :-----      | :-----                                        |
+| <del>`children`</del> |          |             | This component does not render any `children` |
+| `glyph`               | `String` | `undefined` | The name of the icon you want to display.     |

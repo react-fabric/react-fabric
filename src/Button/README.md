@@ -19,10 +19,11 @@ const Buttons = () => (
 
 ## Properties
 
-| Name          | Type     | Default | Description                                                  |
-| :-----        | :-----   | :-----  | :-----                                                       |
-| `type`        | `'command'`<br/>`'compound'`<br/>`'hero'`<br/>`'primary'` | `null` | Render a specific type of Button. |
-| `submit`      | `bool`   | `false` | When `true` set the type attribute of the button to `submit` |
-| `disabled`    | `bool`   | `false` | When `true` render the button as disabled                    |
-| `description` | `string` | `null`  | Set the decription of the button. Compound Buttons only.     |
-| `glyph`       | `string` | `null`  | Set the icon of the button. Command and Hero Button only.    |
+| Name          | Type     | Default     | Description                                                  |
+| :-----        | :-----   | :-----      | :-----                                                       |
+| `type`        | `'command'`<br/>`'compound'`<br/>`'hero'`<br/>`'primary'` | `undefined` | Render a specific type of Button. |
+| `submit`      | `bool`   | `false`     | When `true` set the type attribute of the button to `submit` |
+| `disabled`    | `bool`   | `false`     | When `true` render the button as disabled                    |
+| `description` | `string` | `undefined` | Set the decription of the button. Compound Buttons only.     |
+| `glyph`       | `string` | `undefined` | Set the icon of the button. Command and Hero Button only.    |
+| `onClick`     | `func`   | `undefined` | Click handler for the Button.                                |

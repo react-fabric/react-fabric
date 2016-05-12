@@ -32,12 +32,12 @@ const AppBar = () => (
 
 ## Properties
 
-| Name         | Type                  | Default | Description                                              |
-| :-----       | :-----                | :-----  | :-----                                                   |
-| `isMenuOpen` | `bool`                | `false` | Set this to true/false to open/close the mobile menu.    |
-| `openMenu`   | `func`                | `null`  | Function callback when the mobile menu should be opened. |
-| `closeMenu`  | `func`                | `null`  | Function callback when the mobile menu should be closed. |
-| `children`   | `arrayOf(NavBarItem)` | `null`  | The name of the icon you want to display.                |
+| Name         | Type                  | Default     | Description                                              |
+| :-----       | :-----                | :-----      | :-----                                                   |
+| `isMenuOpen` | `bool`                | `false`     | Set this to true/false to open/close the mobile menu.    |
+| `openMenu`   | `func`                | `undefined` | Function callback when the mobile menu should be opened. |
+| `closeMenu`  | `func`                | `undefined` | Function callback when the mobile menu should be closed. |
+| `children`   | `arrayOf(NavBarItem)` | `undefined` | The name of the icon you want to display.                |
 
 # NavBarItem
 
@@ -59,10 +59,10 @@ const AppBar = () => (
 
 ## Properties
 
-| Name        | Type     | Default | Description                                  |
-| :-----      | :-----   | :-----  | :-----                                       |
-| `children`  | `node`   | `null`  | The name of the icon you want to display.    |
-| `right`     | `bool`   | `false` | Pushes the item to the right of the `NavBar` |
+| Name       | Type   | Default     | Description                                  |
+| :-----     | :----- | :-----      | :-----                                       |
+| `children` | `node` | `undefined` | The name of the icon you want to display.    |
+| `right`    | `bool` | `false`     | Pushes the item to the right of the `NavBar` |
 
 # NavBarLink
 
@@ -82,10 +82,10 @@ const AppBar = () => (
 
 ## Properties
 
-| Name        | Type     | Default | Description                                  |
-| :-----      | :-----   | :-----  | :-----                                       |
-| `children`  | `node`   | `null`  | The name of the icon you want to display.    |
-| `right`     | `bool`   | `false` | Pushes the item to the right of the `NavBar` |
+| Name       | Type   | Default     | Description                                  |
+| :-----     | :----- | :-----      | :-----                                       |
+| `children` | `node` | `undefined` | The name of the icon you want to display.    |
+| `right`    | `bool` | `false`     | Pushes the item to the right of the `NavBar` |
 
 # NavBarTitle
 
@@ -106,6 +106,6 @@ const AppBar = () => (
 
 ## Properties
 
-| Name        | Type     | Default | Description                               |
-| :-----      | :-----   | :-----  | :-----                                    |
-| `children`  | `node`   | `null`  | The name of the icon you want to display. |
+| Name       | Type   | Default     | Description                               |
+| :-----     | :----- | :-----      | :-----                                    |
+| `children` | `node` | `undefined` | The name of the icon you want to display. |

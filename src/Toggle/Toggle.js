@@ -3,24 +3,40 @@ import cx from 'classnames'
 
 import Label from '../Label'
 import fabricComponent from '../fabricComponent.js'
+import invokeWhenNotDisabled from '../util/invokeWhenNotDisabled.js'
 
 import style from './Toggle.scss'
 
-const Toggle = ({ id, name, description, labelOn, labelOff, textLeft, ...props }) => {
+const Toggle = ({
+  checked,
+  defaultChecked,
+  description,
+  disabled,
+  id,
+  labelOff,
+  labelOn,
+  name,
+  onChange,
+  textLeft,
+  ...props
+  }) => {
   const inputId = `Toggle_${id || name || Date.now()}_input`
   const styleName = cx('ms-Toggle', {
+    'is-disabled': disabled,
     'ms-Toggle--textLeft': textLeft
   })
   return (
-    <div styleName={styleName}>
+    <div data-fabric="Toggle" styleName={styleName} id={id}>
       { description && <span styleName="ms-Toggle-description">
         { description }
       </span> }
-      <input {...props}
+      <input {...props} type="checkbox"
         styleName="ms-Toggle-input"
-        type="checkbox"
+        name={name}
         id={inputId}
-        name={name} />
+        checked={checked}
+        defaultChecked={defaultChecked}
+        onChange={invokeWhenNotDisabled(disabled, onChange)} />
       <label styleName="ms-Toggle-field" htmlFor={inputId}>
         <Label styleName="ms-Label ms-Label--off"
           componentClass="span">
@@ -35,14 +51,19 @@ const Toggle = ({ id, name, description, labelOn, labelOff, textLeft, ...props }
   )
 }
 Toggle.propTypes = {
+  checked: React.PropTypes.bool,
+  defaultChecked: React.PropTypes.bool,
   description: React.PropTypes.string,
+  disabled: React.PropTypes.bool,
   id: React.PropTypes.string,
   labelOff: React.PropTypes.string,
   labelOn: React.PropTypes.string,
   name: React.PropTypes.string,
+  onChange: React.PropTypes.func,
   textLeft: React.PropTypes.bool
 }
 Toggle.defaultProps = {
+  defaultChecked: false,
   labelOff: 'off',
   labelOn: 'on',
   textLeft: false
