@@ -9,6 +9,7 @@ import style from './Toggle.scss'
 
 const Toggle = ({
   checked,
+  className,
   defaultChecked,
   description,
   disabled,
@@ -26,7 +27,10 @@ const Toggle = ({
     'ms-Toggle--textLeft': textLeft
   })
   return (
-    <div data-fabric="Toggle" styleName={styleName} id={id}>
+    <div data-fabric="Toggle"
+      id={id}
+      className={className}
+      styleName={styleName}>
       { description && <span styleName="ms-Toggle-description">
         { description }
       </span> }
@@ -52,6 +56,7 @@ const Toggle = ({
 }
 Toggle.propTypes = {
   checked: React.PropTypes.bool,
+  className: React.PropTypes.string,
   defaultChecked: React.PropTypes.bool,
   description: React.PropTypes.string,
   disabled: React.PropTypes.bool,
