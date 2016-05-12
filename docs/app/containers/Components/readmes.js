@@ -1,5 +1,6 @@
 export Button from 'react-fabric/Button/README.md'
 export ChoiceField from 'react-fabric/ChoiceField/README.md'
+export ChoiceFieldGroup from 'react-fabric/ChoiceFieldGroup/README.md'
 export Grid from 'react-fabric/Grid/README.md'
 export Icon from 'react-fabric/Icon/README.md'
 export Label from 'react-fabric/Label/README.md'

@@ -11,6 +11,7 @@ const components = [
   'Button',
   'Callout',
   'ChoiceField',
+  'ChoiceFieldGroup',
   'CommandBar',
   'ContextualMenu',
   'DatePicker',
