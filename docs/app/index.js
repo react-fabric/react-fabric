@@ -9,7 +9,7 @@ import { Components, GettingStarted, Home, Layout } from './containers'
 
 require('./global.scss')
 
-const logPageviewInGA = () => {
+function logPageviewInGA() {
   ga('send', 'pageview', this.state.location.pathname)
 }
 
