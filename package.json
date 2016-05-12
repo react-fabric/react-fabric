@@ -2,7 +2,7 @@
   "name": "react-fabric",
   "description": "Office UI Fabric components built with React and CSS Modules",
   "homepage": "http://kmees.github.io/react-fabric",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "main": "lib/index.js",
   "author": {
     "name": "Kevin Mees",
