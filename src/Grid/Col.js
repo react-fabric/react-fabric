@@ -13,13 +13,16 @@ const sizeKeys = flatten(sizeNames.map(name => [
 ]))
 
 const Col = ({ children, ...props }) => {
-  const sizeStyles = sizeKeys.reduce((res, key) => ({
-    ...res,
-    [`ms-u-${key}${props[key]}`]: !!props[key]
-  }), {})
+  const rest = { ...props }
+  const sizeStyles = { }
+
+  sizeKeys.forEach(key => {
+    sizeStyles[`ms-u-${key}${props[key]}`] = !!props[key]
+    delete rest[key]
+  })
 
   return (
-    <div styleName={cx('ms-Grid-col', sizeStyles)}>
+    <div {...rest} styleName={cx('ms-Grid-col', sizeStyles)}>
       { children }
     </div>
   )

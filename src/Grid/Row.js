@@ -3,8 +3,8 @@ import fabricComponent from 'fabric/decorator'
 
 import style from './Grid.scss'
 
-const Row = ({ children }) => (
-  <div styleName="ms-Grid-row">
+const Row = ({ children, ...props }) => (
+  <div {...props} styleName="ms-Grid-row">
     { children }
   </div>
 )

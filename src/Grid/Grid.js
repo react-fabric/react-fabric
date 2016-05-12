@@ -6,8 +6,8 @@ import style from './Grid.scss'
 import Row from './Row'
 import Col from './Col'
 
-const Grid = ({ children }) => (
-  <div styleName="ms-Grid">
+const Grid = ({ children, ...props }) => (
+  <div {...props} styleName="ms-Grid">
     { children }
   </div>
 )
