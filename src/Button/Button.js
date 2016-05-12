@@ -1,4 +1,4 @@
-import React, { PropTypes } from 'react'
+import React from 'react'
 import cx from 'classnames'
 
 import onlyWhenTypeIs from './onlyWhenTypeIs'
@@ -35,12 +35,12 @@ const Button = ({ children, type, description, disabled, submit, glyph, ...props
   </button>
 )
 Button.propTypes = {
-  children: PropTypes.node,
-  type: PropTypes.oneOf(BUTTON_TYPES),
-  description: onlyWhenTypeIs('compound', PropTypes.node),
-  disabled: PropTypes.bool,
+  children: React.PropTypes.node,
+  type: React.PropTypes.oneOf(BUTTON_TYPES),
+  description: onlyWhenTypeIs('compound', React.PropTypes.node),
+  disabled: React.PropTypes.bool,
   glyph: glyphPropType,
-  submit: PropTypes.bool,
+  submit: React.PropTypes.bool,
 }
 
 export default fabricComponent(Button, style)

@@ -1,4 +1,4 @@
-import React, { PropTypes } from 'react'
+import React from 'react'
 import fabricComponent from 'fabric/decorator'
 
 import style from './Grid.scss'
@@ -12,7 +12,7 @@ const Grid = ({ children }) => (
   </div>
 )
 Grid.propTypes = {
-  children: PropTypes.node
+  children: React.PropTypes.node
 }
 Grid.Row = Row
 Grid.Col = Col

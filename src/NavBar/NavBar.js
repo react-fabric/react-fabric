@@ -1,4 +1,4 @@
-import React, { PropTypes } from 'react'
+import React from 'react'
 import cx from 'classnames'
 
 import Icon from '../Icon'
@@ -37,7 +37,7 @@ const splitChildren = children => {
 @fabricComponent(style)
 class NavBar extends React.Component {
   static propTypes = {
-    title: PropTypes.node,
+    title: React.PropTypes.node,
     children: React.PropTypes.oneOfType([
       React.PropTypes.element,
       React.PropTypes.arrayOf((propValue, key, componentName, location, propFullName) => {
@@ -55,14 +55,14 @@ class NavBar extends React.Component {
         return null
       })
     ]),
-    openMenu: PropTypes.func,
-    closeMenu: PropTypes.func,
-    isMenuOpen: PropTypes.bool,
-    styles: PropTypes.object
+    openMenu: React.PropTypes.func,
+    closeMenu: React.PropTypes.func,
+    isMenuOpen: React.PropTypes.bool,
+    styles: React.PropTypes.object
   };
   static defaultProps = {
     isMenuOpen: false,
-  }
+  };
 
   _closeMenu() {
     const { closeMenu, isMenuOpen } = this.props
