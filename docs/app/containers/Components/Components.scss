@@ -32,4 +32,12 @@
   }
 }
 
+.raw {
+  h1 {
+    margin: 1.33em 0 0.67em 0;
 
+    &:first-child {
+      margin-top: 0.67em;
+    }
+  }
+}

@@ -57,7 +57,7 @@ const Components = ({ params: { componentName } }) => {
         <ComponentList list={components} />
       </navigation>
       <div styleName="content">
-        <Raw html={component.readme || indexHtml} />
+        <Raw styleName="raw" html={component.readme || indexHtml} />
       </div>
     </div>
   )
