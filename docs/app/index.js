@@ -2,8 +2,9 @@
 
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { Router, Route, useRouterHistory } from 'react-router'
+import { Router, Route, useRouterHistory, applyRouterMiddleware } from 'react-router'
 import createHashHistory from 'history/lib/createHashHistory'
+import useScroll from 'react-router-scroll'
 
 import { Components, GettingStarted, Home, Layout } from './containers'
 
@@ -15,7 +16,8 @@ function logPageviewInGA() {
 
 ReactDOM.render((
   <Router history={useRouterHistory(createHashHistory)({ queryKey: false })}
-    onUpdate={logPageviewInGA}>
+    onUpdate={logPageviewInGA}
+    render={applyRouterMiddleware(useScroll())}>
     <Route path="/" component={Home} />
     <Route component={Layout}>
       <Route path="/getting-started" component={GettingStarted} />
