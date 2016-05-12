@@ -1,6 +1,7 @@
 export Button from 'react-fabric/Button/README.md'
 export Grid from 'react-fabric/Grid/README.md'
 export Icon from 'react-fabric/Icon/README.md'
+export Label from 'react-fabric/Label/README.md'
 export Link from 'react-fabric/Link/README.md'
 export NavBar from 'react-fabric/NavBar/README.md'
 export TextField from 'react-fabric/TextField/README.md'
