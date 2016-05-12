@@ -1,10 +1,10 @@
 import React from 'react'
-import fabricComponent from 'fabric/decorator'
-
-import style from './Grid.scss'
 
 import Row from './Row'
 import Col from './Col'
+import fabricComponent from '../fabricComponent.js'
+
+import style from './Grid.scss'
 
 const Grid = ({ children, ...props }) => (
   <div {...props} styleName="ms-Grid">

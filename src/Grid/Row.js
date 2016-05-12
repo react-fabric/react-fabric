@@ -1,5 +1,6 @@
 import React from 'react'
-import fabricComponent from 'fabric/decorator'
+
+import fabricComponent from '../fabricComponent.js'
 
 import style from './Grid.scss'
 
