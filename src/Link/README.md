@@ -19,6 +19,6 @@ const Navigation = () => (
 
 | Name             | Type             | Default | Description                          |
 | :-----           | :-----           | :-----  | :-----                               |
-| `componentClass` | [elementType][1] | `'a'`     | Custom component used for rendering. |
+| `componentClass` | [elementType][1] | `'a'`   | Custom component used for rendering. |
 
 [1]: https://github.com/react-bootstrap/react-prop-types#elementtype

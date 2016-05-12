@@ -34,10 +34,10 @@ const AppBar = () => (
 
 | Name         | Type                  | Default     | Description                                              |
 | :-----       | :-----                | :-----      | :-----                                                   |
+| `children`   | `arrayOf(NavBarItem)` | `undefined` | The name of the icon you want to display.                |
+| `closeMenu`  | `func`                | `undefined` | Function callback when the mobile menu should be closed. |
 | `isMenuOpen` | `bool`                | `false`     | Set this to true/false to open/close the mobile menu.    |
 | `openMenu`   | `func`                | `undefined` | Function callback when the mobile menu should be opened. |
-| `closeMenu`  | `func`                | `undefined` | Function callback when the mobile menu should be closed. |
-| `children`   | `arrayOf(NavBarItem)` | `undefined` | The name of the icon you want to display.                |
 
 # NavBarItem
 
