@@ -1,0 +1,8 @@
+@import "~office-ui-fabric/src/sass/_Fabric.Common.scss";
+@import "~office-ui-fabric/src/components/Toggle/Toggle.scss";
+
+.ms-Toggle.ms-Toggle--textLeft {
+  .ms-Toggle-description {
+    top: 0;
+  }
+}
