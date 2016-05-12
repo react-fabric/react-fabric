@@ -5,6 +5,7 @@ import onlyWhenTypeIs from './onlyWhenTypeIs'
 import Icon from '../Icon'
 import glyphPropType from '../Icon/glyphPropType.js'
 import fabricComponent from '../fabricComponent.js'
+import invokeWhenNotDisabled from '../util/invokeWhenNotDisabled.js'
 
 import style from './Button.scss'
 
@@ -15,14 +16,15 @@ const BUTTON_TYPES = [
   'primary'
 ]
 
-const Button = ({ children, type, description, disabled, submit, glyph, ...props }) => (
+const Button = ({ children, type, description, disabled, submit, glyph, onClick, ...props }) => (
   <button {...props}
-    type={submit ? 'submit' : 'button'}
     styleName={cx('ms-Button', {
       'is-disabled': disabled,
       'ms-Button--primary': type === 'primary',
       [`ms-Button--${type}`]: type,
-    })}>
+    })}
+    type={submit ? 'submit' : 'button'}
+    onClick={invokeWhenNotDisabled(disabled, onClick)}>
     <span styleName="ms-Button-icon">
       { glyph && <Icon styleName="ms-Icon" glyph={glyph} /> }
     </span>
@@ -36,11 +38,12 @@ const Button = ({ children, type, description, disabled, submit, glyph, ...props
 )
 Button.propTypes = {
   children: React.PropTypes.node,
-  type: React.PropTypes.oneOf(BUTTON_TYPES),
   description: onlyWhenTypeIs('compound', React.PropTypes.node),
   disabled: React.PropTypes.bool,
   glyph: glyphPropType,
+  onClick: React.PropTypes.func,
   submit: React.PropTypes.bool,
+  type: React.PropTypes.oneOf(BUTTON_TYPES),
 }
 
 export default fabricComponent(Button, style)
