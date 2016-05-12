@@ -34,7 +34,7 @@ const Toggle = ({
         styleName="ms-Toggle-input"
         name={name}
         id={inputId}
-        checked={checked}
+        checked={typeof checked === 'boolean' ? checked : defaultChecked}
         defaultChecked={defaultChecked}
         onChange={invokeWhenNotDisabled(disabled, onChange)} />
       <label styleName="ms-Toggle-field" htmlFor={inputId}>
