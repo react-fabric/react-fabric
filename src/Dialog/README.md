@@ -1,11 +1,40 @@
 # Dialog
 
+The Dialog component wraps its chilren in a dialog. Accepts arbitrary React elements as children but
+the [DialogTitle](#dialogtitle), [DialogSubtext](#dialogsubtext) and [DialogAction](#dialogaction) components
+have a special semantic when rendered.
+
 <a href="http://dev.office.com/fabric/components/Dialog" target="_blank">View Office Fabric UI docs</a>
 
 ```jsx
 import Dialog from 'react-fabric/lib/Dialog';
+// or import Dialog, { DialogTitle, DialogAction, DialogSubtext };
 
-// TODO...
+class DialogComponent extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      isHidden: true
+    };
+  }
+
+  _show() { this.setState({ isHidden: false }) }
+  _hide() { this.setState({ isHidden: true }) }
+
+  render() {
+    return (
+        <Dialog closeable
+          onClose={::this._hide}
+          hidden={this.state.isHidden}
+          <Dialog.Title>My Dialog</Dialog.Title>
+          <Dialog.Subtext>Click overlay or close button to close</Dialog.Subtext>
+          <Dialog.Action type="primary" onClick={::this._hide}>Ok</Dialog.Action>
+          <Dialog.Action onClick={::this._hide}>Cancel</Dialog.Action>
+        </Dialog>
+      </section>
+    );
+  }
+}
 ```
 
 ## Properties
@@ -19,7 +48,7 @@ import Dialog from 'react-fabric/lib/Dialog';
 
 # DialogTitle
 
-Use this component to set the title of the dialog.
+Use this component to set the title of the dialog. Only one is allowed, additional `DialogTitle` components are ignored.
 
 # DialogSubtext
 

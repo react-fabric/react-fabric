@@ -11,16 +11,18 @@ import fabricComponent, { isFabricComponent } from '../fabricComponent'
 
 import style from './Dialog.scss'
 
+const DEFAULT_TITLE = <DialogTitle>Dialog</DialogTitle>
+
 const scanChildren = children => React.Children.toArray(children).reduce((r, child) => {
   if (isFabricComponent(child, DialogTitle)) {
-    r.title = child // eslint-disable-line no-param-reassign
+    r.title = r.title === DEFAULT_TITLE ? child : r.title // eslint-disable-line no-param-reassign
   } else if (isFabricComponent(child, DialogAction)) {
     r.actions.push(child)
   } else {
     r.content.push(child)
   }
   return r
-}, { title: null, content: [], actions: [] })
+}, { title: DEFAULT_TITLE, content: [], actions: [] })
 
 const Dialog = ({
   children,
