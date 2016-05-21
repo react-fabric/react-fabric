@@ -4,15 +4,18 @@ import fabricComponent from '../fabricComponent.js'
 
 import style from './Dialog.scss'
 
-const DialogTitle = ({ children }) => (
-  <div styleName="ms-Dialog-header">
+const DialogTitle = ({ children, className, ...props }) => (
+  <div {...props}
+    styleName="ms-Dialog-header"
+    className={className}>
     <p styleName="ms-Dialog-title">
       { children }
     </p>
   </div>
 )
 DialogTitle.propTypes = {
-  children: React.PropTypes.node
+  children: React.PropTypes.node,
+  className: React.PropTypes.string
 }
 
 

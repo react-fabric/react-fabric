@@ -61,7 +61,6 @@ const AppBar = () => (
 
 | Name       | Type   | Default     | Description                                  |
 | :-----     | :----- | :-----      | :-----                                       |
-| `children` | `node` | `undefined` | The name of the icon you want to display.    |
 | `right`    | `bool` | `false`     | Pushes the item to the right of the `NavBar` |
 
 # NavBarLink
@@ -84,7 +83,6 @@ const AppBar = () => (
 
 | Name       | Type   | Default     | Description                                  |
 | :-----     | :----- | :-----      | :-----                                       |
-| `children` | `node` | `undefined` | The name of the icon you want to display.    |
 | `right`    | `bool` | `false`     | Pushes the item to the right of the `NavBar` |
 
 # NavBarTitle
@@ -103,9 +101,3 @@ const AppBar = () => (
   </NavBar>
 );
 ```
-
-## Properties
-
-| Name       | Type   | Default     | Description                               |
-| :-----     | :----- | :-----      | :-----                                    |
-| `children` | `node` | `undefined` | The name of the icon you want to display. |

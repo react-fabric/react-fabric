@@ -60,7 +60,6 @@ const Dialog = ({
   )
 }
 Dialog.propTypes = {
-  actions: React.PropTypes.node,
   children: React.PropTypes.node,
   className: React.PropTypes.string,
   closeable: React.PropTypes.bool,
