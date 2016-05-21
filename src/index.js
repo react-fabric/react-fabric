@@ -6,6 +6,7 @@ export Icon from './Icon'
 export Label from './Label'
 export Link from './Link'
 export NavBar from './NavBar'
+export Overlay from './Overlay'
 export TextField from './TextField'
 export Toggle from './Toggle'
 
