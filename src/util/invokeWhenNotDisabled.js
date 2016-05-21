@@ -1,4 +1,4 @@
-import isFunction from 'lodash.isFunction'
+import isFunction from 'lodash.isfunction'
 
 export default function invokeWhenNotDisabled(disabled, fn) {
   return (...args) => {
