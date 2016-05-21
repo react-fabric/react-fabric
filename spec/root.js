@@ -4,6 +4,7 @@ import cssm from 'react-css-modules'
 import IconComponent from './components/IconComponent.js'
 import LinkComponent from './components/LinkComponent.js'
 import ButtonComponent from './components/ButtonComponent.js'
+import DialogComponent from './components/DialogComponent.js'
 
 import style from './style'
 
@@ -31,6 +32,7 @@ const Root = () => (
     <IconComponent />
     <LinkComponent />
     <ButtonComponent />
+    <DialogComponent />
   </div>
 )
 
