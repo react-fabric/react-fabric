@@ -7,8 +7,8 @@ const ButtonComponent = () => (
     <h2>Button</h2>
     <div>
       <Button>Default</Button>
-      <Button primary>Primary</Button>
-      <Button>Disabled</Button>
+      <Button type="primary">Primary</Button>
+      <Button disabled>Disabled</Button>
     </div>
     <div>
       <Button type="command" glyph="star">Command</Button>
