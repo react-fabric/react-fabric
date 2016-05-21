@@ -6,33 +6,19 @@ import NavBarItem from './NavBarItem.js'
 import NavBarLink from './NavBarLink.js'
 import NavBarTitle from './NavBarTitle.js'
 
-import fabricComponent from '../fabricComponent.js'
+import fabricComponent, { isFabricComponent } from '../fabricComponent.js'
 
 import style from './NavBar.scss'
 
-const isFabricComponent = (component = {}, ...componentTypes) => {
-  const type = component.type || {}
-
-  return componentTypes.indexOf(type) !== -1
-}
-
-const splitChildren = children => {
-  const split = {
-    title: null,
-    items: []
+const scanChildren = children => React.Children.toArray(children).map((r, child) => {
+  if (isFabricComponent(child, NavBarItem, NavBarLink)) {
+    r.items.push(child)
   }
-
-  React.Children.forEach(children, child => {
-    if (isFabricComponent(child, NavBarItem, NavBarLink)) {
-      split.items.push(child)
-    }
-    if (isFabricComponent(child, NavBarTitle)) {
-      split.title = child
-    }
-  })
-
-  return split
-}
+  if (isFabricComponent(child, NavBarTitle)) {
+    r.title = child // eslint-disable-line no-param-reassign
+  }
+  return r
+}, { title: null, items: [] })
 
 @fabricComponent(style)
 class NavBar extends React.Component {
@@ -80,7 +66,7 @@ class NavBar extends React.Component {
 
   render() {
     const { children, isMenuOpen, ...props } = this.props
-    const { title, items } = splitChildren(children)
+    const { title, items } = scanChildren(children)
 
     return (
       <div data-fabric="NavBar" {...props}

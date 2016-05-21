@@ -41,3 +41,10 @@ const decorator = (...args) => Component => higherOrderFunction(Component, ...ar
 export default (...args) => (
   isFunction(args[0]) ? higherOrderFunction(...args) : decorator(...args)
 )
+
+export const isFabricComponent = (component = {}, ...componentTypes) => {
+  const type = component.type || {}
+
+  return componentTypes.indexOf(type) !== -1
+}
+
