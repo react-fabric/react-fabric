@@ -9,36 +9,42 @@ import fabricComponent from '../fabricComponent.js'
 
 import style from './Dropdown.scss'
 
+const valuePropType = React.PropTypes.oneOfType([
+  React.PropTypes.number,
+  React.PropTypes.string
+])
+
 @fabricComponent(style)
 class Dropdown extends React.Component {
   static propTypes = {
     active: React.PropTypes.bool,
     className: React.PropTypes.string,
+    defaultValue: valuePropType,
     disabled: React.PropTypes.bool,
-    initialValue: React.PropTypes.oneOfType([
-      React.PropTypes.number,
-      React.PropTypes.string
-    ]),
+    id: React.PropTypes.string,
     label: React.PropTypes.node,
     name: React.PropTypes.string,
     onBlur: React.PropTypes.func,
     onChange: React.PropTypes.func,
     onFocus: React.PropTypes.func,
+    options: React.PropTypes.arrayOf(
+      React.PropTypes.shape({
+        label: React.PropTypes.string,
+        value: valuePropType
+      })
+    ).isRequired,
     placeholder: React.PropTypes.string,
     required: React.PropTypes.bool,
-    options: React.PropTypes.array.isRequired,
     textLeft: React.PropTypes.bool,
-    value: React.PropTypes.oneOfType([
-      React.PropTypes.number,
-      React.PropTypes.string
-    ])
+    value: valuePropType
   };
 
   static defaultProps = {
     active: false,
     disabled: false,
     required: false,
-    textLeft: false
+    textLeft: false,
+    options: []
   };
 
   componentWillUpdate(nextProps) {
@@ -60,10 +66,10 @@ class Dropdown extends React.Component {
   }
 
   getSelectedOption = () => {
-    const { options, value, initialValue } = this.props
+    const { options, value, defaultValue } = this.props
 
     for (const option of options) {
-      if (option.value === (value === undefined ? initialValue : value)) {
+      if (option.value === (value === undefined ? defaultValue : value)) {
         return option
       }
     }
@@ -121,9 +127,11 @@ class Dropdown extends React.Component {
       disabled,
       label,
       name,
+      onFocus,
       options,
       placeholder,
-      required
+      required,
+      ...props
     } = this.props
 
     const selected = this.getSelectedOption()
@@ -135,9 +143,16 @@ class Dropdown extends React.Component {
 
     return (
       <div data-fabric="Dropdown"
+        {...props}
+        onFocus={null}
+        onBlur={null}
         styleName={styleName}
         className={className}>
-        { label && <Label styleName="ms-Label" required={required} disabled={disabled}>
+        { label && <Label styleName="ms-Label"
+          htmlFor=""
+          onClick={onFocus}
+          required={required}
+          disabled={disabled}>
           { label }
         </Label> }
         <div styleName="ms-Dropdown-inner">
