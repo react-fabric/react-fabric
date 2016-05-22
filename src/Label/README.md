@@ -15,7 +15,7 @@ import Label from 'react-fabric/lib/Label';
 | `componentClass` | [elementType][1] | `'label'`   | Custom component used for rendering.               |
 | `disabled`       | `bool`           | `false`     | When `true` render the button as disabled.         |
 | `htmlFor`        | `string`         | `undefined` | Set to the `id` of an input to bind them together. |
-| `onClick`        | `func`           | `undefined` | Custom click handler for the Label.                |
+| `onClick`        | `func(event)`    | `undefined` | Custom click handler for the Label.                |
 | `required`       | `bool`           | `false`     | Set to `true` to mark the component as required.   |
 
 [1]: https://github.com/react-bootstrap/react-prop-types#elementtype
