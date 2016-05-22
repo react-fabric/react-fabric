@@ -1,10 +1,11 @@
 import React from 'react'
 import cssm from 'react-css-modules'
 
-import IconComponent from './components/IconComponent.js'
-import LinkComponent from './components/LinkComponent.js'
-import ButtonComponent from './components/ButtonComponent.js'
-import DialogComponent from './components/DialogComponent.js'
+import ButtonSection from './sections/ButtonSection.js'
+import DialogSection from './sections/DialogSection.js'
+import DropdownSection from './sections/DropdownSection.js'
+import IconSection from './sections/IconSection.js'
+import LinkSection from './sections/LinkSection.js'
 
 import style from './style'
 
@@ -29,10 +30,11 @@ import style from './style'
 const Root = () => (
   <div>
     <h1>react-fabric@{VERSION}</h1>
-    <IconComponent />
-    <LinkComponent />
-    <ButtonComponent />
-    <DialogComponent />
+    <ButtonSection />
+    <DialogSection />
+    <DropdownSection />
+    <IconSection />
+    <LinkSection />
   </div>
 )
 
