@@ -1,0 +1,20 @@
+@import "~office-ui-fabric/src/sass/_Fabric.Common.scss";
+@import "~office-ui-fabric/src/components/Dropdown/Dropdown.scss";
+
+.ms-Dropdown-inner {
+	position: relative;
+}
+
+.ms-Dropdown.ms-Dropdown--textLeft {
+	.ms-Label {
+		width: 167px; // vertically align with toggle
+		vertical-align: top;
+		line-height: 22px;
+	}
+	.ms-Dropdown-inner {
+		min-width: 150px;
+	}
+	.ms-Label, .ms-Dropdown-inner {
+		display: inline-block;
+	}
+}
