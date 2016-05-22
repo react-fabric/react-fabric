@@ -26,7 +26,6 @@ const scanChildren = children => React.Children.toArray(children).reduce((r, chi
 
 const Dialog = ({
   children,
-  className,
   closeable,
   darkOverlay,
   hidden,
@@ -41,8 +40,7 @@ const Dialog = ({
       styleName={cx('ms-Dialog', {
         'ms-Dialog--close': closeable,
         'ms-Dialog--hidden': hidden
-      })}
-      className={className}>
+      })}>
       <Overlay styleName="ms-Overlay" dark={darkOverlay} onClick={closeable ? onClose : null} />
       <div styleName="ms-Dialog-main">
         { closeable && <DialogButton close onClick={onClose} /> }
@@ -63,7 +61,6 @@ const Dialog = ({
 }
 Dialog.propTypes = {
   children: React.PropTypes.node,
-  className: React.PropTypes.string,
   closeable: React.PropTypes.bool,
   darkOverlay: React.PropTypes.bool,
   hidden: React.PropTypes.bool,

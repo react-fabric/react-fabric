@@ -6,7 +6,7 @@ import fabricComponent from '../fabricComponent.js'
 import style from './ChoiceField.scss'
 
 const ChoiceField = ({
-  children, className, disabled, groupId, id, label, name, required, type, ...props
+  className, disabled, groupId, id, label, name, required, type, ...props
 }) => {
   const groupIdSuffix = typeof idx === 'undefined' ? '' : `[${groupId}]`
   const inputId = `ChoiceField_${id || name || Date.now()}${groupIdSuffix}_input`
@@ -14,8 +14,8 @@ const ChoiceField = ({
   return (
     <div data-fabric="ChoiceField"
       id={id}
-      styleName="ms-ChoiceField"
-      className={className}>
+      className={className}
+      styleName="ms-ChoiceField">
       <input {...props}
         id={inputId}
         name={name}
@@ -25,14 +25,12 @@ const ChoiceField = ({
       <label styleName="ms-ChoiceField-field"
         htmlFor={inputId}>
         <Label componentClass="span" styleName="ms-Label" required={required}>{label}</Label>
-        { children }
       </label>
     </div>
   )
 }
 ChoiceField.propTypes = {
   checked: React.PropTypes.bool,
-  children: React.PropTypes.node,
   className: React.PropTypes.string,
   defaultChecked: React.PropTypes.bool,
   disabled: React.PropTypes.bool,

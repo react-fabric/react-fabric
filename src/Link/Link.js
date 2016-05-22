@@ -10,8 +10,8 @@ const Link = ({
   componentClass: Component,
   ...props
 }) => (
-  <Component {...props}
-    data-fabric="Link"
+  <Component data-fabric="Link"
+    {...props}
     styleName={'ms-Link'}>
     { children }
   </Component>

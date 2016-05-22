@@ -32,8 +32,8 @@ const createChoices = ({ name, children }) => React.Children.map(children, (chil
 const ChoiceFieldGroup = ({
   children, name, required, title, ...props
 }) => (
-  <div {...props}
-    data-fabric="ChoiceFieldGroup"
+  <div data-fabric="ChoiceFieldGroup"
+    {...props}
     styleName="ms-ChoiceFieldGroup">
     <div>
       { title && <Label required={required}>{title}</Label> }
@@ -43,6 +43,7 @@ const ChoiceFieldGroup = ({
 )
 ChoiceFieldGroup.propTypes = {
   children: React.PropTypes.node,
+  className: React.PropTypes.string,
   name: React.PropTypes.string.isRequired,
   required: React.PropTypes.bool,
   title: React.PropTypes.string

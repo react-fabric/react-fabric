@@ -9,7 +9,6 @@ import style from './Label.scss'
 
 const Label = ({
   children,
-  className,
   componentClass: ComponentClass,
   disabled,
   htmlFor,
@@ -21,7 +20,6 @@ const Label = ({
     {...props}
     htmlFor={htmlFor}
     onClick={invokeWhenNotDisabled(disabled, onClick)}
-    className={className}
     styleName={cx('ms-Label', {
       'is-required': required,
       'is-disabled': disabled
@@ -31,7 +29,6 @@ const Label = ({
 )
 Label.propTypes = {
   children: React.PropTypes.node,
-  className: React.PropTypes.string,
   componentClass: elementType,
   disabled: React.PropTypes.bool,
   htmlFor: React.PropTypes.string,

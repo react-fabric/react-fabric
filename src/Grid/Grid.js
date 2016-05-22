@@ -7,7 +7,9 @@ import fabricComponent from '../fabricComponent.js'
 import style from './Grid.scss'
 
 const Grid = ({ children, ...props }) => (
-  <div {...props} styleName="ms-Grid">
+  <div data-fabric="Grid"
+    {...props}
+    styleName="ms-Grid">
     { children }
   </div>
 )

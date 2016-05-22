@@ -18,7 +18,6 @@ const valuePropType = React.PropTypes.oneOfType([
 class Dropdown extends React.Component {
   static propTypes = {
     active: React.PropTypes.bool,
-    className: React.PropTypes.string,
     defaultValue: valuePropType,
     disabled: React.PropTypes.bool,
     id: React.PropTypes.string,
@@ -123,7 +122,6 @@ class Dropdown extends React.Component {
 
   render() {
     const {
-      className,
       disabled,
       label,
       name,
@@ -146,8 +144,7 @@ class Dropdown extends React.Component {
         {...props}
         onFocus={null}
         onBlur={null}
-        styleName={styleName}
-        className={className}>
+        styleName={styleName}>
         { label && <Label styleName="ms-Label"
           htmlFor=""
           onClick={onFocus}

@@ -7,8 +7,8 @@ import fabricComponent from '../fabricComponent.js'
 import style from './Icon.scss'
 
 const Icon = ({ glyph, ...props }) => (
-  <i {...props}
-    data-fabric="Icon"
+  <i data-fabric="Icon"
+    {...props}
     styleName={cx('ms-Icon', `ms-Icon--${glyph}`)} />
 )
 Icon.propTypes = {

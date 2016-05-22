@@ -16,8 +16,18 @@ const BUTTON_TYPES = [
   'primary'
 ]
 
-const Button = ({ children, type, description, disabled, submit, glyph, onClick, ...props }) => (
-  <button {...props}
+const Button = ({
+  children,
+  description,
+  disabled,
+  glyph,
+  onClick,
+  submit,
+  type,
+    ...props
+}) => (
+  <button data-fabric="Button"
+    {...props}
     styleName={cx('ms-Button', {
       'is-disabled': disabled,
       'ms-Button--primary': type === 'primary',
