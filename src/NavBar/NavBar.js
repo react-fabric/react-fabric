@@ -10,7 +10,7 @@ import fabricComponent, { isFabricComponent } from '../fabricComponent.js'
 
 import style from './NavBar.scss'
 
-const scanChildren = children => React.Children.toArray(children).map((r, child) => {
+const scanChildren = children => React.Children.toArray(children).reduce((r, child) => {
   if (isFabricComponent(child, NavBarItem, NavBarLink)) {
     r.items.push(child)
   }
