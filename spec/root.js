@@ -2,6 +2,7 @@ import React from 'react'
 import cssm from 'react-css-modules'
 
 import ButtonSection from './sections/ButtonSection.js'
+import ChoiceFieldSection from './sections/ChoiceFieldSection.js'
 import DialogSection from './sections/DialogSection.js'
 import DropdownSection from './sections/DropdownSection.js'
 import IconSection from './sections/IconSection.js'
@@ -31,6 +32,7 @@ const Root = () => (
   <div>
     <h1>react-fabric@{VERSION}</h1>
     <ButtonSection />
+    <ChoiceFieldSection />
     <DialogSection />
     <DropdownSection />
     <IconSection />
