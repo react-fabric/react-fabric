@@ -39,11 +39,11 @@ class DialogComponent extends React.Component {
 
 ## Properties
 
-| Name          | Type   | Default     | Description                                                        |
-| :-----        | :----- | :-----      | :-----                                                             |
-| `closeable`   | `bool` | `false`     | Set to `true` render the dialog's close button (top-right corner). |
-| `darkOverlay` | `bool` | `true`      | Set to `true` to show a dark overlay instead of the default one.   |
-| `hidden`      | `bool` | `true`      | Set to `false` to show the dialog.                                 |
+| Name          | Type          | Default     | Description                                                        |
+| :-----        | :-----        | :-----      | :-----                                                             |
+| `closeable`   | `bool`        | `false`     | Set to `true` render the dialog's close button (top-right corner). |
+| `darkOverlay` | `bool`        | `true`      | Set to `true` to show a dark overlay instead of the default one.   |
+| `hidden`      | `bool`        | `true`      | Set to `false` to show the dialog.                                 |
 | `onClose`     | `func(event)` | `undefined` | Function callback when the dialog should be closed.                |
 
 # DialogTitle
