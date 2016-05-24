@@ -10,11 +10,12 @@ import Dropdown from 'react-fabric/lib/Dropdown';
 
 ## Properties
 
+All additional properties, i.e. `onFocus`, `onBlur`, etc. are passed down to the underlying `<input />` element.
+
 | Name                  | Type                             | Default     | Description                                                                |
 | :-----                | :-----                           | :-----      | :-----                                                                     |
 | <del>`children`</del> |                                  |             | This component does not render any `children`.                             |
 | `active`              | `bool`                           | `false`     | Set this to `true` when the input has focus to show the list of options.   |
-| `defaultValue`        | `string`                         | `''`        | Default value of the input.                                                |
 | `disabled`            | `bool`                           | `false`     | Set to `true` to disable the component.                                    |
 | `label`               | `string`                         | `undefined` | Label of the component.                                                    |
 | `name`                | `string`                         | `undefined` | Name of the input component.                                               |

@@ -4,13 +4,13 @@ import cx from 'classnames'
 import Label from '../Label'
 import fabricComponent from '../fabricComponent.js'
 import invokeWhenNotDisabled from '../util/invokeWhenNotDisabled.js'
+import isDefined from '../util/isDefined.js'
 
 import style from './Toggle.scss'
 
 const Toggle = ({
   checked,
   className,
-  defaultChecked,
   description,
   disabled,
   id,
@@ -38,8 +38,7 @@ const Toggle = ({
         styleName="ms-Toggle-input"
         name={name}
         id={inputId}
-        checked={typeof checked === 'boolean' ? checked : defaultChecked}
-        defaultChecked={defaultChecked}
+        checked={isDefined(checked) ? checked : false}
         onChange={invokeWhenNotDisabled(disabled, onChange)} />
       <label styleName="ms-Toggle-field" htmlFor={inputId}>
         <Label styleName="ms-Label ms-Label--off"
@@ -57,7 +56,6 @@ const Toggle = ({
 Toggle.propTypes = {
   checked: React.PropTypes.bool,
   className: React.PropTypes.string,
-  defaultChecked: React.PropTypes.bool,
   description: React.PropTypes.string,
   disabled: React.PropTypes.bool,
   id: React.PropTypes.string,
@@ -68,7 +66,6 @@ Toggle.propTypes = {
   textLeft: React.PropTypes.bool
 }
 Toggle.defaultProps = {
-  defaultChecked: false,
   labelOff: 'off',
   labelOn: 'on',
   textLeft: false

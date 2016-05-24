@@ -18,7 +18,7 @@ const valuePropType = React.PropTypes.oneOfType([
 class Dropdown extends React.Component {
   static propTypes = {
     active: React.PropTypes.bool,
-    defaultValue: valuePropType,
+    className: React.PropTypes.string,
     disabled: React.PropTypes.bool,
     id: React.PropTypes.string,
     label: React.PropTypes.node,
@@ -65,15 +65,9 @@ class Dropdown extends React.Component {
   }
 
   getSelectedOption = () => {
-    const { options, value, defaultValue } = this.props
+    const { options, value } = this.props
 
-    for (const option of options) {
-      if (option.value === (value === undefined ? defaultValue : value)) {
-        return option
-      }
-    }
-
-    return null
+    return options.filter(option => option.value === value)[0]
   }
 
   handleMouseDown = (event) => {
@@ -122,6 +116,7 @@ class Dropdown extends React.Component {
 
   render() {
     const {
+      className,
       disabled,
       label,
       name,
@@ -129,6 +124,7 @@ class Dropdown extends React.Component {
       options,
       placeholder,
       required,
+      value,
       ...props
     } = this.props
 
@@ -141,10 +137,8 @@ class Dropdown extends React.Component {
 
     return (
       <div data-fabric="Dropdown"
-        {...props}
-        onFocus={null}
-        onBlur={null}
-        styleName={styleName}>
+        styleName={styleName}
+        className={className}>
         { label && <Label styleName="ms-Label"
           htmlFor=""
           onClick={onFocus}
@@ -154,18 +148,21 @@ class Dropdown extends React.Component {
         </Label> }
         <div styleName="ms-Dropdown-inner">
           <Icon styleName="ms-Dropdown-caretDown" glyph="caretDown" />
-          <select name={name} styleName="ms-Dropdown-select">
+          <select {...props}
+            styleName="ms-Dropdown-select"
+            name={name}
+            value={value}>
             { options.map((option, i) => (
               <option key={i} value={option.value}>{option.label}</option>
               )) }
-            </select>
-            <span styleName="ms-Dropdown-title" onMouseDown={this.handleMouseDown}>
-              { selected ? selected.label : placeholder }
-            </span>
-            <ul styleName="ms-Dropdown-items">
-              { options.map(::this.renderItem) }
-            </ul>
-          </div>
+          </select>
+          <span styleName="ms-Dropdown-title" onMouseDown={this.handleMouseDown}>
+            { selected ? selected.label : placeholder }
+          </span>
+          <ul styleName="ms-Dropdown-items">
+            { options.map(::this.renderItem) }
+          </ul>
+        </div>
       </div>
     )
   }

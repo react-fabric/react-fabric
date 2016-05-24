@@ -11,7 +11,7 @@ const onChildBlur = child => () => {
   }
 }
 
-const onChoiceChecked = (children, i) => () => {
+const onChoiceChanged = (children, i) => () => {
   React.Children.forEach(children, (child, ci) => {
     if (child && child.props.onChange) {
       child.props.onChange(ci === i)
@@ -24,7 +24,7 @@ const createChoices = ({ name, children }) => React.Children.map(children, (chil
     groupId: i,
     name,
     onBlur: onChildBlur(child),
-    onChange: onChoiceChecked(children, i),
+    onChange: onChoiceChanged(children, i),
     type: 'radio'
   }) : null
 ))

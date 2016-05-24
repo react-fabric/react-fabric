@@ -3,13 +3,13 @@ import cx from 'classnames'
 
 import Label from '../Label'
 import fabricComponent from '../fabricComponent.js'
+import isDefined from '../util/isDefined.js'
 
 import style from './TextField.scss'
 
 const TextField = ({
   active,
   className,
-  defaultValue,
   description,
   disabled,
   id,
@@ -23,15 +23,14 @@ const TextField = ({
   ...props
 }) => {
   const inputId = `TextField_${id || name || Date.now()}_input`
-  const input = React.cloneElement(multiline ? <textarea /> : <input />, {
+  const input = React.createElement(multiline ? 'textarea' : 'input', {
     ...props,
     active,
-    defaultValue,
     disabled,
     id: inputId,
     name,
     styleName: 'ms-TextField-field',
-    value: typeof value === 'string' || value instanceof String ? value : defaultValue
+    value: isDefined(value) ? value : ''
   })
   const showLabel = placeholder ?
     !active && !value : true
@@ -58,7 +57,6 @@ const TextField = ({
 TextField.propTypes = {
   active: React.PropTypes.bool,
   className: React.PropTypes.string,
-  defaultValue: React.PropTypes.string,
   description: React.PropTypes.node,
   disabled: React.PropTypes.bool,
   id: React.PropTypes.string,
@@ -72,7 +70,6 @@ TextField.propTypes = {
 }
 TextField.defaultProps = {
   active: false,
-  defaultValue: '',
   disabled: false,
   multine: false,
   placeholder: false,

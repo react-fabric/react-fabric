@@ -2,11 +2,12 @@ import React from 'react'
 
 import Label from '../Label'
 import fabricComponent from '../fabricComponent.js'
+import isDefined from '../util/isDefined.js'
 
 import style from './ChoiceField.scss'
 
 const ChoiceField = ({
-  className, disabled, groupId, id, label, name, required, type, ...props
+  className, disabled, groupId, id, label, name, required, type, checked, ...props
 }) => {
   const groupIdSuffix = typeof idx === 'undefined' ? '' : `[${groupId}]`
   const inputId = `ChoiceField_${id || name || Date.now()}${groupIdSuffix}_input`
@@ -21,6 +22,7 @@ const ChoiceField = ({
         name={name}
         type={type}
         disabled={disabled}
+        checked={isDefined(checked) ? checked : false}
         styleName="ms-ChoiceField-input" />
       <label styleName="ms-ChoiceField-field"
         htmlFor={inputId}>
@@ -32,7 +34,6 @@ const ChoiceField = ({
 ChoiceField.propTypes = {
   checked: React.PropTypes.bool,
   className: React.PropTypes.string,
-  defaultChecked: React.PropTypes.bool,
   disabled: React.PropTypes.bool,
   groupId: React.PropTypes.oneOfType([
     React.PropTypes.string,
@@ -45,7 +46,6 @@ ChoiceField.propTypes = {
   type: React.PropTypes.oneOf(['radio', 'checkbox']).isRequired
 }
 ChoiceField.defaultProps = {
-  defaultChecked: false,
   disabled: false,
   require: false,
   type: 'checkbox'
