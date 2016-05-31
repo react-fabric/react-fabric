@@ -48,7 +48,7 @@ ChoiceFieldGroup.propTypes = {
   required: React.PropTypes.bool,
   title: React.PropTypes.string
 }
-ChoiceFieldGroup.propTypes = {
+ChoiceFieldGroup.defaultProps = {
   required: false
 }
 
