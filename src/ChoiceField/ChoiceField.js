@@ -9,7 +9,7 @@ import style from './ChoiceField.scss'
 const ChoiceField = ({
   className, disabled, groupId, id, label, name, required, type, checked, ...props
 }) => {
-  const groupIdSuffix = typeof idx === 'undefined' ? '' : `[${groupId}]`
+  const groupIdSuffix = isDefined(groupId) ? `[${groupId}]` : ''
   const inputId = `ChoiceField_${id || name || Date.now()}${groupIdSuffix}_input`
 
   return (
@@ -18,6 +18,7 @@ const ChoiceField = ({
       className={className}
       styleName="ms-ChoiceField">
       <input {...props}
+        children={null}
         id={inputId}
         name={name}
         type={type}
