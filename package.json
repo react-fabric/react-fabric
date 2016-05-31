@@ -101,7 +101,7 @@
   },
   "peerDependencies": {
     "office-ui-fabric": "^2.4.0",
-    "react": "^15.0.0",
-    "react-dom": "^15.0.0"
+    "react": "^0.14 || ^15.0.0",
+    "react-dom": "^0.14 || ^15.0.0"
   }
 }
