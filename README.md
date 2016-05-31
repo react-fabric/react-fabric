@@ -47,7 +47,7 @@ from the `office-ui-fabric` package in a global stylesheet and requiring it in y
 ```scss
 // globals.scss
 @import "~office-ui-fabric/src/sass/Fabric.Typography.Fonts.Output.scss";
-@import "~office-ui-fabric/src/sass/Fabric.Icons.Fonts.Output.scss";
+@import "~office-ui-fabric/src/sass/Fabric.Icons.Font.Output.scss";
 ```
 
 ```jsx
