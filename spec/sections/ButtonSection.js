@@ -2,7 +2,7 @@ import React from 'react'
 
 import Button from '../../src/Button'
 
-const ButtonComponent = () => (
+const ButtonSection = () => (
 	<section className="button-section">
     <h2>Button</h2>
     <div>
@@ -20,4 +20,4 @@ const ButtonComponent = () => (
 	</section>
 )
 
-export default ButtonComponent
+export default ButtonSection

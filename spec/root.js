@@ -7,26 +7,9 @@ import DialogSection from './sections/DialogSection.js'
 import DropdownSection from './sections/DropdownSection.js'
 import IconSection from './sections/IconSection.js'
 import LinkSection from './sections/LinkSection.js'
+import TableSection from './sections/TableSection.js'
 
 import style from './style'
-
-// const FabricProvider = ({ children }) => (
-//   <div>{ children }</div>
-// )
-// FabricProvider.propTypes = {
-//   children: React.PropTypes.any
-// }
-// FabricProvider.childContextTypes = {
-//   fabric: React.PropTypes.object
-// }
-// FabricProvider.getChildContext = () => {
-//   console.log('getChildContext')
-//   return ({
-//     fabric: {
-//       plainClasses: true
-//     }
-//   })
-// }
 
 const Root = () => (
   <div>
@@ -37,6 +20,7 @@ const Root = () => (
     <DropdownSection />
     <IconSection />
     <LinkSection />
+    <TableSection />
   </div>
 )
 

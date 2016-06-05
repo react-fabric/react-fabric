@@ -2,7 +2,7 @@ import React from 'react'
 
 import ChoiceField from '../../src/ChoiceField'
 
-const ButtonComponent = () => (
+const ButtonSection = () => (
 	<section className="choice-field-section">
     <h2>ChoiceField</h2>
     <div>
@@ -12,4 +12,4 @@ const ButtonComponent = () => (
 	</section>
 )
 
-export default ButtonComponent
+export default ButtonSection

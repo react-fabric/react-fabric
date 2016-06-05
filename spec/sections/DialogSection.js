@@ -3,7 +3,7 @@ import React from 'react'
 import Dialog from '../../src/Dialog'
 import Button from '../../src/Button'
 
-class DialogComponent extends React.Component {
+class DialogSection extends React.Component {
   constructor() {
     super()
     this.state = {
@@ -43,4 +43,4 @@ class DialogComponent extends React.Component {
   }
 }
 
-export default DialogComponent
+export default DialogSection

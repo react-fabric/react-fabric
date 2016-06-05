@@ -5,7 +5,7 @@ import { ALL_GLYPHS } from '../../src/Icon/glyphPropType.js'
 
 const glyphs = ALL_GLYPHS.sort().filter(glyph => glyph !== 'circle')
 
-const IconComponent = () => (
+const IconSection = () => (
 	<section className="icon-section">
 		<h2>Icon</h2>
     { glyphs.map(glyph => (
@@ -14,4 +14,4 @@ const IconComponent = () => (
 	</section>
 )
 
-export default IconComponent
+export default IconSection
