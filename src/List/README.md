@@ -18,9 +18,10 @@ const MyList = () => (
 
 ## Properties
 
-| Name             | Type             | Default     | Description                          |
-| :-----           | :-----           | :-----      | :-----                               |
-| `children`       | `ListItem[]`     | `undefined` | List items.                          |
-| `componentClass` | [elementType][1] | `'ul'`      | Custom component used for rendering. |
+| Name             | Type             | Default     | Description                                        |
+| :-----           | :-----           | :-----      | :-----                                             |
+| `children`       | `ListItem[]`     | `undefined` | List items.                                        |
+| `componentClass` | [elementType][1] | `'ul'`      | Custom component used for rendering.               |
+| `selectable`     | `bool`           | `false`     | Set to `true` to set all list items to selectable. |
 
 [1]: https://github.com/react-bootstrap/react-prop-types#elementtype

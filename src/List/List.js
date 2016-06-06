@@ -6,11 +6,13 @@ import fabricComponent from '../fabricComponent.js'
 
 import style from './List.scss'
 
-const List = ({ children, componentClass: Component, ...props }) => (
+const List = ({ children, componentClass: Component, selectable, ...props }) => (
   <Component data-fabric="List"
     {...props}
     styleName="ms-List">
-    { children }
+    { selectable ? React.Children.map(children, child => (
+       React.cloneElement(child, { selectable })
+    )) : children }
   </Component>
 )
 List.propTypes = {
@@ -20,10 +22,12 @@ List.propTypes = {
   //   React.PropTypes.instanceOf(ListItem),
   //   React.PropTypes.arrayOf(React.PropTypes.instanceOf(ListItem))
   // ]),
-  componentClass: elementType
+  componentClass: elementType,
+  selectable: React.PropTypes.bool
 }
 List.defaultProps = {
-  componentClass: 'ul'
+  componentClass: 'ul',
+  selectable: false
 }
 
 export default fabricComponent(List, style)
