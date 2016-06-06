@@ -18,8 +18,7 @@ const Link = ({
 )
 Link.propTypes = {
   children: React.PropTypes.node,
-  componentClass: elementType,
-  styles: React.PropTypes.object
+  componentClass: elementType
 }
 Link.defaultProps = {
   componentClass: 'a'
