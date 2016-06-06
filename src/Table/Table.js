@@ -5,10 +5,9 @@ import fabricComponent from '../fabricComponent.js'
 
 import style from './Table.scss'
 
-const Table = ({ children, className, fixed, ...props }) => (
+const Table = ({ children, fixed, ...props }) => (
   <table data-fabric="Table"
     {...props }
-    className={className}
     styleName={cx('ms-Table', {
       'ms-Table--fixed': fixed,
     })}>
@@ -17,7 +16,6 @@ const Table = ({ children, className, fixed, ...props }) => (
 )
 Table.propTypes = {
   children: React.PropTypes.node,
-  className: React.PropTypes.string,
   fixed: React.PropTypes.bool
 }
 Table.defaultProps = {

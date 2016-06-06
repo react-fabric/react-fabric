@@ -1,7 +1,7 @@
 # Table
 
 Simple Wrapper component for `<table className="ms-Table" />` which should be used to render a simple styled table
-that doesn't need selection. For a Table component that does support selection, see [SelectableTable](/components/SelectableTable)
+that doesn't need selection.
 
 <a href="http://dev.office.com/fabric/components/Table" target="_blank">View Office Fabric UI docs</a>
 
