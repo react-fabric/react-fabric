@@ -1,5 +1,5 @@
 import test from 'tape'
-import fabricComponent from 'fabricComponent'
+import fabricComponent from '../index.js'
 
 test('fabricComponent as a decorator', t => {
   @fabricComponent
