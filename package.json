@@ -51,7 +51,7 @@
     "enzyme": "^2.3.0",
     "eslint": "^2.9.0",
     "eslint-config-airbnb": "^6.2.0",
-    "eslint-config-xi": "^4.1.1",
+    "eslint-config-xi": "^5.0.0",
     "eslint-plugin-react": "^4.2.3",
     "express": "^4.13.4",
     "extract-text-webpack-plugin": "^1.0.1",
