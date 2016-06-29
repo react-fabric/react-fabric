@@ -1,15 +1,15 @@
 export default {
   /* eslint-disable guard-for-in */
   addEventsToDocument(eventMap) {
-    for (const key in eventMap) {
+    Object.keys(eventMap).forEach(key => {
       document.addEventListener(key, eventMap[key], false)
-    }
+    })
   },
 
   removeEventsFromDocument(eventMap) {
-    for (const key in eventMap) {
+    Object.keys(eventMap).forEach(key => {
       document.removeEventListener(key, eventMap[key], false)
-    }
+    })
   },
   /* eslint-enable guard-for-in */
 

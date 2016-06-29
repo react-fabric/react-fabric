@@ -31,8 +31,8 @@ const ListItem = ({
     {...props}
     styleName={cx('ms-ListItem', {
       [`ms-ListItem--${type}`]: !!type,
-      ['is-selectable']: !!selectable,
-      ['is-selected']: !!checked
+      'is-selectable': selectable,
+      'is-selected': !!checked
     })}>
     { image && <div styleName="ms-ListItem-image">{ image }</div> }
     { primaryText && <span styleName="ms-ListItem-primaryText">{ primaryText }</span> }
@@ -40,9 +40,9 @@ const ListItem = ({
     { tertiaryText && <span styleName="ms-ListItem-tertiaryText">{ tertiaryText }</span> }
     { metaText && <span styleName="ms-ListItem-metaText">{ metaText }</span> }
     { itemIcon && <div styleName="ms-ListItem-itemIcon">{ itemIcon }</div> }
-    { selectable && <div
-      styleName="ms-ListItem-selectionTarget"
-      onClick={handleSelectionTargetClick(onChange, checked)} /> }
+    { selectable && <div styleName="ms-ListItem-selectionTarget"
+      onClick={handleSelectionTargetClick(onChange, checked)} />
+    }
     { children && React.Children.count(children) > 0 && <div styleName="ms-ListItem-actions">
       { children }
     </div> }
