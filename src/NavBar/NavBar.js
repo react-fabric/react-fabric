@@ -6,7 +6,7 @@ import NavBarItem from './NavBarItem.js'
 import NavBarLink from './NavBarLink.js'
 import NavBarTitle from './NavBarTitle.js'
 
-import fabricComponent, { isFabricComponent } from '../fabricComponent.js'
+import fabricComponent, { isFabricComponent } from '../fabricComponent'
 
 import style from './NavBar.scss'
 

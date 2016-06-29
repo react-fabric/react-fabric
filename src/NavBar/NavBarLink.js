@@ -2,7 +2,7 @@ import React from 'react'
 import cx from 'classnames'
 
 import NavBarItem from './NavBarItem.js'
-import fabricComponent from '../fabricComponent.js'
+import fabricComponent from '../fabricComponent'
 
 import style from './NavBar.scss'
 

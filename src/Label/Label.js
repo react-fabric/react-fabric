@@ -3,7 +3,7 @@ import cx from 'classnames'
 import elementType from 'react-prop-types/lib/elementType'
 
 import invokeWhenNotDisabled from '../util/invokeWhenNotDisabled.js'
-import fabricComponent from '../fabricComponent.js'
+import fabricComponent from '../fabricComponent'
 
 import style from './Label.scss'
 

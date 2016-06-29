@@ -12,4 +12,4 @@ export Overlay from './Overlay'
 export TextField from './TextField'
 export Toggle from './Toggle'
 
-export fabricComponent from './fabricComponent.js'
+export fabricComponent from './fabricComponent'

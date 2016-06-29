@@ -4,7 +4,7 @@ import cx from 'classnames'
 import onlyWhenTypeIs from './onlyWhenTypeIs'
 import Icon from '../Icon'
 import glyphPropType from '../Icon/glyphPropType.js'
-import fabricComponent from '../fabricComponent.js'
+import fabricComponent from '../fabricComponent'
 import invokeWhenNotDisabled from '../util/invokeWhenNotDisabled.js'
 
 import style from './Button.scss'

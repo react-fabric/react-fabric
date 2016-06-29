@@ -2,7 +2,7 @@ import React from 'react'
 import cx from 'classnames'
 import flatten from 'lodash.flatten'
 
-import fabricComponent from '../fabricComponent.js'
+import fabricComponent from '../fabricComponent'
 import sizePropType from './sizePropType.js'
 
 import style from './Grid.scss'

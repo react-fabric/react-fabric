@@ -4,7 +4,7 @@ import cx from 'classnames'
 import isFunction from 'lodash.isfunction'
 
 import ListItemAction from './ListItemAction.js'
-import fabricComponent from '../fabricComponent.js'
+import fabricComponent from '../fabricComponent'
 
 import style from './ListItem.scss'
 

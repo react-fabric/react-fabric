@@ -2,7 +2,7 @@ import React from 'react'
 
 import Row from './Row'
 import Col from './Col'
-import fabricComponent from '../fabricComponent.js'
+import fabricComponent from '../fabricComponent'
 
 import style from './Grid.scss'
 

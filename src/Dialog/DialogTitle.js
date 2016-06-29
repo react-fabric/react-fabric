@@ -1,6 +1,6 @@
 import React from 'react'
 
-import fabricComponent from '../fabricComponent.js'
+import fabricComponent from '../fabricComponent'
 
 import style from './Dialog.scss'
 

@@ -2,7 +2,7 @@ import React from 'react'
 import cx from 'classnames'
 
 import Icon from '../Icon'
-import fabricComponent from '../fabricComponent.js'
+import fabricComponent from '../fabricComponent'
 
 import style from './Dialog.scss'
 

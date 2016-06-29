@@ -1,7 +1,7 @@
 import React from 'react'
 
 import Label from '../Label'
-import fabricComponent from '../fabricComponent.js'
+import fabricComponent from '../fabricComponent'
 
 import style from '../ChoiceField/ChoiceField.scss'
 

@@ -5,7 +5,7 @@ import cx from 'classnames'
 import Label from '../Label'
 import Icon from '../Icon'
 import events from '../util/events'
-import fabricComponent from '../fabricComponent.js'
+import fabricComponent from '../fabricComponent'
 
 import style from './Dropdown.scss'
 

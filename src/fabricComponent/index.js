@@ -1,18 +1,28 @@
 import React from 'react'
 import cssm from 'react-css-modules'
 import isFunction from 'lodash.isfunction'
+import identity from 'lodash.identity'
 import hoistNonReactStatics from 'hoist-non-react-statics'
 
-const prependPlainClassNames = styles => (
-  Object.keys(styles).reduce((newStyles, style) => {
-    newStyles[style] = `${style} ${styles[style]}` // eslint-disable-line no-param-reassign
+const DEFAULT_CONFIGURATION = {
+  preprocessStyles: identity
+}
 
-    return newStyles
-  }, {})
-)
+let configuration = {
+  ...DEFAULT_CONFIGURATION
+}
 
-const higherOrderFunction = (Component, styles, options = { }) => {
-  const fabricStyles = styles ? prependPlainClassNames(styles) : null
+// TODO: move to readme / docs
+// const prependGlobalClassNames = styles => (
+//   Object.keys(styles).reduce((newStyles, style) => {
+//     newStyles[style] = `${style} ${styles[style]}` // eslint-disable-line no-param-reassign
+//
+//     return newStyles
+//   }, {})
+// )
+
+const higherOrderFunction = (Component, styles = { }, options = { }) => {
+  const fabricStyles = configuration.preprocessStyles(styles)
   const fabricOptions = {
     ...options,
     allowMultiple: true
@@ -48,3 +58,9 @@ export const isFabricComponent = (component = {}, ...componentTypes) => {
   return componentTypes.indexOf(type) !== -1
 }
 
+export function configure(options) {
+  configuration = {
+    ...DEFAULT_CONFIGURATION,
+    options
+  }
+}

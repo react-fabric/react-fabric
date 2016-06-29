@@ -2,7 +2,7 @@ import React from 'react'
 import cx from 'classnames'
 
 import Label from '../Label'
-import fabricComponent from '../fabricComponent.js'
+import fabricComponent from '../fabricComponent'
 import invokeWhenNotDisabled from '../util/invokeWhenNotDisabled.js'
 import isDefined from '../util/isDefined.js'
 

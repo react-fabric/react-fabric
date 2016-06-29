@@ -1,7 +1,7 @@
 import React from 'react'
 
 import Button from '../Button'
-import fabricComponent from '../fabricComponent.js'
+import fabricComponent from '../fabricComponent'
 
 import style from './Dialog.scss'
 

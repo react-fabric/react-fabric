@@ -2,7 +2,7 @@ import React from 'react'
 import elementType from 'react-prop-types/lib/elementType'
 
 // import ListItem from '../ListItem'
-import fabricComponent from '../fabricComponent.js'
+import fabricComponent from '../fabricComponent'
 
 import style from './List.scss'
 
