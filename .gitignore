@@ -2,3 +2,4 @@ lib
 node_modules
 build
 npm-debug.log
+.nyc_output/
