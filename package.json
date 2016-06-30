@@ -79,7 +79,7 @@
   },
   "scripts": {
     "start": "better-npm-run start",
-    "test": "nyc -x bin/* -x **/__tests__ node ./bin/run-tests.js",
+    "test": "nyc -s -x bin/* -x **/__tests__ node ./bin/run-tests.js",
     "pretest": "npm run lint",
     "build": "better-npm-run transpile && better-npm-run copy-sass",
     "prebuild": "npm run lint && better-npm-run clean",
