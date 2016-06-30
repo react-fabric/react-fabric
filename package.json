@@ -79,7 +79,7 @@
   },
   "scripts": {
     "start": "better-npm-run start",
-    "test": "nyc -s -x bin/* -x **/__tests__ node ./bin/run-tests.js",
+    "test": "better-npm-run test",
     "pretest": "npm run lint",
     "build": "better-npm-run transpile && better-npm-run copy-sass",
     "prebuild": "npm run lint && better-npm-run clean",
@@ -105,6 +105,13 @@
       "command": "babel ./src --out-dir ./lib",
       "env": {
         "NODE_ENV": "production"
+      }
+    },
+    "test": {
+      "command": "nyc -s --instrument false --source-map false node ./bin/run-tests.js",
+      "env": {
+        "NODE_ENV": "test",
+        "BABEL_ENV": "test"
       }
     },
     "tdd": {

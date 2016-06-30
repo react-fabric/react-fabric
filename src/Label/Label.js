@@ -27,6 +27,7 @@ const Label = ({
     { children }
   </ComponentClass>
 )
+Label.displayName = 'Label'
 Label.propTypes = {
   children: React.PropTypes.node,
   componentClass: elementType,
