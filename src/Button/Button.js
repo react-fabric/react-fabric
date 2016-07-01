@@ -30,7 +30,6 @@ const Button = ({
     {...props}
     styleName={cx('ms-Button', {
       'is-disabled': disabled,
-      'ms-Button--primary': type === 'primary',
       [`ms-Button--${type}`]: type,
     })}
     type={submit ? 'submit' : 'button'}
@@ -46,6 +45,7 @@ const Button = ({
     </span>
   </button>
 )
+Button.displayName = 'Button'
 Button.propTypes = {
   children: React.PropTypes.node,
   description: onlyWhenTypeIs('compound', React.PropTypes.node),
