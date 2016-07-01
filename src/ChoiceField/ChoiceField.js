@@ -32,6 +32,7 @@ const ChoiceField = ({
     </div>
   )
 }
+ChoiceField.displayName = 'ChoiceField'
 ChoiceField.propTypes = {
   checked: React.PropTypes.bool,
   className: React.PropTypes.string,
