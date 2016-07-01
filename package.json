@@ -103,7 +103,7 @@
       "command": "node ./spec/server.js"
     },
     "transpile": {
-      "command": "babel ./src --out-dir ./lib",
+      "command": "babel ./src --ignore 'src/**/__tests__' --out-dir ./lib",
       "env": {
         "NODE_ENV": "production"
       }
