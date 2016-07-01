@@ -1,5 +1,4 @@
-# react-fabric [![npm](https://img.shields.io/npm/v/react-fabric.svg?style=flat-square)](https://www.npmjs.com/package/react-fabric) [![npm](https://img.shields.io/npm/dt/react-fabric.svg?style=flat-square)](https://www.npmjs.com/package/react-fabric) [![Build Status](http://img.shields.io/travis/kmees/react-fabric.svg?style=flat-square)](https://travis-ci.org/kmees/react-fabric) [![npm](https://img.shields.io/npm/l/react-fabric.svg?style=flat-square)](https://www.npmjs.com/package/react-fabric)
-
+# react-fabric [![npm](https://img.shields.io/npm/v/react-fabric.svg?style=flat-square)](https://www.npmjs.com/package/react-fabric) [![npm](https://img.shields.io/npm/dt/react-fabric.svg?style=flat-square)](https://www.npmjs.com/package/react-fabric) [![Build Status](http://img.shields.io/travis/kmees/react-fabric.svg?style=flat-square)](https://travis-ci.org/kmees/react-fabric) [![Coveralls](https://img.shields.io/coveralls/kmees/react-fabric/development.svg?style=flat-square)](https://coveralls.io/github/kmees/react-fabric) [![npm](https://img.shields.io/npm/l/react-fabric.svg?style=flat-square)](https://www.npmjs.com/package/react-fabric)
 
 react-fabric is a set of [React](http://facebook.github.io/react/) components that wrap the [Office UI Fabric](https://github.com/OfficeDev/Office-UI-Fabric)
 
