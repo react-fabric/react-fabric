@@ -16,6 +16,7 @@ const Link = ({
     { children }
   </Component>
 )
+Link.displayName = 'Link'
 Link.propTypes = {
   children: React.PropTypes.node,
   componentClass: elementType

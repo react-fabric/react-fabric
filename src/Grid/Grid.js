@@ -13,6 +13,7 @@ const Grid = ({ children, ...props }) => (
     { children }
   </div>
 )
+Grid.displayName = 'Grid'
 Grid.propTypes = {
   children: React.PropTypes.node
 }

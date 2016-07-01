@@ -59,6 +59,7 @@ const Dialog = ({
     </div>
   )
 }
+Dialog.displayName = 'Dialog'
 Dialog.propTypes = {
   children: React.PropTypes.node,
   closeable: React.PropTypes.bool,
@@ -76,4 +77,3 @@ Dialog.Action = DialogAction
 Dialog.Title = DialogTitle
 
 export default fabricComponent(Dialog, style)
-

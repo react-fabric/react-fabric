@@ -53,6 +53,7 @@ const Toggle = ({
     </div>
   )
 }
+Toggle.displayName = 'Toggle'
 Toggle.propTypes = {
   checked: React.PropTypes.bool,
   className: React.PropTypes.string,

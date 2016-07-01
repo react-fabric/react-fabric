@@ -13,7 +13,7 @@ test('ChoiceField', t => {
 
 test('ChoiceField#render - simple', t => {
   const container = render(
-    <ChoiceField label="Foo">Foo</ChoiceField>
+    <ChoiceField name="foo" label="Foo">Foo</ChoiceField>
   ).contents()
 
   t.assert(container.is('div.ms-ChoiceField', 'container'))

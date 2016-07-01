@@ -48,6 +48,7 @@ const ListItem = ({
     </div> }
   </Component>
 )
+ListItem.displayName = 'ListItem'
 ListItem.propTypes = {
   children: React.PropTypes.node,
   // TODO Array of ListItemActions

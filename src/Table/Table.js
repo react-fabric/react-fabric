@@ -14,6 +14,7 @@ const Table = ({ children, fixed, ...props }) => (
       { children }
   </table>
 )
+Table.displayName = 'Table'
 Table.propTypes = {
   children: React.PropTypes.node,
   fixed: React.PropTypes.bool

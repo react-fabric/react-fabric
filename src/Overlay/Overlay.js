@@ -13,6 +13,7 @@ const Overlay = ({ dark, hidden, ...props }) => (
       'ms-Overlay--none': hidden
     })} />
 )
+Overlay.displayName = 'Overlay'
 Overlay.propTypes = {
   dark: React.PropTypes.bool,
   hidden: React.PropTypes.bool

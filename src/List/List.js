@@ -15,6 +15,7 @@ const List = ({ children, componentClass: Component, selectable, ...props }) => 
     )) : children }
   </Component>
 )
+List.displayName = 'List'
 List.propTypes = {
   children: React.PropTypes.node,
   // TODO Array of ListItems

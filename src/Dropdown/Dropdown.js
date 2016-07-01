@@ -16,6 +16,7 @@ const valuePropType = React.PropTypes.oneOfType([
 
 @fabricComponent(style)
 class Dropdown extends React.Component {
+  static displayName = 'Dropdown'
   static propTypes = {
     active: React.PropTypes.bool,
     className: React.PropTypes.string,
@@ -37,7 +38,6 @@ class Dropdown extends React.Component {
     textLeft: React.PropTypes.bool,
     value: valuePropType
   };
-
   static defaultProps = {
     active: false,
     disabled: false,

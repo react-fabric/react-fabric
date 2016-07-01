@@ -11,6 +11,7 @@ const Icon = ({ glyph, ...props }) => (
     {...props}
     styleName={cx('ms-Icon', `ms-Icon--${glyph}`)} />
 )
+Icon.displayName = 'Icon'
 Icon.propTypes = {
   glyph: glyphPropType.isRequired
 }

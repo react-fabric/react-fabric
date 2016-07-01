@@ -54,6 +54,7 @@ const TextField = ({
     </div>
   )
 }
+TextField.displayName = 'TextField'
 TextField.propTypes = {
   active: React.PropTypes.bool,
   className: React.PropTypes.string,
