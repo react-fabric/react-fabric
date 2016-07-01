@@ -12,10 +12,9 @@ test('Button', t => {
 })
 
 test('Button#render - simple', t => {
-  const el = render(
+  const container = render(
     <Button>Foo</Button>
-  )
-  const container = el.contents()
+  ).contents()
 
   t.assert(container.is('button.ms-Button', 'container'))
   t.assert(container.is('[data-fabric="Button"]'), 'data-fabric')
