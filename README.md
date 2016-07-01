@@ -77,10 +77,5 @@ $ npm install
 $ npm test
 ```
 
-## Customization
-
-TODO...
-
-
 ## License
 This project is licensed under the terms of the [MIT License](https://github.com/kmees/react-fabric/blob/master/LICENSE)
