@@ -53,7 +53,7 @@
     "css-modules-require-hook": "^4.0.1",
     "enzyme": "^2.3.0",
     "eslint": "^2.13.1",
-    "eslint-config-xi": "^5.0.0",
+    "eslint-config-xi": "^5.1.0",
     "eslint-plugin-import": "^1.9.2",
     "eslint-plugin-jsx-a11y": "^1.5.3",
     "eslint-plugin-react": "^5.2.2",
@@ -126,7 +126,8 @@
   "nyc": {
     "instrument": false,
     "sourceMap": false,
-    "exclude": ["src/**/__tests__"]
-
+    "exclude": [
+      "src/**/__tests__"
+    ]
   }
 }

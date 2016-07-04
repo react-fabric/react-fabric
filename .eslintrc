@@ -1,10 +1,4 @@
 {
   "parser": "babel-eslint",
-  "extends": "xi",
-  "rules": {
-    "no-underscore-dangle": ["error", { "allowAfterThis": true }],
-
-    "react/jsx-first-prop-new-line": [2, "never"],
-    "react/jsx-curly-spacing": 0
-  }
+  "extends": "xi"
 }
