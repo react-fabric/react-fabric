@@ -1,7 +1,7 @@
 import React from 'react'
 import cx from 'classnames'
 
-import onlyWhenTypeIs from './onlyWhenTypeIs'
+import onlyWhen from '../propTypes/onlyWhen'
 import Icon from '../Icon'
 import glyphPropType from '../Icon/glyphPropType.js'
 import fabricComponent from '../fabricComponent'
@@ -48,7 +48,11 @@ const Button = ({
 Button.displayName = 'Button'
 Button.propTypes = {
   children: React.PropTypes.node,
-  description: onlyWhenTypeIs('compound', React.PropTypes.node),
+  description: onlyWhen(
+    ({ type }) => type === 'compound',
+    'type is compound',
+    React.PropTypes.node
+  ),
   disabled: React.PropTypes.bool,
   glyph: glyphPropType,
   onClick: React.PropTypes.func,
