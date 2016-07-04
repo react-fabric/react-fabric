@@ -10,7 +10,7 @@ const eventMap = {
 test('events#addEventsToDocument', t => {
   t.plan(6)
 
-  GLOBAL.document = {
+  global.document = {
     addEventListener: (key, listener, capture) => {
       t.ok(Object.keys(eventMap).indexOf(key) !== -1, `key ${key}`)
       t.equal(listener, eventMap[key], 'listener for ${key}')
@@ -20,13 +20,13 @@ test('events#addEventsToDocument', t => {
 
   events.addEventsToDocument(eventMap)
 
-  delete GLOBAL.document
+  delete global.document
 })
 
 test('events#removeEventListener', t => {
   t.plan(6)
 
-  GLOBAL.document = {
+  global.document = {
     removeEventListener: (key, listener, capture) => {
       t.ok(Object.keys(eventMap).indexOf(key) !== -1, `key ${key}`)
       t.equal(listener, eventMap[key], 'listener for ${key}')
@@ -36,7 +36,7 @@ test('events#removeEventListener', t => {
 
   events.removeEventsFromDocument(eventMap)
 
-  delete GLOBAL.document
+  delete global.document
 })
 
 test('events#pauseEvent', t => {
