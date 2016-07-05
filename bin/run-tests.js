@@ -43,7 +43,11 @@ args.forEach(function (arg) {
     if (err) { throw err }
 
     files.forEach(function (file) {
-      require(path.resolve(cwd, file))
+      try {
+        require(path.resolve(cwd, file))
+      } catch(err) {
+        console.error('ERROR:', err)
+      }
     })
   })
 })
