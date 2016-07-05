@@ -2,7 +2,7 @@ import React from 'react'
 import cssm from 'react-css-modules'
 import Icon from 'react-fabric/Icon'
 
-import { Link } from '../../components'
+import { Link, Logo } from '../../components'
 
 import style from './Home.scss'
 
@@ -21,7 +21,9 @@ const Home = () => (
         <iframe src={ghEmbedUrl({ user: 'kmees', repo: 'react-fabric', type: 'fork' })}
           frameBorder="0" scrolling="0" />
       </div>
-      <div styleName="logo"></div>
+      <div styleName="logo-container">
+        <Logo fill="white" styleName="logo" />
+      </div>
       <h1 styleName="title">react-fabric</h1>
       <p styleName="subtitle">Office UI Fabric components built with React.</p>
       <navigation styleName="navigation">

@@ -15,8 +15,13 @@
   text-align: center;
 }
 
-.logo {
+.logo-container {
+  margin-top: 42px;
   min-height: 1px;
+}
+
+.logo {
+  height: 92px;
 }
 
 .title {
