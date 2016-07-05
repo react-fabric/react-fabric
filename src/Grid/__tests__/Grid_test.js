@@ -2,18 +2,20 @@ import React from 'react'
 import { render } from 'enzyme'
 import test from 'tape'
 
-import Grid, { Row, Col } from '../index.js'
+import Grid from '../Grid.js'
+import Col from '../Col.js'
+import Row from '../Row.js'
 
 test('Grid', t => {
   t.ok(Grid, 'export')
-  t.equal(Grid.Row || false, Row, '.Row export')
-  t.equal(Grid.Col || false, Col, '.Col export')
+  t.equal(Grid.Row, Row, '.Row export')
+  t.equal(Grid.Col, Col, '.Col export')
   t.equal(Grid.displayName, 'FabricComponent(Grid)')
 
   t.end()
 })
 
-test('Grid#render - simple', t => {
+test('Grid#render', t => {
   const container = render(
     <Grid />
   ).contents()

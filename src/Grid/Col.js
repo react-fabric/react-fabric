@@ -2,33 +2,34 @@ import React from 'react'
 import cx from 'classnames'
 import flatten from 'lodash.flatten'
 
+import { colSizeType } from '../propTypes'
 import fabricComponent from '../fabricComponent'
-import sizePropType from './sizePropType.js'
 
 import style from './Grid.scss'
 
-const sizeNames = ['sm', 'md', 'lg', 'xl', 'xxl', 'xxxl']
-const sizeKeys = flatten(sizeNames.map(name => [
-  name, `${name}Push`, `${name}Pull`
+const breakpoints = ['sm', 'md', 'lg', 'xl', 'xxl', 'xxxl']
+const breakpointPropKeys = flatten(breakpoints.map(breakpoint => [
+  breakpoint, `${breakpoint}Push`, `${breakpoint}Pull`
 ]))
 
-const Col = ({ children, ...props }) => {
-  const rest = { ...props }
-  const sizeStyles = { }
+const Col = ({ children, ...other }) => {
+  const props = { ...other }
+  const breakpointStyles = { }
 
-  sizeKeys.forEach(key => {
-    sizeStyles[`ms-u-${key}${props[key]}`] = !!props[key]
-    delete rest[key]
+  breakpointPropKeys.forEach(key => {
+    breakpointStyles[`ms-u-${key}${props[key]}`] = !!props[key]
+
+    delete props[key]
   })
 
   return (
-    <div {...rest} styleName={cx('ms-Grid-col', sizeStyles)}>
+    <div {...props} styleName={cx('ms-Grid-col', breakpointStyles)}>
       { children }
     </div>
   )
 }
-Col.propTypes = sizeKeys.reduce((propTypes, sizeKey) => {
-  propTypes[sizeKey] = sizePropType // eslint-disable-line no-param-reassign
+Col.propTypes = breakpointPropKeys.reduce((propTypes, key) => {
+  propTypes[key] = colSizeType // eslint-disable-line no-param-reassign
   return propTypes
 }, {
   children: React.PropTypes.node,
