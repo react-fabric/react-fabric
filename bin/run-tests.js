@@ -38,10 +38,6 @@ hook({
 	}
 })
 
-if (process.env['BABEL_ENV'] === 'test') {
-  require('../src')
-}
-
 args.forEach(function (arg) {
   glob(arg, { cwd: cwd }, function (err, files) {
     if (err) { throw err }
