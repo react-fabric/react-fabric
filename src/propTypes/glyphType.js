@@ -18,7 +18,6 @@ export const GLYPH_TYPES = [
   'at',
   'attachment',
   'bag',
-  'balloon',
   'bell',
   'boards',
   'bold',
@@ -289,12 +288,6 @@ export const GLYPH_TYPES = [
   'share',
   'shield',
   'sites',
-  'skypeCheck',
-  'skypeCircleCheck',
-  'skypeCircleClock',
-  'skypeCircleMinus',
-  'skypeClock',
-  'skypeMinus',
   'smiley',
   'soccer',
   'socialListening',
@@ -346,7 +339,7 @@ export const GLYPH_TYPES = [
   'work',
   'wrench',
   'x',
-  'xCircle'
+  'xCircle',
 ]
 
 export default React.PropTypes.oneOf(GLYPH_TYPES)
