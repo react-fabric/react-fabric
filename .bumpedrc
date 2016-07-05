@@ -16,9 +16,13 @@ plugins:
       command: 'npm run prepublish'
 
   postrelease:
+    'Generate Changelog':
+      plugin: 'bumped-terminal'
+      command: 'conventional-changelog -p angular -s -i CHANGELOG.md'
+
     'Commiting new version':
       plugin: 'bumped-terminal'
-      command: 'git add package.json && git commit package.json -m "$newVersion release" && git push origin development:master'
+      command: 'git add package.json && git commit -m "chore(package): release $newVersion" && git push origin development:master'
 
     'Publishing tag at Github':
       plugin: 'bumped-terminal'
