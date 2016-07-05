@@ -21,20 +21,21 @@
 }
 
 .logo {
-  height: 92px;
+  height: 128px;
 }
 
 .title {
   @include ms-font-su;
+  margin: 0.5em 1rem 0 1rem;
 }
 
 .subtitle {
   @include ms-font-xl;
+  margin: 0 1rem 2em 1rem;
 }
 
 .title, .subtitle {
   color: $ms-color-white;
-  margin: 1em 1rem;
 }
 
 .sellout {
@@ -72,10 +73,10 @@
   }
 
   a {
-    color: $ms-color-orangeLighterAlt;
+    color: $ms-color-white;
 
     &:hover, &:focus {
-      color: $ms-color-white;
+      color: $ms-color-orangeLighterAlt;
     }
   }
 }
