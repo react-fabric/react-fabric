@@ -2,9 +2,8 @@
   "name": "react-fabric",
   "description": "Office UI Fabric components built with React and CSS Modules",
   "homepage": "http://kmees.github.io/react-fabric",
-  "version": "0.1.7",
+  "version": "0.2.0",
   "main": "lib/index.js",
-  "license": "MIT",
   "author": {
     "name": "Kevin Mees",
     "email": "kev.mees@gmail.com"
@@ -81,18 +80,19 @@
     "webpack-loader": "0.0.1"
   },
   "scripts": {
-    "start": "better-npm-run start",
-    "test": "better-npm-run test",
-    "pretest": "npm run lint",
     "build": "better-npm-run transpile && better-npm-run copy-sass",
-    "prebuild": "npm run lint && better-npm-run clean",
-    "prepublish": "npm run build",
     "lint": "eslint src/",
     "patch": "npm run release -- patch",
+    "prebuild": "npm run lint && better-npm-run clean",
+    "prepublish": "npm run build",
+    "pretest": "npm run lint",
     "release": "bumped release",
     "report-coverage": "nyc report --reporter=text-lcov | coveralls",
-    "tdd": "better-npm-run tdd"
+    "start": "better-npm-run start",
+    "tdd": "better-npm-run tdd",
+    "test": "better-npm-run test"
   },
+  "license": "MIT",
   "betterScripts": {
     "clean": {
       "command": "rimraf ./lib"
@@ -103,11 +103,8 @@
     "start": {
       "command": "node ./spec/server.js"
     },
-    "transpile": {
-      "command": "babel ./src --ignore 'src/**/__tests__' --out-dir ./lib",
-      "env": {
-        "NODE_ENV": "production"
-      }
+    "tdd": {
+      "command": "watch 'node ./bin/run-tests.js | ${TAP_FORMATTER:-tap-min}' src"
     },
     "test": {
       "command": "nyc -s node ./bin/run-tests.js",
@@ -115,20 +112,23 @@
         "BABEL_ENV": "test"
       }
     },
-    "tdd": {
-      "command": "watch 'node ./bin/run-tests.js | ${TAP_FORMATTER:-tap-min}' src"
+    "transpile": {
+      "command": "babel ./src --ignore 'src/**/__tests__' --out-dir ./lib",
+      "env": {
+        "NODE_ENV": "production"
+      }
     }
+  },
+  "nyc": {
+    "exclude": [
+      "src/**/__tests__"
+    ],
+    "instrument": false,
+    "sourceMap": false
   },
   "peerDependencies": {
     "office-ui-fabric": "^2.6.0",
     "react": "^0.14 || ^15.0.0",
     "react-dom": "^0.14 || ^15.0.0"
-  },
-  "nyc": {
-    "instrument": false,
-    "sourceMap": false,
-    "exclude": [
-      "src/**/__tests__"
-    ]
   }
 }
