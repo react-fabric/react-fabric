@@ -3,7 +3,7 @@ import cx from 'classnames'
 
 import onlyWhen from '../propTypes/onlyWhen'
 import Icon from '../Icon'
-import glyphPropType from '../Icon/glyphPropType.js'
+import { glyphType } from '../propTypes'
 import fabricComponent from '../fabricComponent'
 import invokeWhenNotDisabled from '../util/invokeWhenNotDisabled.js'
 
@@ -54,7 +54,7 @@ Button.propTypes = {
     React.PropTypes.node
   ),
   disabled: React.PropTypes.bool,
-  glyph: glyphPropType,
+  glyph: glyphType,
   onClick: React.PropTypes.func,
   submit: React.PropTypes.bool,
   type: React.PropTypes.oneOf(BUTTON_TYPES),

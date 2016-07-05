@@ -1,7 +1,7 @@
 import React from 'react'
 import cx from 'classnames'
 
-import glyphPropType from './glyphPropType.js'
+import { glyphType } from '../propTypes'
 import fabricComponent from '../fabricComponent'
 
 import style from './Icon.scss'
@@ -13,7 +13,7 @@ const Icon = ({ glyph, ...props }) => (
 )
 Icon.displayName = 'Icon'
 Icon.propTypes = {
-  glyph: glyphPropType.isRequired
+  glyph: glyphType.isRequired
 }
 
 export default fabricComponent(Icon, style)

@@ -1,7 +1,7 @@
 import React from 'react'
 
 import Icon from '../Icon'
-import glyphPropType from '../Icon/glyphPropType.js'
+import { glyphType } from '../propTypes'
 import fabricComponent from '../fabricComponent'
 
 import style from './ListItem.scss'
@@ -15,7 +15,7 @@ const ListItemAction = ({ children, glyph, ...props }) => (
 )
 ListItemAction.propTypes = {
   children: React.PropTypes.node,
-  glyph: glyphPropType
+  glyph: glyphType
 }
 
 export default fabricComponent(ListItemAction, style)
