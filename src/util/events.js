@@ -1,3 +1,5 @@
+import isDefined from './isDefined.js'
+
 export default {
   /* eslint-disable guard-for-in */
   addEventsToDocument(eventMap) {
@@ -26,7 +28,7 @@ export default {
 
   targetIsDescendant(event, parent) {
     let node = event.target
-    while (node !== null) {
+    while (isDefined(node)) {
       if (node === parent) return true
       node = node.parentNode
     }

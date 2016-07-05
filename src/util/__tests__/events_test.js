@@ -1,6 +1,6 @@
 import test from 'tape'
 
-import events from '../events.js'
+import sut from '../events.js'
 
 const eventMap = {
   'foo': function foohandler() {},
@@ -18,7 +18,7 @@ test('events#addEventsToDocument', t => {
     }
   }
 
-  events.addEventsToDocument(eventMap)
+  sut.addEventsToDocument(eventMap)
 
   delete global.document
 })
@@ -34,7 +34,7 @@ test('events#removeEventListener', t => {
     }
   }
 
-  events.removeEventsFromDocument(eventMap)
+  sut.removeEventsFromDocument(eventMap)
 
   delete global.document
 })
@@ -48,8 +48,26 @@ test('events#pauseEvent', t => {
     preventDefault: t.pass.bind(t, 'preventDefault')
   }
 
-  events.pauseEvent(event)
+  sut.pauseEvent(event)
 
   t.equal(event.returnValue, false, 'returnValue')
   t.equal(event.cancelBubble, true, 'cancelBubble')
+})
+
+test('events#targetIsDescendant', t => {
+  const root = { id: 'root', parentNode: null }
+  const event = {
+    target: {
+      id: 'target',
+      parentNode: {
+        id: 'node1',
+        parentNode: root
+      }
+    }
+  }
+
+  t.ok(sut.targetIsDescendant(event, root))
+  t.notOk(sut.targetIsDescendant(event, { id: 'other' }))
+
+  t.end()
 })
