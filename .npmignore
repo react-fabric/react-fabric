@@ -1,6 +1,11 @@
 .*rc
 .eslintignore
-.editorconfig
+.nyc_output
+.bumpedrc
+.DS_Store
+.env
+.travis.yml
 server.js
 docs
 spec
+assets
