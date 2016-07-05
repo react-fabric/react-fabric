@@ -1,3 +1,19 @@
+<a name="0.2.0"></a>
+# [0.2.0](https://github.com/kmees/react-fabric/compare/0.1.7...v0.2.0) (2016-07-05)
+
+
+### Bug Fixes
+
+* **ChoiceField:** add displayName ([d933a0c](https://github.com/kmees/react-fabric/commit/d933a0c))
+* **Icon:** extract glyph types from 2.6.1 instead of 3.0.0-beta ([32921c0](https://github.com/kmees/react-fabric/commit/32921c0))
+
+
+### Features
+
+* setup test infrastructure ([7a12510](https://github.com/kmees/react-fabric/commit/7a12510))
+
+
+
 <a name="0.1.7"></a>
 ## [0.1.7](https://github.com/kmees/react-fabric/compare/0.1.6...0.1.7) (2016-06-06)
 
