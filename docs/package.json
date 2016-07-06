@@ -24,7 +24,7 @@
       }
     },
     "deploy": {
-      "command": "gh-pages -d build"
+      "command": "gh-pages -d build -o gh-pages -b master"
     }
   },
   "devDependencies": {
