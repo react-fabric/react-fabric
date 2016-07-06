@@ -18,6 +18,12 @@ class Playground extends React.Component {
 
   state = { code: '' }
 
+  componentWillReceiveProps(nextProps) {
+    if (this.props.defaultCode !== nextProps.defaultCode) {
+      this.setState({ ...this.state, code: '' })
+    }
+  }
+
   handleChange = (value) => {
     this.setState({ ...this.state, code: value })
   }
