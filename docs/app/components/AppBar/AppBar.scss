@@ -17,11 +17,19 @@
 .title-link {
   @extend .ms-NavBar-link;
   @include ms-fontWeight-semibold;
+
   color: $ms-color-orangeLight;
+  display: flex;
+  align-items: center;
 
   &:hover, &:focus {
     color: $ms-color-orange;
   }
+}
+
+.title-logo {
+  height: 24px;
+  margin-right: 3px;
 }
 
 .icon {

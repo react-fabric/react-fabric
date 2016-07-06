@@ -32,7 +32,10 @@ class AppBar extends React.Component {
         openMenu={::this._onOpenMenu}
         closeMenu={::this._onCloseMenu}>
         <NavBar.Title styleName="title">
-          <IndexLink styleName="title-link" to="/">react-fabric</IndexLink>
+          <IndexLink styleName="title-link" to="/">
+            <img src="./favicon-32x32.png" styleName="title-logo" />
+            react-fabric
+          </IndexLink>
         </NavBar.Title>
         <NavBar.Link>
           <IndexLink to="/getting-started">Getting Started</IndexLink>
