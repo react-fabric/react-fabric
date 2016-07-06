@@ -5,32 +5,28 @@ import fabricComponent from '../fabricComponent'
 
 import style from '../ChoiceField/ChoiceField.scss'
 
-const onChildBlur = child => () => {
-  if (child.props.onBlur) {
-    child.props.onBlur(child.props.checked)
+const handleChildChanged = onChange => e => {
+  if (onChange && e.target.checked) {
+    onChange(e)
   }
 }
 
-const onChoiceChanged = (children, i) => () => {
-  React.Children.forEach(children, (child, ci) => {
-    if (child && child.props.onChange) {
-      child.props.onChange(ci === i)
-    }
-  })
-}
+const createChoices = ({ children, name, value, onChange }) => (
+  React.Children.map(children, (child, i) => {
+    if (child === null) { return child }
 
-const createChoices = ({ name, children }) => React.Children.map(children, (child, i) => (
-  child !== null ? React.cloneElement(child, {
-    groupId: i,
-    name,
-    onBlur: onChildBlur(child),
-    onChange: onChoiceChanged(children, i),
-    type: 'radio'
-  }) : null
-))
+    return React.cloneElement(child, {
+      type: 'radio',
+      name,
+      id: `ChoiceFieldGroup_${name}[${i}]`,
+      checked: value === child.props.value,
+      onChange: handleChildChanged(onChange)
+    })
+  })
+)
 
 const ChoiceFieldGroup = ({
-  children, name, required, title, ...props
+  children, name, required, title, value, onChange, ...props
 }) => (
   <div data-fabric="ChoiceFieldGroup"
     {...props}
@@ -38,7 +34,7 @@ const ChoiceFieldGroup = ({
     <div>
       { title && <Label required={required}>{title}</Label> }
     </div>
-    { createChoices({ name, children }) }
+    { createChoices({ children, name, value, onChange }) }
   </div>
 )
 ChoiceFieldGroup.propTypes = {
@@ -46,7 +42,9 @@ ChoiceFieldGroup.propTypes = {
   className: React.PropTypes.string,
   name: React.PropTypes.string.isRequired,
   required: React.PropTypes.bool,
-  title: React.PropTypes.string
+  title: React.PropTypes.string,
+  value: React.PropTypes.string,
+  onChange: React.PropTypes.func
 }
 ChoiceFieldGroup.defaultProps = {
   required: false

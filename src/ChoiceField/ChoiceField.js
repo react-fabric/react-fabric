@@ -7,10 +7,9 @@ import isDefined from '../util/isDefined.js'
 import style from './ChoiceField.scss'
 
 const ChoiceField = ({
-  className, disabled, groupId, id, label, name, required, type, checked, ...props
+  className, disabled, id, label, name, required, type, checked, ...props
 }) => {
-  const groupIdSuffix = isDefined(groupId) ? `[${groupId}]` : ''
-  const inputId = `ChoiceField_${id || name || Date.now()}${groupIdSuffix}_input`
+  const inputId = `ChoiceField_${id || name || Date.now()}_input`
 
   return (
     <div data-fabric="ChoiceField"
@@ -37,10 +36,6 @@ ChoiceField.propTypes = {
   checked: React.PropTypes.bool,
   className: React.PropTypes.string,
   disabled: React.PropTypes.bool,
-  groupId: React.PropTypes.oneOfType([
-    React.PropTypes.string,
-    React.PropTypes.number
-  ]),
   id: React.PropTypes.string,
   label: React.PropTypes.node,
   name: React.PropTypes.string.isRequired,

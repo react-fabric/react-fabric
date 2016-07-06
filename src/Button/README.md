@@ -6,7 +6,6 @@ Simple Button component for all the different types.
 
 ## Example <!-- EXAMPLE -->
 ```jsx
-import React from 'react';
 import Button from 'react-fabric/lib/Button';
 
 const ButtonExample = () => (
