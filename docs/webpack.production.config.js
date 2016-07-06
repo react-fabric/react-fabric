@@ -22,7 +22,7 @@ module.exports = extend(config, {
         test: /\.json$/, loader: 'json'
       }, {
         test: /\.md$/,
-        loader: 'html!highlight!markdown'
+        loader: 'html?removeComments=false!highlight!markdown'
         // test: /\.md$/, loader: 'raw'
       }
       // }, {

@@ -49,8 +49,9 @@ class ComponentView extends React.Component {
 
   replaceHooks = () => {
     const { showPlayground } = this.props
-    const hooks = [...document.getElementsByClassName(EXAMPLE_HOOK)]
-    hooks.forEach((hook) => {
+    const hooks = document.getElementsByClassName(EXAMPLE_HOOK)
+
+    Array.prototype.forEach.call(hooks, hook => {
       const codeElement = findCodeElement(hook)
 
       if (showPlayground && hook && codeElement) {
