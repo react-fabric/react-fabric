@@ -6,35 +6,35 @@ have a special semantic when rendered.
 
 <a href="http://dev.office.com/fabric/components/Dialog" target="_blank">View Office Fabric UI docs</a>
 
+## Example <!-- EXAMPLE -->
 ```jsx
 import Dialog from 'react-fabric/lib/Dialog';
 // or import Dialog, { DialogTitle, DialogAction, DialogSubtext };
 
-class DialogComponent extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      isHidden: true
-    };
-  }
+class DialogExample extends React.Component {
+  state = { isHidden: true };
 
-  _show() { this.setState({ isHidden: false }) }
-  _hide() { this.setState({ isHidden: true }) }
+  show() { this.setState({ isHidden: false }) }
+  hide() { this.setState({ isHidden: true }) }
 
   render() {
     return (
+      <section>
         <Dialog closeable
-          onClose={::this._hide}
-          hidden={this.state.isHidden}
+          onClose={::this.hide}
+          hidden={this.state.isHidden}>
           <Dialog.Title>My Dialog</Dialog.Title>
           <Dialog.Subtext>Click overlay or close button to close</Dialog.Subtext>
-          <Dialog.Action type="primary" onClick={::this._hide}>Ok</Dialog.Action>
-          <Dialog.Action onClick={::this._hide}>Cancel</Dialog.Action>
+          <Dialog.Action type="primary" onClick={::this.hide}>Ok</Dialog.Action>
+          <Dialog.Action onClick={::this.hide}>Cancel</Dialog.Action>
         </Dialog>
+        <Button onClick={::this.show}>Show Dialog</Button>
       </section>
     );
   }
 }
+
+return <DialogExample />;
 ```
 
 ## Properties
