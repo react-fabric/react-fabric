@@ -1,4 +1,4 @@
-# react-fabric [![npm](https://img.shields.io/npm/v/react-fabric.svg?style=flat-square)](https://www.npmjs.com/package/react-fabric) [![npm](https://img.shields.io/npm/dt/react-fabric.svg?style=flat-square)](https://www.npmjs.com/package/react-fabric) [![Build Status](http://img.shields.io/travis/kmees/react-fabric.svg?style=flat-square)](https://travis-ci.org/kmees/react-fabric) [![Coveralls](https://img.shields.io/coveralls/kmees/react-fabric/development.svg?style=flat-square)](https://coveralls.io/github/kmees/react-fabric) [![npm](https://img.shields.io/npm/l/react-fabric.svg?style=flat-square)](https://www.npmjs.com/package/react-fabric)
+# react-fabric [![npm](https://img.shields.io/npm/v/react-fabric.svg?style=flat-square)](https://www.npmjs.com/package/react-fabric) [![npm](https://img.shields.io/npm/dt/react-fabric.svg?style=flat-square)](https://www.npmjs.com/package/react-fabric) [![Build Status](http://img.shields.io/travis/react-fabric/react-fabric.svg?style=flat-square)](https://travis-ci.org/react-fabric/react-fabric) [![Coveralls](https://img.shields.io/coveralls/react-fabric/react-fabric/development.svg?style=flat-square)](https://coveralls.io/github/react-fabric/react-fabric) [![npm](https://img.shields.io/npm/l/react-fabric.svg?style=flat-square)](https://www.npmjs.com/package/react-fabric)
 
 react-fabric is a set of [React](http://facebook.github.io/react/) components that wrap the [Office UI Fabric](https://github.com/OfficeDev/Office-UI-Fabric)
 
@@ -58,7 +58,7 @@ const Layout = () => {
 ```
 
 ## Example / Docs
-The [docs project](https://github.com/kmees/react-fabric/blob/master/docs) included in 
+The [docs project](https://github.com/react-fabric/react-fabric/blob/master/docs) included in 
 this repository doubles as the example project. To run the docs project, follow these steps:
 
 ```sh
@@ -78,4 +78,4 @@ $ npm test
 ```
 
 ## License
-This project is licensed under the terms of the [MIT License](https://github.com/kmees/react-fabric/blob/master/LICENSE)
+This project is licensed under the terms of the [MIT License](https://github.com/react-fabric/react-fabric/blob/master/LICENSE)
