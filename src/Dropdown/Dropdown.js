@@ -80,21 +80,25 @@ class Dropdown extends React.Component {
     }
   }
 
-  handleSelect = (option, event) => {
+  handleSelect = (option, e) => {
     const { onBlur, onChange, disabled } = this.props
 
-    if (onBlur) { onBlur(event) }
+    e.target.value = option.value // eslint-disable-line no-param-reassign
 
     if (!disabled) {
-      if (onChange) { onChange(option, event) }
+      if (onChange) { onChange(e, option) }
     }
+
+    if (onBlur) { onBlur(e, option) }
   }
 
-  handleDocumentClick = (event) => {
-    const { active, onBlur } = this.props
+  handleDocumentClick = (e) => {
+    const { active, onBlur, value } = this.props
 
     if (active && !events.targetIsDescendant(event, ReactDOM.findDOMNode(this))) {
-      if (onBlur) { onBlur(event) }
+      e.target.value = value // eslint-disable-line no-param-reassign
+
+      if (onBlur) { onBlur(e) }
     }
   }
 
@@ -102,7 +106,7 @@ class Dropdown extends React.Component {
     const styleName = cx('ms-Dropdown-item', {
       'is-selected': option.value === this.props.value
     })
-    const handleSelect = this.handleSelect.bind(this, option.value)
+    const handleSelect = this.handleSelect.bind(this, option)
 
     return (
       <li key={i}
@@ -151,7 +155,7 @@ class Dropdown extends React.Component {
           <select {...props}
             styleName="ms-Dropdown-select"
             name={name}
-            value={value}>
+            value={value || ''}>
             { options.map((option, i) => (
               <option key={i} value={option.value}>{option.label}</option>
               )) }
