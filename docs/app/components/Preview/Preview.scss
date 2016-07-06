@@ -1,11 +1,14 @@
+@import "../Raw/Raw.scss";
+
 .preview {
   display: block;
+
+  h1:first-child {
+    margin-top: 0
+  }
 }
 
 .error {
   color: red;
-}
-
-.content {
-  display: block;
+  white-space: pre-line;
 }

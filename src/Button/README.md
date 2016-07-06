@@ -6,16 +6,22 @@ Simple Button component for all the different types.
 
 ## Example <!-- EXAMPLE -->
 ```jsx
+import React from 'react';
 import Button from 'react-fabric/lib/Button';
 
-const Buttons = () => (
-  <Button>Default</Button>
-  <Button primary>Primary</Button>
-  <Button>Disabled</Button>
-  <Button type="command" glyph="star">Command</Button>
-  <Button type="compound" description="with description">Compound</Button>
-  <Button type="hero" glyph="star">Hero</Button>
+const ButtonExample = () => (
+  <section>
+    <h1>ButtonExample</h1>
+    <Button>Default</Button>
+    <Button type="primary">Primary</Button>
+    <Button>Disabled</Button>
+    <Button type="command" glyph="star">Command</Button>
+    <Button type="compound" description="with description">Compound</Button>
+    <Button type="hero" glyph="star">Hero</Button>
+  </section>
 );
+
+return <ButtonExample />;
 ```
 
 ## Properties

@@ -88,7 +88,7 @@ class Preview extends React.Component {
     return (
       <div {...this.props} styleName="preview">
         { error && <span styleName="error">{error}</span> }
-        <div ref="mount" styleName="content" />
+        <div ref="mount" styleName="raw" />
       </div>
     )
   }
