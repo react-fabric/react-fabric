@@ -16,9 +16,9 @@ const Home = () => (
   <article styleName="root">
     <header styleName="header">
       <div styleName="sellout">
-        <iframe src={ghEmbedUrl({ user: 'kmees', repo: 'react-fabric', type: 'star' })}
+        <iframe src={ghEmbedUrl({ user: 'react-fabric', repo: 'react-fabric', type: 'star' })}
           frameBorder="0" scrolling="0" />
-        <iframe src={ghEmbedUrl({ user: 'kmees', repo: 'react-fabric', type: 'fork' })}
+        <iframe src={ghEmbedUrl({ user: 'react-fabric', repo: 'react-fabric', type: 'fork' })}
           frameBorder="0" scrolling="0" />
       </div>
       <div styleName="logo-container">
@@ -32,7 +32,7 @@ const Home = () => (
           <li><Icon glyph="dot" /></li>
           <li><Link to="/components">Components</Link></li>
           <li><Icon glyph="dot" /></li>
-          <li><Link to="https://github.com/kmees/react-fabric">GitHub</Link></li>
+          <li><Link to="https://github.com/react-fabric/react-fabric">GitHub</Link></li>
         </ul>
       </navigation>
     </header>

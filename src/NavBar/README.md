@@ -21,7 +21,7 @@ const AppBar = () => (
       <IndexLink to="/components">Components</IndexLink>
     </NavBar.Link>
     <NavBar.Link right>
-      <a href="https://github.com/kmees/react-fabric"
+      <a href="https://github.com/react-fabric/react-fabric"
         target="_blank">
         <img src="images/GitHub-Mark-32px.png" />
       </a>

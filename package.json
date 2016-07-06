@@ -1,7 +1,7 @@
 {
   "name": "react-fabric",
   "description": "Office UI Fabric components built with React and CSS Modules",
-  "homepage": "http://kmees.github.io/react-fabric",
+  "homepage": "http://react-fabric.github.io",
   "version": "0.2.0",
   "main": "lib/index.js",
   "author": {
@@ -10,10 +10,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kmees/react-fabric.git"
+    "url": "git+https://github.com/react-fabric/react-fabric.git"
   },
   "bugs": {
-    "url": "https://github.com/kmees/react-fabric/issues"
+    "url": "https://github.com/react-fabric/react-fabric/issues"
   },
   "keywords": [
     "office",
