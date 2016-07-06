@@ -31,3 +31,7 @@ plugins:
     'Publishing at NPM':
       plugin: 'bumped-terminal'
       command: 'npm publish'
+
+    'Create Github Release':
+      plugin: 'bumped-terminal'
+      command: 'conventional-github-releaser -p angular -r 1'
