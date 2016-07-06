@@ -1,10 +1,17 @@
 import React from 'react'
 import cssm from 'react-css-modules'
+import cx from 'classnames'
 
-import Raw from '../../components/Raw'
+import { Raw } from '../../components'
 
-import indexHtml from './index.md'
+import homeHtml from './home.md'
 import * as readmes from './readmes.js'
+
+import ComponentList from './ComponentList.js'
+import ComponentView from './ComponentView.js'
+import Playground from './Playground.js'
+
+import style from './Components.scss'
 
 const components = [
   'Breadcrumb',
@@ -45,28 +52,67 @@ const components = [
   finished: !!readmes[name]
 }))
 
-import ComponentList from './ComponentList.js'
+class Components extends React.Component {
+  static propTypes = {
+    params: React.PropTypes.shape({
+      componentName: React.PropTypes.string
+    })
+  }
 
-import style from './Components.scss'
+  constructor() {
+    super()
 
-const Components = ({ params: { componentName } }) => {
-  const component = components.filter(c => c.name === componentName)[0] || {}
+    this.state = {
+      playgroundEnabled: false
+    }
+  }
 
-  return (
-    <div styleName="root">
-      <navigation styleName="navigation">
-        <ComponentList list={components} />
-      </navigation>
-      <div styleName="content">
-        <Raw styleName="raw" html={component.readme || indexHtml} />
+  cleanupCode = (code) => {
+    const lines = code.split('\n')
+
+    return lines
+      .filter(line => !/^\s*import/.test(line))
+      .join('\n')
+      .trim()
+  }
+
+  showPlayground = (code) => {
+    this.setState({
+      ...this.state,
+      code: this.cleanupCode(code),
+      playgroundEnabled: true
+    })
+  }
+
+  hidePlayground = () => {
+    this.setState({
+      ...this.state,
+      playgroundEnabled: false
+    })
+  }
+
+  render() {
+    const { params: { componentName } } = this.props
+    const { code, playgroundEnabled } = this.state
+    const component = components.filter(c => c.name === componentName)[0]
+
+    return (
+      <div styleName={cx('root', { 'with-playground': playgroundEnabled })}>
+        <navigation styleName="navigation">
+          <ComponentList list={components} />
+        </navigation>
+        <div styleName="content">
+          { component ?
+            <ComponentView component={component} showPlayground={this.showPlayground} /> :
+            <Raw html={homeHtml} />
+          }
+        </div>
+        <div styleName="playground">
+          <Playground defaultCode={code} close={this.hidePlayground} />
+        </div>
       </div>
-    </div>
-  )
-}
-Components.propTypes = {
-  params: React.PropTypes.shape({
-    componentName: React.PropTypes.string
-  })
+    )
+  }
 }
 
-export default cssm(Components, style)
+export default cssm(Components, style, { allowMultiple: true })

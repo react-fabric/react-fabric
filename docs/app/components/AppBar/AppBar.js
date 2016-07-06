@@ -1,5 +1,6 @@
 import React from 'react'
 import cssm from 'react-css-modules'
+import cx from 'classnames'
 
 import { IndexLink } from 'react-router'
 
@@ -26,7 +27,7 @@ class AppBar extends React.Component {
 
   render() {
     return (
-      <NavBar styleName="app-bar"
+      <NavBar styleName={cx('app-bar', { fixed: this.props.fixed })}
         isMenuOpen={this.state.isMenuOpen}
         openMenu={::this._onOpenMenu}
         closeMenu={::this._onCloseMenu}>
@@ -42,7 +43,7 @@ class AppBar extends React.Component {
         <NavBar.Link right>
           <a href="https://github.com/kmees/react-fabric"
             target="_blank">
-            <img styleName="icon" src="images/GitHub-Mark-32px.png" />
+            <img styleName="icon" src="images/GitHub-Mark-32px.png" alt="github" />
           </a>
         </NavBar.Link>
       </NavBar>
@@ -50,7 +51,8 @@ class AppBar extends React.Component {
   }
 }
 AppBar.propTypes = {
-  styles: React.PropTypes.object
+  styles: React.PropTypes.object,
+  fixed: React.PropTypes.bool
 }
 
-export default cssm(AppBar, style)
+export default cssm(AppBar, style, { allowMultiple: true })

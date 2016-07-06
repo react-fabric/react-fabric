@@ -1,12 +1,26 @@
+@import "~office-ui-fabric/src/sass/_Fabric.Common.scss";
 @import "../../mixins";
+@import "../../variables";
+
+$nav-width: 20rem;
 
 .root {
   display: flex;
   flex-direction: row;
+
+  padding-top: $appbar-height;
 }
 
 .navigation {
-  max-width: 25rem;
+  position: fixed;
+  top: $appbar-height;
+  bottom: 0;
+
+  width: $nav-width;
+
+  overflow-y: auto;
+
+  border-right: 1px solid $ms-color-neutralLighter;
 }
 
 .content {
@@ -15,6 +29,45 @@
   @include indent;
 
   margin-top: 0;
+  padding-left: $nav-width;
+
+  h1 {
+    margin: 1.33em 0 0.67em 0;
+
+    &:first-child {
+      margin-top: 0.67em;
+    }
+  }
+}
+
+.playground {
+  position: fixed;
+  top: 4rem;
+  bottom: 0;
+  right: 0;
+  width: 50%;
+
+  transform: translateX(100%);
+
+  border-right: 1px solid $ms-color-neutralLighter;
+}
+
+.navigation, .content, .playground {
+  transition: all 0.5s ease-in-out;
+}
+
+.with-playground {
+  .navigation {
+    transform: translateX(-100%);
+  }
+  .content {
+    padding-left: 0;
+    padding-right: 50%;
+  }
+  .playground {
+    transform: translateX(0);
+    box-shadow: -2px 0 4px rgba(0,0,0,.14);
+  }
 }
 
 .component-list,
@@ -32,12 +85,35 @@
   }
 }
 
-.raw {
-  h1 {
-    margin: 1.33em 0 0.67em 0;
+.pg-root {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
 
-    &:first-child {
-      margin-top: 0.67em;
-    }
-  }
+.pg-close {
+  position: absolute;
+  display: inline-block;
+  top: 0;
+  right: 3px;
+
+  z-index: 100;
+
+  font-size: 24px;
+  cursor: pointer;
+  color: #ea4300;
+}
+
+.pg-editor {
+  border-bottom: 1px solid $ms-color-neutralLighter;
+}
+
+.pg-preview {
+  padding: 1rem;
+}
+
+.pg-editor, .pg-preview {
+  flex: 1;
+  overflow-y: scroll;
 }

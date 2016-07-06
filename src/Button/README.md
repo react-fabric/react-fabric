@@ -4,6 +4,7 @@ Simple Button component for all the different types.
 
 <a href="http://dev.office.com/fabric/components/button" target="_blank">View Office Fabric UI docs</a>
 
+## Example <!-- EXAMPLE -->
 ```jsx
 import Button from 'react-fabric/lib/Button';
 

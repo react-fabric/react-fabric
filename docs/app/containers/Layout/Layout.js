@@ -6,7 +6,7 @@ require('../../global.js')
 
 const Layout = ({ children }) => (
   <div>
-    <AppBar />
+    <AppBar fixed />
     { children }
   </div>
 )

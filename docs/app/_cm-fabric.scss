@@ -1,0 +1,68 @@
+.cm-s-fabric {
+  font-size: 13px;
+  line-height: 1.5em;
+  font-family: 'source-code-pro', Menlo, Consolas, Monaco, 'Andale Mono', 'Courier New', monospace;
+  letter-spacing: 0.3px;
+  word-spacing: 1px;
+  background: #f4f4f4;
+  color: #000000;
+
+  .CodeMirror-lines {
+    padding: 8px 0;
+  }
+  .CodeMirror-gutters {
+    box-shadow: 1px 0 2px 0 rgba(0, 0, 0, 0.5);
+    -webkit-box-shadow: 1px 0 2px 0 rgba(0, 0, 0, 0.5);
+    background-color: #FFFFFF;
+    padding-right: 10px;
+    z-index: 3;
+    border: none;
+  }
+  div.CodeMirror-cursor {
+    border-left: 3px solid #000000;
+  }
+  .CodeMirror-activeline-background {
+    background: rgba(1, 1, 1, 0.1);
+  }
+  .CodeMirror-selected {
+    background: #BAD6FD;
+  }
+  .cm-string {
+    color: #df5000;
+  }
+  .cm-number {
+    color: null;
+  }
+  .cm-keyword {
+    color: #a71d5d;
+  }
+  .cm-atom {
+    color: null;
+  }
+  .cm-variable {
+    color: #000000;
+  }
+  .cm-def {
+  }
+  .cm-comment {
+    color: #007400;
+  }
+  .cm-variable-2 {
+    color: #881280;
+  }
+  .cm-property {
+    color: null;
+  }
+  .cm-operator {
+    color: #AA0D91;
+  }
+  .cm-tag {
+    color: #795da3;
+  }
+  .cm-attribute {
+    color: #0086b3;
+  }
+  .CodeMirror-linenumber {
+    color: #007400;
+  }
+}

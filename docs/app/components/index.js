@@ -1,4 +1,6 @@
 export AppBar from './AppBar'
+export Editor from './Editor'
 export Link from './Link'
 export Logo from './Logo'
+export Preview from './Preview'
 export Raw from './Raw'

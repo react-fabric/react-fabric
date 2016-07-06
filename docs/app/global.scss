@@ -6,6 +6,12 @@
 
 :global {
   @import "~highlight.js/styles/github-gist";
+  @import "~codemirror/lib/codemirror";
+  @import "cm-fabric";
+
+  .hljs-value {
+    color: #C41A16;
+  }
 
   *, :before, :after {
     box-sizing: border-box;

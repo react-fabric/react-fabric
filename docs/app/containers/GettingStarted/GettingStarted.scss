@@ -1,8 +1,10 @@
 @import "~office-ui-fabric/src/sass/_Fabric.Common.scss";
 @import "../../mixins";
+@import "../../variables";
 
 .root {
   display: block;
+  padding-top: $appbar-height;
 }
 
 .title {
