@@ -6,16 +6,25 @@ can be found [here](https://github.com/react-fabric#fonts--icons).
 
 <a href="http://dev.office.com/fabric/styles#icons" target="_blank">View Office Fabric UI docs</a>
 
+## Example <!-- EXAMPLE -->
 ```jsx
 import Icon from 'react-fabric/lib/Icon';
 
-const Icons = () => (
-  <span>
-    <Icon glyph="check" />
-    <Icon glyph="star" />
-    <Icon glyph="wrench" />
-  </span>
+const IconExample = () => (
+  <div>
+    <Icon glyph="arrowUp" />
+    <Icon glyph="arrowUp" />
+    <Icon glyph="arrowDown" />
+    <Icon glyph="arrowDown" />
+    <Icon glyph="arrowLeft" />
+    <Icon glyph="arrowRight" />
+    <Icon glyph="arrowLeft" />
+    <Icon glyph="arrowRight" />
+    B A
+  </div>
 );
+
+return <IconExample />;
 ```
 
 ## Properties

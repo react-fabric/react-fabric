@@ -71,7 +71,7 @@ class Components extends React.Component {
     const lines = code.split('\n')
 
     return lines
-      .filter(line => !/^\s*import/.test(line))
+      .map(line => (/^\s*import/.test(line) ? `// ${line}` : line))
       .join('\n')
       .trim()
   }

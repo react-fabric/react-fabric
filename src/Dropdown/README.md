@@ -23,10 +23,10 @@ class DropdownExample extends React.Component {
 
   handleFocus() { this.setState({ ...this.state, active: true }) }
   handleBlur() { this.setState({ ...this.state, active: false }) }
-  handleChange(e, option) { 
+  handleChange(e) { 
     this.setState({ 
       ...this.state,
-      value: option.value,
+      value: e.target.value,
       active: false
     })
   }

@@ -5,18 +5,39 @@ TextField component wraps a [controlled](http://facebook.github.io/react/docs/fo
 
 <a href="http://dev.office.com/fabric/components/TextField" target="_blank">View Office Fabric UI docs</a>
 
+## Example <!-- EXAMPLE -->
 ```jsx
-import Toggle from 'react-fabric/lib/Toggle';
+import TextField from 'react-fabric/lib/TextField';
 
-// Don't do this in production...
-let values = { };
-const onChange = name => e => { values[name] = e.target.value; }
+class TextFieldExample extends React.Component {
+  state = {}
+  handleChanged = (e) => this.setState({ ...this.state, [e.target.name]: e.target.value })
 
-const Inputs = () => (
-	<TextField label="Default" name="default" value={values.default} onChange={onChange('default')} />
-	<TextField label="Underlined" name="underlined" underlined value={values.underlined} onChange={onChange('underlined')} />
-	<TextField label="Multiline" name="multiline" multiline value={values.multiline} onChange={onChange('multiline')} />
-);
+  render() {
+    return (
+      <section>
+        <h1>TextField</h1>
+        <TextField label="Default" 
+          name="default"
+          value={this.state.default}
+          onChange={::this.handleChanged} />
+        <TextField label="Underlined"
+          underlined 
+          name="underlined"
+          value={this.state.underlined} 
+          onChange={::this.handleChanged} />
+        <TextField label="Multiline"
+          multiline 
+          name="multiline"
+          value={this.state.multiline}
+          onChange={::this.handleChanged} />
+        <pre>{ JSON.stringify({ state: this.state }, null, 2) }</pre>
+      </section>
+    )
+  }
+}
+
+return <TextFieldExample />;
 ```
 
 ## Properties

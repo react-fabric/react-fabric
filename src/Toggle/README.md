@@ -4,16 +4,37 @@ Toggle component wraps a [controlled](http://facebook.github.io/react/docs/forms
 
 <a href="http://dev.office.com/fabric/components/Toggle" target="_blank">View Office Fabric UI docs</a>
 
+## Example <!-- EXAMPLE -->
 ```jsx
 import Toggle from 'react-fabric/lib/Toggle';
 
-// Don't do this in production...
-let checked = false;
-const onChange = e => { checked = e.target.checked; }
+class ToggleExample extends React.Component {
+  state = { default: false, textleft: false }
+  handleChanged = e => this.setState({ 
+    ...this.state,
+    [e.target.name]: e.target.checked
+  })
 
-const MyToggle = () => (
-  <Toggle name="my-toggle" checked={checked} onChange={onChange} description="My Toggle">
-);
+  render() {
+    return (
+      <section>
+        <h1>Toggle</h1>
+        <Toggle name="default"
+          checked={this.state.default}
+          onChange={::this.handleChanged}
+          description="Default" />
+        <Toggle name="textleft"
+          textLeft
+          checked={this.state.textleft}
+          onChange={::this.handleChanged}
+          description="Text Left" />
+        <pre>{ JSON.stringify({ state: this.state }, null, 2) }</pre>
+      </section>
+    )
+  }
+}
+
+return <ToggleExample />;
 ```
 
 ## Properties

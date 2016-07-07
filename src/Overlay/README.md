@@ -4,10 +4,18 @@ Simple Overlay component. Used by the [Dialog](/components/Dialog) component.
 
 <a href="http://dev.office.com/fabric/components/Overlay" target="_blank">View Office Fabric UI docs</a>
 
+## Example <!-- EXAMPLE -->
 ```jsx
 import Overlay from 'react-fabric/lib/Overlay';
 
-// TODO...
+const OverlayExample = () => (
+  <section>
+    I am behind the overlay!
+    <Overlay dark />
+  </section>
+);
+
+return <OverlayExample />;
 ```
 
 ## Properties

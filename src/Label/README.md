@@ -4,8 +4,19 @@ Simple Label component.
 
 <a href="http://dev.office.com/fabric/components/label" target="_blank">View Office Fabric UI docs</a>
 
+## Example <!-- EXAMPLE -->
 ```jsx
 import Label from 'react-fabric/lib/Label';
+
+const LabelExample = () => (
+  <section>
+    <Label>Some Label</Label>
+    <Label required>Required</Label>
+    <Label componentClass="span">Span</Label>
+  </section>
+);
+
+return <LabelExample />;
 ```
 
 ## Properties

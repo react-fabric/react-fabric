@@ -5,10 +5,11 @@ that doesn't need selection.
 
 <a href="http://dev.office.com/fabric/components/Table" target="_blank">View Office Fabric UI docs</a>
 
+## Example <!-- EXAMPLE -->
 ```jsx
 import Table from 'react-fabric/lib/Table';
 
-const MyDocuments = () => {
+const TableExample = () => (
   <Table fixed>
     <thead>
       <tr>
@@ -20,14 +21,16 @@ const MyDocuments = () => {
     </thead>
     <tbody>
       <tr>
-        <td>Foo</td>
-        <td>Bar</td>
-        <td>Baz</td>
-        <td>Qux</td>
+        <td>README.md</td>
+        <td>c:\</td>
+        <td>01.01.1970</td>
+        <td>Markdown</td>
       </tr>
     </tbody>
   </Table>
-}
+);
+
+return <TableExample />;
 ```
 
 ## Properties

@@ -5,11 +5,16 @@ Currently implemented NavBarItem types: [NavBarItem](#navbaritem), [NavBarLink](
 
 <a href="http://dev.office.com/fabric/components/navbar" target="_blank">View Office Fabric UI docs</a>
 
+## Example <!-- EXAMPLE -->
 ```jsx
 import NavBar from 'react-fabric/lib/NavBar';
 import IndexLink from 'react-router';
 
-const AppBar = () => (
+const IndexLink = ({ to, children, ...props }) => (
+  <a {...props} href={to}>{children}</a>
+);
+
+const NavBarExample = () => (
   <NavBar>
     <NavBar.Title>
       <IndexLink to="/">react-fabric</IndexLink>
@@ -23,11 +28,13 @@ const AppBar = () => (
     <NavBar.Link right>
       <a href="https://github.com/react-fabric/react-fabric"
         target="_blank">
-        <img src="images/GitHub-Mark-32px.png" />
+        <Icon glyph="star" />
       </a>
     </NavBar.Link>
   </NavBar>
 );
+
+return <NavBarExample />;
 ```
 
 ## Properties

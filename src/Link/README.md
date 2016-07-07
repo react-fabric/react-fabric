@@ -5,14 +5,24 @@ by passing the component class as a prop, see [Properties](#properties).
 
 <a href="http://dev.office.com/fabric/components/link" target="_blank">View Office Fabric UI docs</a>
 
+## Example <!-- EXAMPLE -->
 ```jsx
-import { Link as RouterLink } from 'react-router';
 import Link from 'react-fabric/lib/Link';
 
-const Navigation = () => (
-  <Link href="http://google.com">Google<Link>
-  <Link to="/" componentClass={RouterLink}>Home<Link>
+const RouterLink = ({ to, children, ...props }) => (
+  <a {...props} href={to}>{children}</a>
 );
+
+const LinkExample = () => (
+  <section>
+    <h1>Links</h1>
+    <Link href="http://dev.office.com/fabric">Office UI Fabric</Link>
+    <br />
+    <Link to="/" componentClass={RouterLink}>Home</Link>
+  </section>
+);
+
+return <LinkExample />;
 ```
 
 ## Properties

@@ -2,7 +2,7 @@ import React from 'react'
 import { render } from 'enzyme'
 import test from 'tape'
 
-import Table from '../index.js'
+import Table from '../Table.js'
 
 test('Table', t => {
   t.ok(Table, 'export')

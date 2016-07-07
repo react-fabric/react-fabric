@@ -5,15 +5,47 @@ via [Properties](#properties). Each child of the List should be a [ListItemActio
 
 <a href="http://dev.office.com/fabric/components/listitem" target="_blank">View Office Fabric UI docs</a>
 
+## Example <!-- EXAMPLE -->
 ```jsx
 import List from 'react-fabric/lib/List';
-import ListItem, { ListItemAction } from 'react-fabric/lib/ListItem'
+import ListItem from 'react-fabric/lib/ListItem';
 
-const MyList = () => (
-  <List>
-    <ListItem>Foo</ListItem>
-  </List>
-);
+class ListExample extends React.Component {
+  state = { checked: false };
+  handleChanged = () => this.setState({ checked: !this.state.checked });
+
+  render() {
+    return (
+      <section>
+        <h2>List & ListItem</h2>
+        <List>
+          <ListItem
+            image={<img src="http://placekitten.com/64/64" />}
+            selectable
+            checked={this.state.checked}
+            onChange={::this.handleChanged}
+            primaryText="Primary Text"
+            secondaryText="Secondary Text"
+            tertiaryText="Tertiary Text"
+            metaText="Meta Text">
+            <ListItem.Action glyph="mail" />
+          </ListItem>
+          <ListItem type="document"
+            itemIcon="star"
+            primaryText="Primary Text"
+            secondaryText="Secondary Text"
+            tertiaryText="Tertiary Text"
+            metaText="Meta Text">
+            <ListItem.Action glyph="mail" />
+            <ListItem.Action glyph="star" />
+          </ListItem>
+        </List>
+      </section>
+    )
+  }
+}
+
+return <ListExample />;
 ```
 
 ## Properties

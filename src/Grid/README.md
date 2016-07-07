@@ -5,19 +5,27 @@ See official docs for more explanation and examples.
 
 <a href="http://dev.office.com/fabric/styles#responsive-grid" target="_blank">View Office Fabric UI docs</a>
 
+## Example <!-- EXAMPLE -->
 ```jsx
 import Grid from 'react-fabric/lib/Grid';
 // or import Grid, { Col, Row } from 'react-fabric/lib/Grid'
 
-const Layout = ({ children }) => (
-  <Grid>
+const CELLS = [12, 6, 4, 3, 2, 1];
+const style = { background: '#F8F8F8', margin: '3px 0', padding: 3 };
+
+const GridExample = () => (
+  <Grid style={{ textAlign: 'center' }}>
     <Grid.Row>
-      <Grid.Col md={6} mdPush={3} mdPull={3} sm={12}>
-        { children }
-      </Grid.Col>
+      { CELLS.map(i => [...new Array(12/i)].map(() => (
+        <Grid.Col sm={i}>
+          <div style={style}>{i}</div>
+        </Grid.Col>
+      ))) }
     </Grid.Row>
   </Grid>
 );
+
+return <GridExample />;
 ```
 
 ## Properties
