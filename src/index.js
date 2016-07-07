@@ -9,6 +9,7 @@ export Label from './Label'
 export Link from './Link'
 export NavBar from './NavBar'
 export Overlay from './Overlay'
+export Table from './Table'
 export TextField from './TextField'
 export Toggle from './Toggle'
 
