@@ -1,3 +1,33 @@
+<a name="0.3.0"></a>
+# [0.3.0](https://github.com/react-fabric/react-fabric/compare/0.2.0...v0.3.0) (2016-07-07)
+
+
+### Bug Fixes
+
+* **Button:** remove margin from hero button icon ([e93eb91](https://github.com/react-fabric/react-fabric/commit/e93eb91))
+* **Table:** Add Table export ([de03811](https://github.com/react-fabric/react-fabric/commit/de03811))
+
+
+### Features
+
+* move repo to react-fabric organization ([0ea4f2b](https://github.com/react-fabric/react-fabric/commit/0ea4f2b))
+* **ChoiceFieldGroup:** Add support for value/onChange properties. ([b519501](https://github.com/react-fabric/react-fabric/commit/b519501))
+* **Dropdown:** pass event to ui event handlers (onChange, onFocus, onBlur) as first argument ([d81dad0](https://github.com/react-fabric/react-fabric/commit/d81dad0))
+
+
+### BREAKING CHANGES
+
+* Dropdown: onChange was invoked with value as first argument
+
+Migration:
+onChange(value) -> onChange(e, option)
+* ChoiceFieldGroup: checked/onChange properties of children ChoiceFields
+are overwritten by ChoiceFieldGroup. Use value/onChange of the
+ChoiceFieldGroup instead.
+* repo now at https://github.com/react-fabric/react-fabric
+
+
+
 <a name="0.2.0"></a>
 # [0.2.0](https://github.com/react-fabric/react-fabric/compare/0.1.7...0.2.0) (2016-07-05)
 
