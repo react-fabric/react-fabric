@@ -7,36 +7,40 @@ const eventMap = {
   'bar': function barHandler() {}
 }
 
+const setOnDocument = (property, value) => {
+  const backup = global.document[property]
+
+  global.document[property] = value
+
+  return () => { global.document[property] = backup }
+}
+
 test('events#addEventsToDocument', t => {
   t.plan(6)
 
-  global.document = {
-    addEventListener: (key, listener, capture) => {
-      t.ok(Object.keys(eventMap).indexOf(key) !== -1, `key ${key}`)
-      t.equal(listener, eventMap[key], 'listener for ${key}')
-      t.equal(capture, false, 'capture')
-    }
-  }
+  const restore = setOnDocument('addEventListener', (key, listener, capture) => {
+    t.ok(Object.keys(eventMap).indexOf(key) !== -1, `key ${key}`)
+    t.equal(listener, eventMap[key], `listener for ${key}`)
+    t.equal(capture, false, 'capture')
+  })
 
   sut.addEventsToDocument(eventMap)
 
-  delete global.document
+  restore()
 })
 
 test('events#removeEventListener', t => {
   t.plan(6)
 
-  global.document = {
-    removeEventListener: (key, listener, capture) => {
-      t.ok(Object.keys(eventMap).indexOf(key) !== -1, `key ${key}`)
-      t.equal(listener, eventMap[key], 'listener for ${key}')
-      t.equal(capture, false, 'capture')
-    }
-  }
+  const restore = setOnDocument('removeEventListener', (key, listener, capture) => {
+    t.ok(Object.keys(eventMap).indexOf(key) !== -1, `key ${key}`)
+    t.equal(listener, eventMap[key], `listener for ${key}`)
+    t.equal(capture, false, 'capture')
+  })
 
   sut.removeEventsFromDocument(eventMap)
 
-  delete global.document
+  restore()
 })
 
 test('events#pauseEvent', t => {
