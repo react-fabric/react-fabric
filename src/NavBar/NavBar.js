@@ -11,12 +11,16 @@ import fabricComponent, { isFabricComponent } from '../fabricComponent'
 import style from './NavBar.scss'
 
 const scanChildren = children => React.Children.toArray(children).reduce((r, child) => {
-  if (isFabricComponent(child, NavBarItem, NavBarLink)) {
-    r.items.push(child)
-  }
   if (isFabricComponent(child, NavBarTitle)) {
     r.title = child // eslint-disable-line no-param-reassign
+  } else if (isFabricComponent(child, NavBarItem, NavBarLink)) {
+    r.items.push(child)
+  } else {
+    r.items.push(
+      <NavBarItem key={child.key}>{child}</NavBarItem>
+    )
   }
+
   return r
 }, { title: null, items: [] })
 
@@ -26,13 +30,13 @@ class NavBar extends React.Component {
     title: React.PropTypes.node,
     children: React.PropTypes.oneOfType([
       React.PropTypes.element,
-      React.PropTypes.arrayOf((propValue, key, componentName, location, propFullName) => {
-        if (!isFabricComponent(propValue[key], NavBarItem, NavBarLink, NavBarTitle)) {
-          return new Error(
-            `Invalid prop '${propFullName}' supplied to '${componentName}'. Must be one of
-            NavBar.Item, NavBar.Link or NavBar.Title`
-          )
-        }
+      React.PropTypes.arrayOf((propValue, key, componentName/* , location, propFullName */) => {
+        // if (!isFabricComponent(propValue[key], NavBarItem, NavBarLink, NavBarTitle)) {
+        //   return new Error(
+        //     `Invalid prop '${propFullName}' supplied to '${componentName}'. Must be one of
+        //     NavBar.Item, NavBar.Link or NavBar.Title`
+        //   )
+        // }
         if (propValue.filter(value => isFabricComponent(value, NavBarTitle)).length > 1) {
           return new Error(
             `Multiple NavBar.Title props supplied to '${componentName}'. Maximal one is allowed.`
