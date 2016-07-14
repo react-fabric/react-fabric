@@ -2,11 +2,39 @@ import React from 'react'
 import { render, mount } from 'enzyme'
 import test from 'tape'
 
-import ListItem from '../index.js'
+import ListItem from '..'
+import ListItemAction from '../ListItemAction.js'
 
 test('ListItem', t => {
   t.ok(ListItem, 'export')
+  t.equal(ListItem.Action, ListItemAction, '.Action export')
   t.equal(ListItem.displayName, 'FabricComponent(ListItem)')
+
+  t.end()
+})
+
+test('ListItem#render - simple', t => {
+  const container = render(
+    <ListItem primaryText="Foo" />
+  ).contents()
+
+  t.assert(container.is('li.ms-ListItem', 'container'))
+  t.assert(container.is('[data-fabric="ListItem"]'), 'data-fabric')
+  t.equal(container.find('.ms-ListItem-primaryText').text(), 'Foo')
+
+  t.end()
+})
+
+test('ListItem#render - with actions', t => {
+  const wrapper = render(
+    <ListItem primaryText="Foo">
+      <ListItem.Action glyph="star" />
+      <ListItem.Action glyph="pinLeft" />
+      <ListItem.Action glyph="trash" />
+    </ListItem>
+  )
+
+  t.equal(wrapper.find('.ms-ListItem-actions').children().length, 3)
 
   t.end()
 })
