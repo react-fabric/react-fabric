@@ -70,13 +70,13 @@ class Dropdown extends React.Component {
     return options.filter(option => option.value === value)[0]
   }
 
-  handleMouseDown = (event) => {
+  handleMouseDown = (e) => {
     const { onFocus, disabled } = this.props
 
-    events.pauseEvent(event)
+    events.pauseEvent(e)
 
     if (!disabled) {
-      if (onFocus) { onFocus(event) }
+      if (onFocus) { onFocus(e) }
     }
   }
 
@@ -95,7 +95,7 @@ class Dropdown extends React.Component {
   handleDocumentClick = (e) => {
     const { active, onBlur, value } = this.props
 
-    if (active && !events.targetIsDescendant(event, ReactDOM.findDOMNode(this))) {
+    if (active && !events.targetIsDescendant(e, ReactDOM.findDOMNode(this))) {
       e.target.value = value // eslint-disable-line no-param-reassign
 
       if (onBlur) { onBlur(e) }
