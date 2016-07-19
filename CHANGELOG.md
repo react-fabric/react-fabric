@@ -1,3 +1,14 @@
+<a name="0.3.1"></a>
+## [0.3.1](https://github.com/react-fabric/react-fabric/compare/0.3.0...v0.3.1) (2016-07-19)
+
+
+### Bug Fixes
+
+* **NavBar:** allow any nodes as children but wrap them in a NavBarItem ([80aa49e](https://github.com/react-fabric/react-fabric/commit/80aa49e))
+* **package:** move 'react-css-modules' to dependencies and add missing 'babel-runtime' dependency. Fix [#9](https://github.com/react-fabric/react-fabric/issues/9) ([a12958b](https://github.com/react-fabric/react-fabric/commit/a12958b)), closes [#9](https://github.com/react-fabric/react-fabric/issues/9)
+
+
+
 <a name="0.3.0"></a>
 # [0.3.0](https://github.com/react-fabric/react-fabric/compare/0.2.0...v0.3.0) (2016-07-07)
 
