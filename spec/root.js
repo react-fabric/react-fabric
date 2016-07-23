@@ -8,6 +8,7 @@ import DropdownSection from './sections/DropdownSection.js'
 import IconSection from './sections/IconSection.js'
 import LinkSection from './sections/LinkSection.js'
 import ListSection from './sections/ListSection.js'
+import SearchBoxSection from './sections/SearchBoxSection.js'
 import TableSection from './sections/TableSection.js'
 
 import style from './style'
@@ -22,6 +23,7 @@ const Root = () => (
     <IconSection />
     <LinkSection />
     <ListSection />
+    <SearchBoxSection />
     <TableSection />
   </div>
 )
