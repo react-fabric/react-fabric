@@ -1,3 +1,19 @@
+<a name="0.4.0"></a>
+# [0.4.0](https://github.com/react-fabric/react-fabric/compare/0.3.1...v0.4.0) (2016-07-26)
+
+
+### Bug Fixes
+
+* **fabricComponent:** remove unused contextTypes definition ([3e3aa60](https://github.com/react-fabric/react-fabric/commit/3e3aa60))
+
+
+### Features
+
+* **bower:** prepare for bower release ([3b602ba](https://github.com/react-fabric/react-fabric/commit/3b602ba))
+* **SearchBox:** implement the SearchBox component. ([9f8f74d](https://github.com/react-fabric/react-fabric/commit/9f8f74d))
+
+
+
 <a name="0.3.1"></a>
 ## [0.3.1](https://github.com/react-fabric/react-fabric/compare/0.3.0...v0.3.1) (2016-07-19)
 

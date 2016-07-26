@@ -1,25 +1,24 @@
 {
   "name": "react-fabric",
   "description": "Office UI Fabric components built with React and CSS Modules",
-  "version": "0.3.1",
+  "homepage": "https://react-fabric.github.io/",
+  "version": "0.4.0",
   "main": "dist/react-fabric.js",
+  "authors": [
+    "Kevin Mees <kev.mees@gmail.com>"
+  ],
+  "keywords": [
+    "fabric",
+    "office",
+    "office",
+    "react",
+    "react-component",
+    "ui"
+  ],
   "dependencies": {
     "office-ui-fabric": "^2.6.0",
     "react": "^0.14 || ^15.0.0"
   },
-  "authors": [
-    "Kevin Mees <kev.mees@gmail.com>"
-  ],
-  "license": "MIT",
-  "keywords": [
-    "office",
-    "office",
-    "ui",
-    "fabric",
-    "react",
-    "react-component"
-  ],
-  "homepage": "https://react-fabric.github.io/",
   "ignore": [
     "**/.*",
     "assets",
@@ -27,8 +26,9 @@
     "docs",
     "lib",
     "node_modules",
-    "src",
     "spec",
+    "src",
     "webpack.config.js"
-  ]
+  ],
+  "license": "MIT"
 }

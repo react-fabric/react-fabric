@@ -2,7 +2,7 @@
   "name": "react-fabric",
   "description": "Office UI Fabric components built with React and CSS Modules",
   "homepage": "http://react-fabric.github.io",
-  "version": "0.3.1",
+  "version": "0.4.0",
   "main": "lib/index.js",
   "author": {
     "name": "Kevin Mees",
@@ -84,19 +84,19 @@
     "yargs": "^4.8.1"
   },
   "scripts": {
-    "start": "better-npm-run start",
-    "prebuild": "better-npm-run clean:build",
     "build": "better-npm-run transpile && better-npm-run copy-sass",
-    "prebundle": "better-npm-run clean:bundle",
     "bundle": "webpack --bail && webpack --bail -p",
-    "patch": "npm run release -- patch",
-    "release": "bumped release",
     "lint": "eslint src/",
+    "patch": "npm run release -- patch",
+    "prebuild": "better-npm-run clean:build",
+    "prebundle": "better-npm-run clean:bundle",
+    "prepublish": "npm run build && npm run bundle",
     "pretest": "npm run lint",
-    "test": "better-npm-run test",
+    "release": "bumped release",
     "report-coverage": "nyc report --reporter=text-lcov | coveralls",
+    "start": "better-npm-run start",
     "tdd": "better-npm-run tdd",
-    "prepublish": "npm run build && npm run bundle"
+    "test": "better-npm-run test"
   },
   "license": "MIT",
   "betterScripts": {
