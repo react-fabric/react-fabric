@@ -90,7 +90,6 @@
     "patch": "npm run release -- patch",
     "prebuild": "better-npm-run clean:build",
     "prebundle": "better-npm-run clean:bundle",
-    "prepublish": "npm run build && npm run bundle",
     "pretest": "npm run lint",
     "release": "bumped release",
     "report-coverage": "nyc report --reporter=text-lcov | coveralls",

@@ -14,7 +14,7 @@ plugins:
 
     'Preparing build':
       plugin: 'bumped-terminal'
-      command: 'npm run prepublish'
+      command: 'npm run build && npm run bundle'
 
   postrelease:
     'Generate Changelog':
