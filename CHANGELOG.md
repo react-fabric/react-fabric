@@ -1,3 +1,13 @@
+<a name="0.4.1"></a>
+## [0.4.1](https://github.com/react-fabric/react-fabric/compare/0.4.0...v0.4.1) (2016-07-26)
+
+
+### Bug Fixes
+
+* **bower:** extract css from bundled css ([679fd18](https://github.com/react-fabric/react-fabric/commit/679fd18))
+
+
+
 <a name="0.4.0"></a>
 # [0.4.0](https://github.com/react-fabric/react-fabric/compare/0.3.1...v0.4.0) (2016-07-26)
 

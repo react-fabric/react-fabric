@@ -2,7 +2,7 @@
   "name": "react-fabric",
   "description": "Office UI Fabric components built with React and CSS Modules",
   "homepage": "https://react-fabric.github.io/",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "main": "dist/react-fabric.js",
   "authors": [
     "Kevin Mees <kev.mees@gmail.com>"
