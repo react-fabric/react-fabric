@@ -29,12 +29,9 @@ const higherOrderFunction = (Component, styles = { }, options = { }) => {
   }
 
   const WrappedComponent = cssm(Component, fabricStyles, fabricOptions)
-  const FabricComponent = ({ ...props }) => (
-    <WrappedComponent {...props} styles={undefined} />
+  const FabricComponent = ({ styles, ...props }) => (
+    <WrappedComponent {...props} />
   )
-  FabricComponent.contextTypes = {
-    fabric: React.PropTypes.object
-  }
 
   const componentDisplayName = Component.displayName || Component.name
 
