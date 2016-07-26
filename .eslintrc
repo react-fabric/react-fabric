@@ -1,4 +1,8 @@
 {
   "parser": "babel-eslint",
-  "extends": "xi"
+  "extends": "xi",
+  "rules": {
+    "no-unused-vars": [2, { "varsIgnorePattern": "styles", "argsIgnorePattern": "styles" }],
+    "no-unused-vars": [2, { "ignore": "styles" }]
+  }
 }
