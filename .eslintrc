@@ -2,7 +2,7 @@
   "parser": "babel-eslint",
   "extends": "xi",
   "rules": {
-    "no-unused-vars": [2, { "varsIgnorePattern": "styles", "argsIgnorePattern": "styles" }],
-    "no-unused-vars": [2, { "ignore": "styles" }]
+    "no-unused-vars": [2, { "varsIgnorePattern": "[sS]tyles", "argsIgnorePattern": "[sS]tyles" }],
+    "react/prop-types": [2, { "ignore": ["styles"] }]
   }
 }

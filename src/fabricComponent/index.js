@@ -29,7 +29,7 @@ const higherOrderFunction = (Component, styles = { }, options = { }) => {
   }
 
   const WrappedComponent = cssm(Component, fabricStyles, fabricOptions)
-  const FabricComponent = ({ styles, ...props }) => (
+  const FabricComponent = ({ styles: ignoreStyles, ...props }) => (
     <WrappedComponent {...props} />
   )
 
