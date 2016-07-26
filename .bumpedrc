@@ -1,5 +1,6 @@
 files: [
-  "package.json"
+  "package.json",
+  "bower.json"
 ]
 
 plugins:
@@ -22,7 +23,7 @@ plugins:
 
     'Commiting new version':
       plugin: 'bumped-terminal'
-      command: 'git add package.json CHANGELOG.md && git commit -m "chore(package): release $newVersion" && git push origin development:master'
+      command: 'git add package.json bower.json CHANGELOG.md dist/ && git commit -m "chore(package): release $newVersion" && git push origin development:master'
 
     'Publishing tag at Github':
       plugin: 'bumped-terminal'

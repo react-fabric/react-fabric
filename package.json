@@ -80,25 +80,31 @@
     "webpack": "^1.13.0",
     "webpack-dev-middleware": "^1.6.1",
     "webpack-hot-middleware": "^2.12.1",
-    "webpack-loader": "0.0.1"
+    "webpack-loader": "0.0.1",
+    "yargs": "^4.8.1"
   },
   "scripts": {
-    "build": "better-npm-run transpile && better-npm-run copy-sass",
-    "lint": "eslint src/",
-    "patch": "npm run release -- patch",
-    "prebuild": "npm run lint && better-npm-run clean",
-    "prepublish": "npm run build",
-    "pretest": "npm run lint",
-    "release": "bumped release",
-    "report-coverage": "nyc report --reporter=text-lcov | coveralls",
     "start": "better-npm-run start",
+    "prebuild": "better-npm-run clean:build",
+    "build": "better-npm-run transpile && better-npm-run copy-sass",
+    "prebundle": "better-npm-run clean:bundle",
+    "bundle": "webpack --bail && webpack --bail -p",
+    "patch": "npm run release -- patch",
+    "release": "bumped release",
+    "lint": "eslint src/",
+    "pretest": "npm run lint",
+    "test": "better-npm-run test",
+    "report-coverage": "nyc report --reporter=text-lcov | coveralls",
     "tdd": "better-npm-run tdd",
-    "test": "better-npm-run test"
+    "prepublish": "npm run build && npm run bundle"
   },
   "license": "MIT",
   "betterScripts": {
-    "clean": {
+    "clean:build": {
       "command": "rimraf ./lib"
+    },
+    "clean:bundle": {
+      "command": "rimraf ./dist"
     },
     "copy-sass": {
       "command": "cpx 'src/**/*.scss' ./lib"
