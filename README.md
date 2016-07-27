@@ -11,7 +11,6 @@ $ npm install --save react-fabric
 ```
 Please note that you also have to install all missing peer depencies.
 
-
 ## Usage
 
 Before you start using `react-fabric` it is recommended to setup a basic Webpack workflow with
@@ -19,7 +18,7 @@ Before you start using `react-fabric` it is recommended to setup a basic Webpack
 and [sass-loader](https://github.com/jtangelder/sass-loader). A minimal starter project is 
 [React Hot Boilerplate](https://github.com/gaearon/react-hot-boilerplate).
 
-Once Webpack is set up, yu can just require `react-fabric` and use the components
+Once Webpack is set up, you can just require `react-fabric` and use the components
 
 ```jsx
 import React from 'react';
@@ -32,7 +31,7 @@ const SaveButton = ({ onClick }) => (
 export default SaveButton
 ```
 
-The above code creates a custom `SaveButton` component based on the hero button component of fabric ui. Please not
+The above code creates a custom `SaveButton` component based on the hero button component of fabric ui. Please note
 that all the required SASS for the button component is automatically required by the module.
 
 
