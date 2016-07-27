@@ -9,7 +9,12 @@ var options = yargs
   .argv;
 
 module.exports = {
-  entry: { 'react-fabric': './src/index.js' },
+  entry: {
+    'react-fabric': [
+      './src/index.js',
+      './src/fonts/index.js'
+    ]
+  },
   devtool: 'source-map',
   output: {
     path: __dirname + '/dist',
