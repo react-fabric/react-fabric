@@ -18,6 +18,15 @@ Before you start using `react-fabric` it is recommended to setup a basic Webpack
 and [sass-loader](https://github.com/jtangelder/sass-loader). A minimal starter project is 
 [React Hot Boilerplate](https://github.com/gaearon/react-hot-boilerplate).
 
+Dont forget to enable CSS modules support for the `css-loader`
+
+```js
+{
+    test: /\.css/,
+    loader: 'style!css?modules'
+}
+```
+
 Once Webpack is set up, you can just require `react-fabric` and use the components
 
 ```jsx
