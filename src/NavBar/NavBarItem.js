@@ -5,7 +5,7 @@ import fabricComponent from '../fabricComponent'
 
 import style from './NavBar.scss'
 
-const NavBarItem = ({ children, right, ...props }) => (
+const NavBarItem = ({ children, right, styles, ...props }) => (
   <li {...props}
     styleName={cx('ms-NavBar-item', {
       'ms-NavBar-item--right': right

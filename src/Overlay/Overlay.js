@@ -5,7 +5,7 @@ import fabricComponent from '../fabricComponent'
 
 import style from './Overlay.scss'
 
-const Overlay = ({ dark, hidden, ...props }) => (
+const Overlay = ({ dark, hidden, styles, ...props }) => (
   <div data-fabric="Overlay"
     {...props}
     styleName={cx('ms-Overlay', {

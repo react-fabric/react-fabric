@@ -6,7 +6,13 @@ import fabricComponent from '../fabricComponent'
 
 import style from './List.scss'
 
-const List = ({ children, componentClass: Component, selectable, ...props }) => (
+const List = ({
+  children,
+  componentClass: Component,
+  selectable,
+  styles,
+  ...props
+}) => (
   <Component data-fabric="List"
     {...props}
     styleName="ms-List">

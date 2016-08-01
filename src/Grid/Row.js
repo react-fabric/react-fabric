@@ -4,7 +4,7 @@ import fabricComponent from '../fabricComponent'
 
 import style from './Grid.scss'
 
-const Row = ({ children, ...props }) => (
+const Row = ({ children, styles, ...props }) => (
   <div {...props} styleName="ms-Grid-row">
     { children }
   </div>

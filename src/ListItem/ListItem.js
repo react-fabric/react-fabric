@@ -23,6 +23,7 @@ const ListItem = ({
   primaryText,
   secondaryText,
   selectable,
+  styles,
   tertiaryText,
   type,
   ...props

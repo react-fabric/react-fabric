@@ -6,7 +6,7 @@ import fabricComponent from '../fabricComponent'
 
 import style from './ListItem.scss'
 
-const ListItemAction = ({ children, glyph, ...props }) => (
+const ListItemAction = ({ children, glyph, styles, ...props }) => (
   <div {...props}
     styleName="ms-ListItem-action">
     { glyph && <Icon glyph={glyph} /> }

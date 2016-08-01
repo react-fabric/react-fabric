@@ -7,7 +7,16 @@ import isDefined from '../util/isDefined.js'
 import style from './ChoiceField.scss'
 
 const ChoiceField = ({
-  className, disabled, id, label, name, required, type, checked, ...props
+  checked,
+  className,
+  disabled,
+  id,
+  label,
+  name,
+  required,
+  styles,
+  type,
+  ...props
 }) => {
   const inputId = `ChoiceField_${id || name || Date.now()}_input`
 
@@ -44,7 +53,7 @@ ChoiceField.propTypes = {
 }
 ChoiceField.defaultProps = {
   disabled: false,
-  require: false,
+  required: false,
   type: 'checkbox'
 }
 

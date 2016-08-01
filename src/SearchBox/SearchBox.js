@@ -53,6 +53,7 @@ class SearchBox extends React.Component {
       className,
       onChange,
       placeholder,
+      styles,
       value,
       ...props
     } = this.props

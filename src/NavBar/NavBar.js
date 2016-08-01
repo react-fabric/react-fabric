@@ -69,7 +69,7 @@ class NavBar extends React.Component {
   }
 
   render() {
-    const { children, isMenuOpen, ...props } = this.props
+    const { children, isMenuOpen, styles, ...props } = this.props
     const { title, items } = scanChildren(children)
     const styleName = cx('ms-NavBar', {
       'is-open': isMenuOpen

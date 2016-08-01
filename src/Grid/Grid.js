@@ -6,7 +6,7 @@ import fabricComponent from '../fabricComponent'
 
 import style from './Grid.scss'
 
-const Grid = ({ children, ...props }) => (
+const Grid = ({ children, styles, ...props }) => (
   <div data-fabric="Grid"
     {...props}
     styleName="ms-Grid">

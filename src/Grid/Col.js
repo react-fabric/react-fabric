@@ -12,7 +12,7 @@ const breakpointPropKeys = flatten(breakpoints.map(breakpoint => [
   breakpoint, `${breakpoint}Push`, `${breakpoint}Pull`
 ]))
 
-const Col = ({ children, ...other }) => {
+const Col = ({ children, styles, ...other }) => {
   const props = { ...other }
   const breakpointStyles = { }
 

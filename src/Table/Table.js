@@ -5,7 +5,7 @@ import fabricComponent from '../fabricComponent'
 
 import style from './Table.scss'
 
-const Table = ({ children, fixed, ...props }) => (
+const Table = ({ children, fixed, styles, ...props }) => (
   <table data-fabric="Table"
     {...props }
     styleName={cx('ms-Table', {

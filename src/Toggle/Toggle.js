@@ -18,6 +18,7 @@ const Toggle = ({
   labelOn,
   name,
   onChange,
+  styles,
   textLeft,
   ...props
   }) => {

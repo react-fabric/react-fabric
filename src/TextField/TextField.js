@@ -18,6 +18,7 @@ const TextField = ({
   name,
   placeholder,
   required,
+  styles,
   underlined,
   value,
   ...props

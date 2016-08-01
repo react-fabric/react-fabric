@@ -30,6 +30,7 @@ const Dialog = ({
   darkOverlay,
   hidden,
   onClose,
+  styles,
   ...props
 }) => {
   const { title, content, actions } = scanChildren(children)

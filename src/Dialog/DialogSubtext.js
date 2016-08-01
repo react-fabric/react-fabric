@@ -4,7 +4,12 @@ import fabricComponent from '../fabricComponent'
 
 import style from './Dialog.scss'
 
-const DialogSubtext = ({ className, children, ...props }) => (
+const DialogSubtext = ({
+  className,
+  children,
+  styles,
+    ...props
+    }) => (
   <p {...props}
     styleName="ms-Dialog-subText"
     className={className}>

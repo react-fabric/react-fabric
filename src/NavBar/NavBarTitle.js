@@ -4,7 +4,7 @@ import fabricComponent from '../fabricComponent'
 
 import style from './NavBar.scss'
 
-const NavBarTitle = ({ children, ...props }) => (
+const NavBarTitle = ({ children, styles, ...props }) => (
   <div {...props} styleName="ms-NavBar-title">
     { children }
   </div>

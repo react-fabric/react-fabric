@@ -14,6 +14,7 @@ const Label = ({
   htmlFor,
   onClick,
   required,
+  styles,
   ...props
   }) => (
   <ComponentClass data-fabric="Label"

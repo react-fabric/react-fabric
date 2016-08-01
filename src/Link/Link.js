@@ -8,6 +8,7 @@ import style from './Link.scss'
 const Link = ({
   children,
   componentClass: Component,
+  styles,
   ...props
 }) => (
   <Component data-fabric="Link"

@@ -120,6 +120,7 @@ class Dropdown extends React.Component {
 
   render() {
     const {
+      active,
       className,
       disabled,
       label,
@@ -128,15 +129,17 @@ class Dropdown extends React.Component {
       options,
       placeholder,
       required,
+      styles,
+      textLeft,
       value,
       ...props
     } = this.props
 
     const selected = this.getSelectedOption()
     const styleName = cx('ms-Dropdown', {
-      'ms-Dropdown--textLeft': this.props.textLeft,
-      'is-open': this.props.active,
-      'is-disabled': this.props.disabled
+      'ms-Dropdown--textLeft': textLeft,
+      'is-open': active,
+      'is-disabled': disabled
     })
 
     return (

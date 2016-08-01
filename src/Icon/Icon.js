@@ -6,7 +6,7 @@ import fabricComponent from '../fabricComponent'
 
 import style from './Icon.scss'
 
-const Icon = ({ glyph, ...props }) => (
+const Icon = ({ glyph, styles, ...props }) => (
   <i data-fabric="Icon"
     {...props}
     styleName={cx('ms-Icon', `ms-Icon--${glyph}`)} />

@@ -22,6 +22,7 @@ const Button = ({
   disabled,
   glyph,
   onClick,
+  styles,
   submit,
   type,
     ...props

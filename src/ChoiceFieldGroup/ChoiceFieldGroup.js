@@ -26,7 +26,14 @@ const createChoices = ({ children, name, value, onChange }) => (
 )
 
 const ChoiceFieldGroup = ({
-  children, name, required, title, value, onChange, ...props
+  children,
+  name,
+  onChange,
+  required,
+  styles,
+  title,
+  value,
+  ...props
 }) => (
   <div data-fabric="ChoiceFieldGroup"
     {...props}
