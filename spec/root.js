@@ -11,7 +11,7 @@ import ListSection from './sections/ListSection.js'
 import SearchBoxSection from './sections/SearchBoxSection.js'
 import TableSection from './sections/TableSection.js'
 
-import style from './style'
+import style from './style.scss'
 
 const Root = () => (
   <div>
