@@ -2,6 +2,9 @@
 
 react-fabric is a set of [React](http://facebook.github.io/react/) components that wrap the [Office UI Fabric](https://github.com/OfficeDev/Office-UI-Fabric)
 
+## :warning: DEPRECATED :warning:
+> Use [office-ui-fabric-react](https://github.com/OfficeDev/office-ui-fabric-react)
+
 ## Installation
 
 `react-fabric` can be installed as an npm package
